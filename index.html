@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#101918"><meta name="description" content="鴉棲鎮的灰燼：完整繁體中文 2D 動作 RPG。探索五大區域、十一個任務，從三把鑰匙走向四種命運。"><title>鴉棲鎮的灰燼 — 完整篇章</title><style>
+<html lang="zh-Hant"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#101918"><meta name="description" content="鴉棲鎮的灰燼：完整繁體中文 2D 動作 RPG。探索五大區域、十一個任務，從三把鑰匙走向四種命運與可探索後日談。支援浴血難度與離線遊玩。"><title>鴉棲鎮的灰燼 — 完整篇章</title><style>
 :root{color-scheme:dark;--ink:#0b1212;--panel:#15201f;--line:#48534a;--gold:#d5b67c;--cream:#e7e7d5;--muted:#9baaa3;--green:#94bfa6;--red:#d36a5b;--serif:"Noto Serif TC","Songti TC","PMingLiU","Microsoft JhengHei",serif;--sans:"Microsoft JhengHei","PingFang TC",sans-serif}
 *{box-sizing:border-box}body{margin:0;background:#0a1010;color:var(--cream);font-family:var(--sans);background-image:radial-gradient(ellipse at 50% 0,#23312b88,transparent 65%);min-height:100svh}button,select,input{font:inherit}button{color:inherit;cursor:pointer}button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid #e9cd91;outline-offset:4px}button:disabled{opacity:.4;cursor:default}button{touch-action:manipulation}button svg{width:17px;height:17px;vertical-align:middle;fill:none;stroke:currentColor;stroke-width:1.5}button:hover:not(:disabled){filter:brightness(1.15)}[hidden]{display:none!important}
 .app{width:min(1512px,100%,calc((100svh - 160px)*1.6 + 56px));margin:auto;padding:0 28px 20px}.masthead{height:86px;display:flex;align-items:center;justify-content:space-between;gap:20px}.identity{display:flex;align-items:center;gap:14px}.sigil{width:37px;height:39px;color:var(--gold)}.identity h1{font:600 21px var(--serif);letter-spacing:.19em;margin:0 0 5px}.identity small{font:9px Georgia,serif;letter-spacing:.29em;color:#95a298}.mast-right{display:flex;align-items:center;gap:20px;color:#a5b0a6;font-size:11px;letter-spacing:.16em}.version{border:1px solid #495548;padding:6px 9px;font-size:9px;color:#c4c6ad}
@@ -17,23 +17,27 @@
 .title-difficulty{display:flex;align-items:center;gap:12px;margin-top:22px;font-size:11px;color:#b4bfa8;letter-spacing:.07em}.title-difficulty select{background:#10231b;border:1px solid #78866b77;padding:7px;color:#d0d4b5;font-size:11px}.text-btn{background:none;border:0;padding:12px 0 0;color:#b6c9ae;font:11px var(--serif);letter-spacing:.1em;text-decoration:underline;text-underline-offset:4px}.title-foot{line-height:1.9;margin-top:15px}.map-button{display:block;padding:0;background:none;cursor:pointer;pointer-events:auto}.dialogue{max-height:76%;overflow:auto}.dialogue-content{padding-bottom:12px}.choices{padding-bottom:7px}.skip-intro{position:absolute;right:20px;top:12px;background:#182a22d9;border:1px solid #79846b77;padding:4px 8px;font-size:9px;color:#b5c2aa;z-index:4}.skip-intro:hover{color:#ecddae}.dialogue-hint{pointer-events:none}.portrait-wrap{max-height:170px;align-self:stretch}.portrait-wrap canvas{max-height:165px}.journal-drawer{width:min(530px,94%)}.journal-tabs{display:flex;border-bottom:1px solid #7a896259;gap:6px;padding-bottom:12px;position:sticky;top:-27px;background:#111f1ef5;padding-top:8px;z-index:2}.journal-tabs button,.region-tabs button{background:#20352866;border:1px solid #68795455;padding:7px 11px;color:#aebfa7;font-size:11px}.journal-tabs button.selected,.region-tabs button.selected{color:#e6d7a8;border-color:#b7b17a}.quest-card{padding:16px 0;border-bottom:1px solid #62745444}.quest-card .quest-kind{font-size:9px;color:#b9a974;letter-spacing:.12em}.quest-card h3{font:17px var(--serif);margin:8px 0;letter-spacing:.04em;color:#e1d9b7}.quest-card p{font-size:12px;color:#9caf9e;line-height:1.85;margin:5px 0}.quest-card .hint{color:#bfd0b1;border-left:2px solid #8a9b6c;padding-left:10px}.quest-card button{font:10px var(--sans);padding:6px 10px;min-width:0;margin-top:6px}.quest-card.done h3{color:#9abc9e}.quest-card.failed{opacity:.65}.quest-card.failed h3{color:#bd8a78}.quest-card .status{float:right;font-size:10px;color:#baa97b}.evidence-item{border:1px solid #73815a55;padding:14px;margin:12px 0;background:#273b292b}.evidence-item h3{font:16px var(--serif);margin:0 0 8px;color:#d7c794}.evidence-item p{font-size:12px;color:#a4b7a1;line-height:1.85;margin:5px 0}.guide-copy{font-size:12px;line-height:2;color:#adbda6}.guide-copy h3{font:17px var(--serif);color:#d8c69a;margin:22px 0 9px}.guide-copy kbd{color:#e0cc9d}.pause-card{max-height:96%;overflow:auto;padding:24px 32px}.pause-card h2{font-size:24px;margin:10px 0}.pause-card p{font-size:12px;margin:10px 0}.pause-card .settings-row{margin:10px 0}.pause-card .gold-btn,.pause-card .quiet-btn{padding:10px}.checkpoint-info{padding:10px 13px;background:#82916b12;border:1px solid #76866240;color:#9fb193;font-size:10px;line-height:1.8;text-align:left}.checkpoint-info b{font-size:12px;color:#cfcba5;font-weight:400}.checkpoint-info small{display:block;font-size:9px}.save-tools{display:flex;gap:10px}.save-tools button{min-width:0}.map-screen{background:#08140eeb}.map-card{padding:24px;width:min(960px,94%);height:94%;overflow:auto;background:#14231e;border:1px solid #81927388;box-shadow:0 20px 90px #000}.map-card .drawer-head{margin-bottom:15px}.map-en{font:9px Georgia;letter-spacing:.25em;color:#9baf94}.map-card h2{margin-top:7px;font-size:23px}.map-card canvas{display:block;width:100%;height:auto;max-height:65vh;background:#172d23;border:1px solid #5b71514d;image-rendering:auto;object-fit:contain}.map-legend{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:10px;color:#bfc5a4;margin:14px 0}.region-tabs{display:flex;gap:6px;flex-wrap:wrap}.region-tabs button{font-size:10px}.ending-screen{background:radial-gradient(ellipse at 50% 0,#526047cc,#0a1711f2 70%);backdrop-filter:blur(3px);overflow:auto;align-items:flex-start}.ending-card{width:min(790px,90%);padding:36px 30px 35px;text-align:center}.ending-crest{margin:0 auto 22px;width:66px;height:72px;clip-path:polygon(50% 0,100% 24%,100% 75%,50% 100%,0 75%,0 25%);background:#a6a77455;display:flex;justify-content:center;align-items:center}.ending-crest span{font:29px Georgia;color:#e3cf98}.ending-card .overline{font:9px Georgia;letter-spacing:.23em;color:#b7c398}.ending-card h2{font:30px var(--serif);color:#e6d7b2;letter-spacing:.2em;margin:18px 0 25px}.ending-card #ending-copy{font:14px/2.1 var(--serif);text-align:left;color:#bdcbb5}.ending-card p{margin:14px 0}.ending-stats{font-size:10px;color:#b9bd91;border-top:1px solid #7a896055;padding-top:17px;line-height:1.7}.ending-card .title-buttons{justify-content:center;margin-top:20px}.confirm-screen{z-index:50;background:#08120eeb}.objective{max-width:270px}.objective p{max-width:230px}.hud.combat .objective{opacity:.55}.hud.combat .objective p{display:none}.hud.combat .objective:hover{opacity:1}.hud.combat .skill-label{display:none}.map-wrap:before{pointer-events:none}.objective .eyebrow{font-size:9px}.tools #map-btn{font-size:20px;line-height:18px}.location small{font-size:8px}.choice{min-height:32px}.choice:focus-visible{outline:1px solid #e3d498;outline-offset:0}.touch-actions .attack-touch{touch-action:none}#dialogue:not([hidden])~.touch{display:none}
 @media(max-width:1000px){.title-difficulty{margin-top:14px}.title-difficulty select{font-size:10px;padding:5px}.title-foot{font-size:9px}.title-copy{margin-bottom:18px}.journal-tabs{top:-20px}.map-card{padding:18px}.ending-card{padding:24px 17px}.ending-card #ending-copy{font-size:12px}.ending-card h2{font-size:25px}.ending-crest{width:45px;height:50px;margin-bottom:15px}.pause-card{padding:17px 25px}.pause-card .settings-row{margin:7px 0}.pause-card p{font-size:11px}.checkpoint-info{padding:7px 10px}}
 @media(max-width:650px){.title-difficulty{font-size:9px;margin-top:12px}.title-difficulty select{font-size:9px}.title-copy{font-size:10px}.title-foot{font-size:8px;margin-top:10px}.text-btn{font-size:9px;padding-top:7px}.title-layout{padding:6% 8%}.game-title{font-size:27px;line-height:1.3;margin-top:13px}.english-title{margin-bottom:12px}.title-copy{margin-bottom:12px}.dialogue{max-height:83%}.dialogue-content{padding-bottom:0}.skip-intro{font-size:8px;top:5px;right:7px}.dialogue:has(.skip-intro:not([hidden])) .speaker{padding-right:60px}.map-card{height:96%;padding:12px}.map-card h2{font-size:17px}.map-card .drawer-head{margin-bottom:10px}.map-legend{font-size:8px;gap:6px}.region-tabs{gap:4px}.region-tabs button{font-size:8px;padding:5px 7px}.map-card .settings-note{font-size:8px}.ending-card{width:96%;padding:15px}.ending-card h2{font-size:21px;letter-spacing:.1em;margin:12px 0}.ending-card #ending-copy{font-size:11px;line-height:1.9}.ending-crest{display:none}.ending-stats{font-size:8px}.ending-card .overline{font-size:7px}.pause-card{max-height:97%;padding:12px 18px}.pause-card h2{font-size:19px}.pause-card p{font-size:10px;line-height:1.5}.pause-card .overline{font-size:7px}.pause-card .settings-row{font-size:10px}.pause-card .gold-btn,.pause-card .quiet-btn{padding:7px;font-size:10px;margin-top:7px}.pause-card select{padding:3px}.checkpoint-info{font-size:8px;padding:5px 9px}.checkpoint-info b{font-size:10px}.checkpoint-info small{font-size:8px}.quest-card h3{font-size:15px}.quest-card p{font-size:11px}.journal-tabs button{font-size:10px}.dialogue .portrait-wrap{max-height:120px}}
+
+.intro-skip{position:absolute;right:22px;bottom:86px;z-index:18;padding:8px 13px;background:#163025e8;border:1px solid #b3a47388;color:#e0d2a4;font:11px var(--sans);cursor:pointer}.hud.prologue .vitals,.hud.prologue .skill-label,.hud.prologue .actionbar .action:nth-child(2),.hud.prologue .actionbar .action:nth-child(3),.hud.prologue .actionbar .action:nth-child(5){visibility:hidden}.volume-row>span{display:flex;align-items:center;gap:8px}.volume-row input[type=range]{width:120px;height:18px;accent-color:#c6b77c;margin:0}.volume-row output{min-width:36px;text-align:right;font-size:10px;color:#d4c695}.ending-card .title-buttons{flex-wrap:wrap}.ending-card .title-buttons button{min-width:170px}.title-layout>.text-btn{display:block}.pause-card .settings-row{margin:8px 0}
+@media(max-width:650px){.volume-row input[type=range]{width:95px}.intro-skip{right:10px;bottom:68px;font-size:9px;padding:6px 9px}.ending-card .title-buttons button{min-width:120px}.volume-row output{font-size:9px}.pause-card .settings-row{margin:6px 0}}
 </style></head><body><main class="app">
- <header class="masthead"><div class="identity"><svg class="sigil" viewBox="0 0 44 46" aria-hidden="true"><path fill="none" stroke="currentColor" d="M22 2 40 12v20L22 44 4 32V12Z"/><path fill="currentColor" d="m9 15 10 4 3-7 4 3 7-1-5 5 6 7-11-3-4 9-2-8-8-2 6-2Z"/></svg><div><h1>鴉棲鎮的灰燼</h1><small>ASHES OF RAVENROOST</small></div></div><div class="mast-right"><span id="act-label">一座小鎮，四種命運</span><span class="version">COMPLETE EDITION / 1.0</span></div></header>
+ <header class="masthead"><div class="identity"><svg class="sigil" viewBox="0 0 44 46" aria-hidden="true"><path fill="none" stroke="currentColor" d="M22 2 40 12v20L22 44 4 32V12Z"/><path fill="currentColor" d="m9 15 10 4 3-7 4 3 7-1-5 5 6 7-11-3-4 9-2-8-8-2 6-2Z"/></svg><div><h1>鴉棲鎮的灰燼</h1><small>ASHES OF RAVENROOST</small></div></div><div class="mast-right"><span id="act-label">一座小鎮，四種命運</span><span class="version">COMPLETE EDITION / 1.2</span></div></header>
  <section class="stage" id="stage" aria-label="鴉棲鎮的灰燼遊戲區域">
   <canvas id="game" width="1280" height="800" tabindex="0" aria-label="俯視角動作遊戲。WASD 移動，J 揮劍，空白鍵翻滾，E 互動，H 喝藥，G 地圖，Tab 任務手札。">請使用支援 Canvas 的瀏覽器。</canvas><div class="vignette"></div>
+  <button class="intro-skip" id="intro-skip" hidden>略過序章</button>
   <div class="hud" id="hud" hidden><div class="hud-top"><div class="vitals"><div class="vital-title"><span class="level" id="level">Lv.1</span><i class="divider"></i><span>異鄉劍客</span></div><div class="hp-track"><div class="hp-lag" id="hp-lag"></div><div class="hp-fill" id="hp-fill"></div></div><div class="vital-numbers"><span id="hp-text">100 / 100</span><span id="attack-text">劍傷 15</span></div><div class="quick-stats"><span><i class="flask"></i><b id="potions">3 / 3</b></span><span><i class="dodge-gem" id="dodge-gem"></i><span id="dodge-text">閃避就緒</span></span></div></div><div class="location"><small id="location-en"></small><strong id="location-name"></strong><div class="location-line"></div><div class="weather" id="weather"></div></div><div><div class="tools"><button class="icon-btn" id="map-btn" title="地圖（G）" aria-label="開啟地圖">⌖</button><button class="icon-btn" id="journal-btn" title="任務手札（Tab）" aria-label="任務手札"><svg viewBox="0 0 20 20"><path d="M3 3h6l1 2 1-2h6v14h-6l-1-2-1 2H3Z"/><path d="M10 5v10M5 7h3m-3 3h3m4-3h3m-3 3h3"/></svg></button><button class="icon-btn" id="sound-btn" title="聲音（M）" aria-label="切換聲音">♪</button><button class="icon-btn" id="fullscreen-btn" title="全螢幕（F）" aria-label="全螢幕">⛶</button><button class="icon-btn" id="pause-btn" title="暫停（Esc）" aria-label="暫停">Ⅱ</button></div><button class="map-wrap map-button" id="minimap-btn" aria-label="放大區域地圖"><canvas id="minimap" width="134" height="86"></canvas></button></div></div>
    <div class="objective"><div class="eyebrow" id="objective-kind">追蹤任務</div><strong id="objective-title"></strong><p id="objective-text"></p><div class="quest-detail" id="key-text"></div></div><div class="bark" id="bark" hidden></div><div class="skill-label" id="skill-label" hidden>白鴉劍意 · 已傳承</div>
    <div class="actionbar"><span class="action move-hint"><span class="key">WASD</span>移動</span><span class="action"><span class="key">J / 左鍵</span>揮劍 <span class="combo" id="combo"><i></i><i></i><i></i></span></span><span class="action"><span class="key">SPACE</span>翻滾</span><span class="action"><span class="key">E</span>互動</span><span class="action"><span class="key">H</span>藥水</span><span class="action move-hint"><span class="key">G</span>地圖</span></div>
   </div>
   <div class="interact" id="interact" hidden><span class="key">E</span><span id="interact-text"></span></div><div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
   <div class="touch" id="touch-controls" hidden><div class="dpad"><button style="grid-area:1/2" data-move="w" aria-label="向上">▲</button><button style="grid-area:2/1" data-move="a" aria-label="向左">◀</button><button style="grid-area:2/3" data-move="d" aria-label="向右">▶</button><button style="grid-area:3/2" data-move="s" aria-label="向下">▼</button></div><div class="touch-actions"><button id="touch-interact">互動</button><button id="touch-potion">藥水</button><button id="touch-dodge">閃避</button><button class="attack-touch" id="touch-attack">揮劍</button></div></div>
-  <div class="screen" id="title-screen"><div class="title-layout"><div class="chapter-tag">A TOWN. THREE KEYS. FOUR FATES.</div><h2 class="game-title">鴉棲鎮的灰燼</h2><p class="english-title">ASHES OF RAVENROOST</p><p class="title-copy">雨夜裡，你失去了一切。<br>他遞來一把劍，也遞來一場復仇。<br>這座小鎮的真相，藏在捷徑之外。</p><div class="title-buttons"><button class="gold-btn" id="start-btn">開始新的旅途　→</button><button class="quiet-btn" id="continue-btn" hidden>繼續上次旅途</button></div><label class="title-difficulty">戰鬥難度 <select id="title-difficulty" aria-label="選擇戰鬥難度"><option value="story">故事 · 從容探索</option><option value="normal" selected>標準 · 劍與抉擇</option><option value="hard">挑戰 · 步步為營</option></select></label><button class="text-btn" id="revisit-btn" hidden>回顧：進入莊園前的旅程</button><div class="title-foot">完整繁體中文 · 11 個任務 · 自由探索 · 四種結局<br>建議鍵盤與滑鼠操作 · 戰鬥外可隨時調整難度</div><div class="title-index"><b>IV</b>復仇，或是黎明</div></div></div>
+  <div class="screen" id="title-screen"><div class="title-layout"><div class="chapter-tag">A TOWN. THREE KEYS. FOUR FATES.</div><h2 class="game-title">鴉棲鎮的灰燼</h2><p class="english-title">ASHES OF RAVENROOST</p><p class="title-copy">雨夜裡，你失去了一切。<br>他遞來一把劍，也遞來一場復仇。<br>這座小鎮的真相，藏在捷徑之外。</p><div class="title-buttons"><button class="gold-btn" id="start-btn">開始新的旅途　→</button><button class="quiet-btn" id="continue-btn" hidden>繼續上次旅途</button></div><label class="title-difficulty">戰鬥難度 <select id="title-difficulty" aria-label="選擇戰鬥難度"><option value="story">故事 · 從容探索</option><option value="normal" selected>標準 · 劍與抉擇</option><option value="hard">挑戰 · 步步為營</option><option value="blood">浴血 · 生命與傷害兩倍</option></select></label><button class="text-btn" id="revisit-btn" hidden>回顧：進入莊園前的旅程</button><button class="text-btn" id="aftermath-btn" hidden>後日談收藏 · 繼續探索結局世界</button><div class="title-foot">完整繁體中文 · 11 個任務 · 四種難度 · 四種結局與後日談<br>建議鍵盤與滑鼠操作 · 戰鬥外可隨時調整難度</div><div class="title-index"><b>IV</b>復仇，或是黎明</div></div></div>
   <section class="dialogue" id="dialogue" aria-label="角色對話" hidden><div class="portrait-wrap"><canvas id="portrait" width="106" height="136"></canvas></div><div class="dialogue-content"><div class="speaker"><span id="speaker"></span><small id="speaker-tag"></small></div><div class="dialogue-text" id="dialogue-text"></div><div class="choices" id="choices"></div></div><div class="dialogue-hint">E / Enter 繼續 · ↑↓ 選擇</div><button class="skip-intro" id="skip-prologue" hidden>略過序章</button></section>
   <section class="screen death-screen" id="death-screen" hidden><div class="overlay-card"><div class="overline">THE RAIN REMEMBERS</div><h2>劍客倒下了</h2><p id="death-detail"></p><button class="gold-btn" id="retry-btn">在鎮中心診所醒來</button><button class="quiet-btn" id="death-title-btn">返回標題</button></div></section>
-  <section class="screen" id="pause-screen" hidden><div class="overlay-card pause-card"><div class="overline">A MOMENT IN THE RAIN</div><h2>暫歇片刻</h2><p>WASD / 方向鍵移動 · J / 左鍵揮劍<br>空白鍵 / K 翻滾 · E 互動 · H 藥水<br>Tab 手札 · G 地圖 · F 全螢幕</p><div class="checkpoint-info">最近任務狀態點<br><b id="checkpoint-name">序章</b><small>死亡與重新讀檔，會還原至此狀態點。</small></div><label class="settings-row">戰鬥難度<select id="difficulty-select"><option value="story">故事</option><option value="normal">標準</option><option value="hard">挑戰</option></select></label><p class="settings-note" id="difficulty-note">戰鬥外可以切換；所有難度皆可達成四種結局。</p><label class="settings-row">雨夜音景與音效<input id="sound-check" type="checkbox" checked></label><label class="settings-row">減少震動與閃光<input id="motion-check" type="checkbox"></label><button class="gold-btn" id="resume-btn">回到雨夜</button><div class="save-tools"><button class="quiet-btn" id="export-btn">匯出存檔</button><button class="quiet-btn" id="import-btn">匯入存檔</button></div><input id="import-file" type="file" accept=".json,application/json" hidden><button class="quiet-btn" id="pause-title-btn">返回標題</button></div></section>
+  <section class="screen" id="pause-screen" hidden><div class="overlay-card pause-card"><div class="overline">A MOMENT IN THE RAIN</div><h2>暫歇片刻</h2><p>WASD / 方向鍵移動 · J / 左鍵揮劍<br>空白鍵 / K 翻滾 · E 互動 · H 藥水<br>Tab 手札 · G 地圖 · F 全螢幕</p><div class="checkpoint-info">最近任務狀態點<br><b id="checkpoint-name">序章</b><small>死亡與重新讀檔，會還原至此狀態點。</small></div><label class="settings-row">戰鬥難度<select id="difficulty-select"><option value="story">故事</option><option value="normal">標準</option><option value="hard">挑戰</option><option value="blood">浴血</option></select></label><p class="settings-note" id="difficulty-note">戰鬥外可以切換；所有難度皆可達成四種結局。</p><label class="settings-row">雨夜音景與音效<input id="sound-check" type="checkbox" checked></label><label class="settings-row volume-row" for="master-volume">總音量 <span><input id="master-volume" type="range" min="0" max="100" value="100"><output id="master-volume-value">100%</output></span></label><label class="settings-row volume-row" for="effects-volume">音效 <span><input id="effects-volume" type="range" min="0" max="100" value="100"><output id="effects-volume-value">100%</output></span></label><label class="settings-row volume-row" for="ambient-volume">環境音 <span><input id="ambient-volume" type="range" min="0" max="100" value="80"><output id="ambient-volume-value">80%</output></span></label><label class="settings-row">減少震動與閃光<input id="motion-check" type="checkbox"></label><button class="gold-btn" id="resume-btn">回到雨夜</button><div class="save-tools"><button class="quiet-btn" id="export-btn">匯出存檔</button><button class="quiet-btn" id="import-btn">匯入存檔</button></div><input id="import-file" type="file" accept=".json,application/json" hidden><button class="quiet-btn" id="pause-aftermath" hidden>後日談收藏</button><button class="quiet-btn" id="pause-title-btn">返回標題</button></div></section>
   <div class="drawer-shade" id="journal" hidden><aside class="drawer journal-drawer" aria-label="任務手札"><div class="drawer-head"><h2>旅人的手札</h2><button class="icon-btn" id="close-journal" aria-label="關閉手札">✕</button></div><div class="journal-tabs"><button data-tab="quests" class="selected">任務</button><button data-tab="evidence">證物與同盟</button><button data-tab="guide">旅途筆記</button></div><div id="journal-content"></div></aside></div>
   <section class="screen map-screen" id="map-screen" hidden><div class="map-card"><div class="drawer-head"><div><small class="map-en" id="map-en"></small><h2 id="map-title">區域地圖</h2></div><button class="icon-btn" id="close-map" aria-label="關閉地圖">✕</button></div><canvas id="full-map" width="900" height="560" aria-label="目前區域的道路、建築、出口與追蹤目標"></canvas><div class="map-legend"><span>◆ 目前位置</span><span>◇ 追蹤目標</span><span>↗ 區域出口</span><span id="map-size"></span></div><div class="region-tabs" id="region-tabs"></div><p class="settings-note">鎮中心連接所有外圍區域。金色指引會帶你走向追蹤任務；地圖檢視不會傳送角色。</p></div></section>
-  <section class="screen ending-screen" id="ending-screen" hidden><div class="ending-card"><div class="ending-crest"><span id="ending-index">04</span></div><div class="overline" id="ending-en"></div><h2 id="ending-name"></h2><div id="ending-copy"></div><p class="ending-stats" id="ending-stats"></p><div class="title-buttons"><button class="gold-btn" id="ending-replay">回到莊園入場前</button><button class="quiet-btn" id="ending-title">返回標題</button></div></div></section>
+  <section class="screen ending-screen" id="ending-screen" hidden><div class="ending-card"><div class="ending-crest"><span id="ending-index">04</span></div><div class="overline" id="ending-en"></div><h2 id="ending-name"></h2><div id="ending-copy"></div><p class="ending-stats" id="ending-stats"></p><div class="title-buttons"><button class="gold-btn" id="ending-explore">返回小鎮，自由活動</button><button class="quiet-btn" id="ending-replay">回到莊園入場前</button><button class="quiet-btn" id="ending-title">返回標題</button></div></div></section>
   <section class="screen confirm-screen" id="confirm-screen" hidden><div class="overlay-card"><div class="overline">ANOTHER ROAD</div><h2 id="confirm-title"></h2><p id="confirm-text"></p><button class="gold-btn" id="confirm-yes">確定</button><button class="quiet-btn" id="confirm-no">取消</button></div></section>
  </section>
  <footer class="outside-foot"><span><b>完整篇章</b>　/　鎮中心與四大區域 · 十一個任務 · 四種結局</span><span>每次任務結算，留下新的世界　　<span id="save-status">進度自動保存</span></span></footer>
@@ -64,21 +68,23 @@ const QUESTS={
  finale:{name:'鴉棲鎮的審判',kind:'終局',region:'灰岩莊園',desc:'三把鑰匙開啟大門。選擇誰先倒下，再決定活下來的人是否值得你的劍。'}
 };
 const LEVEL_QUESTS=['morris','elise','bark','truthA','truthB','truthC','deserter','lullaby','veteran'];
-const DIFFICULTY={story:{name:'故事',damage:.7,warn:1.25},normal:{name:'標準',damage:1,warn:1},hard:{name:'挑戰',damage:1.3,warn:.9}};
-const settings={sound:true,reduced:!!window.matchMedia?.('(prefers-reduced-motion: reduce)').matches,difficulty:'normal',textSpeed:42};
-try{const prefs=JSON.parse(localStorage.getItem(SETTINGS_KEY));if(prefs){if(typeof prefs.sound==='boolean')settings.sound=prefs.sound;if(typeof prefs.reduced==='boolean')settings.reduced=prefs.reduced;if(DIFFICULTY[prefs.difficulty])settings.difficulty=prefs.difficulty;}}catch{}
+const DIFFICULTY={story:{name:'故事',damage:.7,warn:1.25},normal:{name:'標準',damage:1,warn:1},hard:{name:'挑戰',damage:1.3,warn:.9},blood:{name:'浴血',damage:2,warn:1,hp:2}};
+const settings={sound:true,reduced:!!window.matchMedia?.('(prefers-reduced-motion: reduce)').matches,difficulty:'normal',textSpeed:42,masterVolume:1,effectsVolume:1,ambientVolume:.8};
+try{const prefs=JSON.parse(localStorage.getItem(SETTINGS_KEY));if(prefs){if(typeof prefs.sound==='boolean')settings.sound=prefs.sound;if(typeof prefs.reduced==='boolean')settings.reduced=prefs.reduced;if(DIFFICULTY[prefs.difficulty])settings.difficulty=prefs.difficulty;for(const k of ['masterVolume','effectsVolume','ambientVolume'])if(Number.isFinite(prefs[k]))settings[k]=clamp(prefs[k],0,1);}}catch{}
 let state,player={},boss=null,enemies=[],npcs=[],interactables=[],world=null,mode='TITLE',camera={x:0,y:0},tracked='morris';
 let clock=0,playTime=0,shake=0,hitstop=0,damageTint=0,flash=0,barkTime=0,toastTime=0,transition=0;
-let effects=[],particles=[],slashes=[],hazards=[],projectiles=[],scheduled=[],trails=[];
+let effects=[],particles=[],slashes=[],hazards=[],projectiles=[],scheduled=[],trails=[],fieldAction=null;
 let nearest=null,pointer={x:640,y:400,valid:false,last:-100},heldAttack=false,attackBuffer=0;
-let saveData=null,checkpoint=null,preFinal=null,endingGallery=[],dialogue=null,typed=0,choiceIndex=0,previousMode='PLAY',journalTab='quests';
-let sceneActors=[],cinematic=false,cinemaFocus=null,mapCache=null,hoveredMap=null,hudClock=0,lastFrame=0,accumulator=0;
+let saveData=null,checkpoint=null,preFinal=null,endingGallery=[],epilogues={},reviewingFinal=false,dialogue=null,typed=0,choiceIndex=0,previousMode='PLAY',journalTab='quests';
+let sceneActors=[],cinematic=false,cinemaFocus=null,mapCache=null,hoveredMap=null,hudClock=0,lastFrame=0,accumulator=0,worldDecor=[],worldBarriers=[];
 function freshState(){return {version:1,map:'tower',quests:Object.fromEntries(Object.keys(QUESTS).map(id=>[id,id==='prologue'?'active':id==='finale'?'hidden':['morris','elise','bark'].includes(id)?'active':'hidden'])),flags:{},evidence:{A:false,B:false,C:false},factions:{Town:false,Dock:false,Mine:false},keys:[],kills:{},routes:{},enteredFinal:false,final:{phase:0,side:null},ending:0,playTime:0};}
 function flags(){return state.flags;}
 function truthCount(){return Object.values(state.evidence).filter(Boolean).length;}
 function factionCount(){return Object.values(state.factions).filter(Boolean).length;}
 function trueEndingAvailable(){return truthCount()===3&&factionCount()===3;}
 function movable(){return mode==='PLAY';}
+function isIntro(){return state?.quests.prologue==='active'&&['street','tavern','scene'].includes(state.flags.prologueStage);}
+function inAftermath(){return !!(state?.ending&&state.flags.aftermath);}
 function questOpen(id){return !['done','failed'].includes(state.quests[id])&&!state.enteredFinal;}
 function questActive(id){return state.quests[id]==='active';}
 function startQuest(id){if(state.quests[id]==='hidden'&&!state.enteredFinal){state.quests[id]='active';toast('新任務　'+QUESTS[id].name,3);return true;}return false;}
@@ -86,7 +92,7 @@ function level(){return Math.min(10,1+LEVEL_QUESTS.filter(id=>state.quests[id]==
 function setStats(heal=false){player.level=level();[player.maxHp,player.atk]=STATS[player.level];player.potionMax=flags().belt?5:3;if(heal){player.hp=player.maxHp;player.potions=player.potionMax;}else{player.hp=clamp(Number.isFinite(player.hp)?player.hp:player.maxHp,0,player.maxHp);player.potions=clamp(Number.isFinite(player.potions)?player.potions:player.potionMax,0,player.potionMax);}}
 function initPlayer(x=640,y=600){player={x,y,r:15,angle:-PI/2,hp:100,maxHp:100,atk:15,potions:3,potionMax:3,level:1,hurt:0,walk:0,dodge:0,dodgeCd:0,dodgeX:0,dodgeY:0,attackCd:0,attackAnim:0,combo:0,comboTimer:0,stun:0,sleep:0,slow:0};setStats(true);}
 function clearInput(){keys.clear();heldAttack=false;attackBuffer=0;}
-function clearEffects(){effects=[];particles=[];slashes=[];hazards=[];projectiles=[];scheduled=[];trails=[];shake=0;hitstop=0;damageTint=0;flash=0;nearest=null;$('bark').hidden=true;$('interact').hidden=true;}
+function clearEffects(){effects=[];particles=[];slashes=[];hazards=[];projectiles=[];scheduled=[];trails=[];fieldAction=null;shake=0;hitstop=0;damageTint=0;flash=0;nearest=null;$('bark').hidden=true;$('interact').hidden=true;}
 function hideScreens(){for(const id of ['title-screen','death-screen','ending-screen','pause-screen','journal','map-screen','dialogue','confirm-screen'])$(id).hidden=true;}
 function snapshot(){return {state:deepCopy({...state,playTime}),player:{x:player.x,y:player.y,hp:player.hp,potions:player.potions},tracked,savedAt:new Date().toISOString()};}
 function validSnapshot(s){
@@ -94,26 +100,28 @@ function validSnapshot(s){
  const st=s.state;if(!st.quests||!st.flags||!st.evidence||!st.factions||!st.kills||!st.routes||!Array.isArray(st.keys)||new Set(st.keys).size!==st.keys.length||st.keys.some(k=>!['morris','elise','bark'].includes(k)))return false;
  if(!Object.keys(QUESTS).every(k=>['hidden','active','done','failed'].includes(st.quests[k])))return false;
  if(!['A','B','C'].every(k=>typeof st.evidence[k]==='boolean')||!['Town','Dock','Mine'].every(k=>typeof st.factions[k]==='boolean'))return false;
+ if(st.flags.aftermath!==undefined&&typeof st.flags.aftermath!=='boolean')return false;
+ if(st.flags.aftermath&&(st.ending<1||st.quests.finale!=='done'||st.final?.phase!==3))return false;
  if(st.keys.some(k=>st.quests[k]!=='done')||['morris','elise','bark'].some(k=>st.quests[k]==='done'&&!st.keys.includes(k)))return false;
  if(typeof st.enteredFinal!=='boolean'||(st.enteredFinal&&st.keys.length!==3)||!st.final||![0,1,2,3].includes(st.final.phase))return false;
  return typeof st.ending==='number'&&st.ending>=0&&st.ending<=4;
 }
 function persist(){
- if(!checkpoint)return false;const record={format:'ravenroost-save',version:1,checkpoint,preFinal,endingGallery,settings};
+ if(!checkpoint)return false;const record={format:'ravenroost-save',version:1,checkpoint,preFinal,endingGallery,epilogues,reviewingFinal,settings};
  saveData=record;try{localStorage.setItem(STORE_KEY,JSON.stringify(record));$('save-status').textContent='任務狀態點已保存';return true;}catch{toast('瀏覽器無法寫入存檔，請在暫停選單匯出進度。',5);$('save-status').textContent='請匯出存檔';return false;}
 }
 function commitCheckpoint(reason){checkpoint=snapshot();persist();$('checkpoint-name').textContent=reason||'最近任務結算';}
-function readSave(){try{const s=JSON.parse(localStorage.getItem(STORE_KEY));if(s?.format==='ravenroost-save'&&validSnapshot(s.checkpoint)){saveData=s;checkpoint=s.checkpoint;preFinal=validSnapshot(s.preFinal)?s.preFinal:null;endingGallery=Array.isArray(s.endingGallery)?s.endingGallery.filter(x=>[1,2,3,4].includes(x)):[];}}catch{}$('continue-btn').hidden=!saveData;$('revisit-btn').hidden=!preFinal;}
+function readSave(){try{const s=JSON.parse(localStorage.getItem(STORE_KEY));if(s?.format==='ravenroost-save'&&validSnapshot(s.checkpoint)){saveData=s;checkpoint=s.checkpoint;preFinal=validSnapshot(s.preFinal)?s.preFinal:null;endingGallery=Array.isArray(s.endingGallery)?s.endingGallery.filter(x=>[1,2,3,4].includes(x)):[];epilogues=validEpilogues(s.epilogues);reviewingFinal=!!s.reviewingFinal;}}catch{}$('continue-btn').hidden=!saveData;$('revisit-btn').hidden=!preFinal;$('aftermath-btn').hidden=!Object.keys(epilogues).length;}
 function loadSnapshot(s,death=false){
  if(!validSnapshot(s))return false;clearInput();clearEffects();hideScreens();dialogue=null;cinematic=false;cinemaFocus=null;sceneActors=[];state=deepCopy(s.state);playTime=state.playTime||0;tracked=QUESTS[s.tracked]?s.tracked:'morris';initPlayer(s.player.x,s.player.y);player.hp=clamp(s.player.hp,1,player.maxHp);player.potions=clamp(s.player.potions,0,player.potionMax);mode='PLAY';
- if(death){state.map='town';state.final={phase:0,side:null};resetRegularEnemies();player.x=655;player.y=1290;setStats(true);}
+ if(death){state.map='town';if(!inAftermath())state.final={phase:0,side:null};resetRegularEnemies();player.x=inAftermath()?840:655;player.y=inAftermath()?1320:1290;setStats(true);}
  enterMap(state.map,player.x,player.y,{silent:true});$('hud').hidden=false;$('touch-controls').hidden=false;focusGame();
- if(state.ending&&!death){showEnding(state.ending,false);}else if(death){toast('在葛蘭診所醒來。世界已還原至最近一次任務結算。',5);}return true;
+ if(state.ending&&!death&&!inAftermath()){showEnding(state.ending,false);}else if(death){toast(inAftermath()?'在後日談安全點醒來。結局與世界後果保留。':'在葛蘭診所醒來。世界已還原至最近一次任務結算。',5);}return true;
 }
-function newGame(){clearEffects();clearInput();hideScreens();state=freshState();playTime=0;checkpoint=null;preFinal=null;initPlayer(620,530);mode='PLAY';tracked='morris';$('hud').hidden=false;$('touch-controls').hidden=true;sound.init();startPrologue();}
+function newGame(){saveAftermathPosition();reviewingFinal=false;clearEffects();clearInput();hideScreens();state=freshState();playTime=0;checkpoint=null;preFinal=null;initPlayer(620,530);mode='PLAY';tracked='morris';$('hud').hidden=false;$('touch-controls').hidden=true;sound.init();startPrologue();}
 function continueGame(){if(saveData){checkpoint=deepCopy(saveData.checkpoint);preFinal=saveData.preFinal&&validSnapshot(saveData.preFinal)?deepCopy(saveData.preFinal):null;loadSnapshot(checkpoint);}}
-function replayFinal(){if(preFinal){checkpoint=deepCopy(preFinal);loadSnapshot(checkpoint);toast('返回進入莊園前的獨立回顧狀態。',4);persist();}}
-function returnTitle(){clearInput();clearEffects();hideScreens();dialogue=null;cinematic=false;sceneActors=[];mode='TITLE';state=freshState();initPlayer(1590,1260);enterMap('town',1590,1260,{silent:true});$('hud').hidden=true;$('touch-controls').hidden=true;$('title-screen').hidden=false;readSave();}
+function replayFinal(){if(preFinal){saveAftermathPosition();reviewingFinal=true;checkpoint=deepCopy(preFinal);loadSnapshot(checkpoint);toast('返回莊園前回顧。已保存的後日談可從標題或暫停選單繼續。',5);persist();}}
+function returnTitle(){saveAftermathPosition();clearInput();clearEffects();hideScreens();dialogue=null;cinematic=false;sceneActors=[];mode='TITLE';state=freshState();initPlayer(1590,1260);enterMap('town',1590,1260,{silent:true});$('hud').hidden=true;$('touch-controls').hidden=true;$('title-screen').hidden=false;readSave();}
 function finishQuest(id,mutate){if(state.quests[id]==='done'||state.quests[id]==='failed')return false;if(mutate)mutate();state.quests[id]='done';setStats(true);sound.victory();burst(player.x,player.y-20,'#ddd5a2',35,120);toast('任務完成　'+QUESTS[id].name+(LEVEL_QUESTS.includes(id)?'　·　Lv.'+player.level:''),5);if(state.keys.length===3&&!state.enteredFinal){state.quests.finale='active';bark('信鴉落在路標上：三把鑰匙已齊。踏入莊園之前，尚可回鎮整備。',7);}commitCheckpoint(QUESTS[id].name);rebuildActors();syncHUD();return true;}
 function failQuest(id,reason){if(['done','failed'].includes(state.quests[id]))return false;state.quests[id]='failed';toast('任務失敗　'+QUESTS[id].name+'：'+reason,6);return true;}
 function maybeFinishA(){if(state.evidence.A&&state.factions.Town&&questOpen('truthA'))finishQuest('truthA');}
@@ -124,7 +132,7 @@ function completeMain(id){
 function resetRegularEnemies(){for(const [id,s] of Object.entries(ALL_SPAWNS))if(!s.unique)delete state.kills[id];}
 function rest(fullPotions=true){if(inCombat()){toast('先擺脫追兵，才能休息。');return false;}player.hp=player.maxHp;if(fullPotions)player.potions=player.potionMax;resetRegularEnemies();rebuildActors();burst(player.x,player.y-20,'#abcfa7',18,70);sound.heal();toast(fullPotions?'休息完畢。生命與藥水已補滿，外圍巡邏兵重新出現。':'黑羽烈酒溫暖了你的胸口。生命已回滿。',4);return true;}
 function retryDeath(){if(checkpoint)loadSnapshot(checkpoint,true);else newGame();}
-function die(){if(mode==='DEAD')return;mode='DEAD';clearInput();$('death-screen').hidden=false;$('interact').hidden=true;$('death-detail').textContent=state.enteredFinal?'回到鎮中心，還原莊園入場時的狀態。終局兩場連戰將從第一階段重新開始。':'回到鎮中心診所，還原最近一次任務完成或失敗時的世界。生命與藥水補滿。';sound.tone(110,.9,'triangle',.12,26);}
+function die(){if(mode==='DEAD')return;mode='DEAD';clearInput();$('death-screen').hidden=false;$('interact').hidden=true;$('retry-btn').textContent=inAftermath()?'在後日談安全點醒來':'在鎮中心診所醒來';$('death-detail').textContent=inAftermath()?'保留目前結局，回到小鎮安全點。終局與已確定的居民命運不會重置。':state.enteredFinal?'回到鎮中心，還原莊園入場時的狀態。終局兩場連戰將從第一階段重新開始。':'回到鎮中心診所，還原最近一次任務完成或失敗時的世界。生命與藥水補滿。';sound.tone(110,.9,'triangle',.12,26);}
 function toast(message,seconds=3){$('toast').textContent=message;$('toast').hidden=false;toastTime=seconds;}
 function bark(message,seconds=3){$('bark').textContent=message;$('bark').hidden=false;barkTime=seconds;}
 function floatText(x,y,text,color='#e7e1bb',size=16){effects.push({x,y,text,color,size,life:1.15,max:1.15});}
@@ -139,22 +147,23 @@ function actable(i){return !i.when||i.when();}
 function getMovement(){let x=(keys.has('d')||keys.has('arrowright')?1:0)-(keys.has('a')||keys.has('arrowleft')?1:0),y=(keys.has('s')||keys.has('arrowdown')?1:0)-(keys.has('w')||keys.has('arrowup')?1:0);const n=Math.hypot(x,y)||1;return {x:x/n,y:y/n};}
 function circleRect(e,r){const x=clamp(e.x,r.x,r.x+r.w),y=clamp(e.y,r.y,r.y+r.h);return Math.hypot(e.x-x,e.y-y)<e.r;}
 function collides(e){
+ if(isIntro()&&state.map==='town'&&(e.x<1160+e.r||e.x>1920-e.r||e.y<730+e.r||e.y>1430-e.r))return true;
  if(e.x<world.bounds.left+e.r||e.x>world.bounds.right-e.r||e.y<world.bounds.top+e.r||e.y>world.bounds.bottom-e.r)return true;
  if(boss&&!['IDLE','KNEEL','DEAD'].includes(boss.state)&&(e===player||e===boss)){const b=boss.arena;if(e.x<b.left+e.r||e.x>b.right-e.r||e.y<b.top+e.r||e.y>b.bottom-e.r)return true;}
  if(state.map==='highland'&&flags().barkDown&&state.routes.bark==='bridge'&&circleRect(e,{x:1610,y:590,w:380,h:180}))return true;
- return world.colliders.some(r=>{if(r.breakable&&flags()['broken:'+r.crateId])return false;if(r.kind==='toxicpipe'&&flags().pipeDestroyed)return false;return r.circle?dist(e,r)<e.r+r.r:circleRect(e,r);});
+ return [...world.colliders,...worldBarriers].some(r=>{if(r.breakable&&flags()['broken:'+r.crateId])return false;if(r.kind==='toxicpipe'&&flags().pipeDestroyed)return false;return r.circle?dist(e,r)<e.r+r.r:circleRect(e,r);});
 }
 function moveEntity(e,dx,dy){let hit=false;const steps=Math.max(1,Math.ceil(Math.max(Math.abs(dx),Math.abs(dy))/10));for(let s=0;s<steps;s++){const x=e.x;e.x+=dx/steps;if(collides(e)){e.x=x;hit=true;}const y=e.y;e.y+=dy/steps;if(collides(e)){e.y=y;hit=true;}}return hit;}
 function safePoint(x,y,r=20){const p={x,y,r};if(!collides(p))return p;for(let d=30;d<350;d+=30)for(let a=0;a<TAU;a+=PI/4){const p={x:x+Math.cos(a)*d,y:y+Math.sin(a)*d,r};if(!collides(p))return p;}return {x:world.spawn.x,y:world.spawn.y,r};}
 function constrain(e){const p=safePoint(e.x,e.y,e.r);e.x=p.x;e.y=p.y;}
 function enterMap(id,x,y,options={}){
- if(!MAPS[id])throw new Error('Unknown map '+id);state.map=id;world=MAPS[id];clearEffects();boss=null;player.x=x??world.spawn.x;player.y=y??world.spawn.y;player.hurt=0;player.dodge=0;player.stun=0;clearInput();constrain(player);camera.x=clamp(player.x-W/2,0,Math.max(0,world.w-W));camera.y=clamp(player.y-H/2,0,Math.max(0,world.h-H));buildWorldBackground();rebuildActors();transition=options.silent?0:.55;syncHUD();if(!options.silent)toast(world.name+'　·　'+world.subtitle,3.5);focusGame();
+ if(!MAPS[id])throw new Error('Unknown map '+id);state.map=id;world=MAPS[id];worldDecor=[];worldBarriers=[];clearEffects();boss=null;player.x=x??world.spawn.x;player.y=y??world.spawn.y;player.hurt=0;player.dodge=0;player.stun=0;clearInput();constrain(player);camera.x=clamp(player.x-W/2,0,Math.max(0,world.w-W));camera.y=clamp(player.y-H/2,0,Math.max(0,world.h-H));buildWorldBackground();rebuildActors();transition=options.silent?0:.55;syncHUD();if(!options.silent)toast(world.name+'　·　'+(inAftermath()?AFTERMATH[state.ending].time:world.subtitle),3.5);focusGame();
 }
-function travel(id,x,y){if(inCombat()){toast('敵人尚未放棄追擊。先離開他們的視線。');return;}enterMap(id,x,y);}
-function maybeInteract(){if(!canInteract())return;findNearest();if(!nearest)return;if(inCombat()&&!nearest.combatAllowed){toast('先解決附近的威脅。');return;}sound.click();const item=nearest;clearInput();item.action();}
+function travel(id,x,y){if(inCombat()){toast('敵人尚未放棄追擊。先拉開距離甩掉追兵。');return;}enterMap(id,x,y);if(inAftermath())saveAftermathPosition();}
+function maybeInteract(){if(!canInteract()||fieldAction)return;findNearest();if(!nearest)return;if(inCombat()&&!nearest.combatAllowed){toast('先解決附近的威脅。');return;}sound.click();const item=nearest;clearInput();item.action();}
 function findNearest(){
  nearest=null;let d=Infinity;for(const i of interactables){if(!actable(i))continue;const n=dist(player,i);if(n<(i.range||90)&&n<d){d=n;nearest=i;}}
- $('interact').hidden=!nearest||mode!=='PLAY';if(nearest)$('interact-text').textContent=typeof nearest.label==='function'?nearest.label():nearest.label;
+ $('interact').hidden=!nearest||mode!=='PLAY'||!!fieldAction;if(nearest)$('interact-text').textContent=typeof nearest.label==='function'?nearest.label():nearest.label;
 }
 function updateCamera(dt){const p=cinemaFocus||player,cx=p.x-camera.x,cy=p.y-camera.y;let tx=camera.x,ty=camera.y;if(cx<W/2-65)tx=p.x-(W/2-65);if(cx>W/2+65)tx=p.x-(W/2+65);if(cy<H/2-50)ty=p.y-(H/2-50);if(cy>H/2+50)ty=p.y-(H/2+50);const a=1-Math.exp(-dt*7);camera.x=clamp(camera.x+(tx-camera.x)*a,0,Math.max(0,world.w-W));camera.y=clamp(camera.y+(ty-camera.y)*a,0,Math.max(0,world.h-H));}
 function update(dt){
@@ -164,7 +173,7 @@ function update(dt){
  const m=getMovement();player.walk+=dt*(m.x||m.y?10:1);if(pointer.valid&&clock-pointer.last<2)player.angle=Math.atan2(pointer.y+camera.y-player.y,pointer.x+camera.x-player.x);else if(m.x||m.y)player.angle=Math.atan2(m.y,m.x);
  if(player.dodge>0){player.dodge-=dt;moveEntity(player,player.dodgeX*dt,player.dodgeY*dt);if(Math.random()<.5)trails.push({x:player.x,y:player.y,life:.22});}else if(player.stun<=0){const speed=(player.slow>0?140:205)*(player.attackAnim>0?.56:1);moveEntity(player,m.x*speed*dt,m.y*speed*dt);}
  attackBuffer-=dt;if((heldAttack||attackBuffer>0)&&player.stun<=0)slash();
- updateEnemies(dt);updateBoss(dt);updateHazards(dt);updateEscort(dt);
+ updateEnemies(dt);updateBoss(dt);updateHazards(dt);updateEscort(dt);updateFieldAction(dt);
  for(const s of scheduled)s.delay-=dt;const ready=scheduled.filter(s=>s.delay<=0);scheduled=scheduled.filter(s=>s.delay>0);for(const s of ready){if(mode==='PLAY')s.fn();}
  for(const e of effects){e.life-=dt;e.y-=dt*26;}effects=effects.filter(e=>e.life>0);for(const p of particles){p.life-=dt;p.x+=p.vx*dt;p.y+=p.vy*dt;p.z+=p.vz*dt;p.vz-=dt*130;}particles=particles.filter(p=>p.life>0);for(const s of slashes)s.life-=dt;slashes=slashes.filter(s=>s.life>0);for(const t of trails)t.life-=dt;trails=trails.filter(t=>t.life>0);
  shake=Math.max(0,shake-dt*30);damageTint=Math.max(0,damageTint-dt);flash=Math.max(0,flash-dt*2);findNearest();hudClock+=dt;if(hudClock>.1){hudClock=0;syncHUD();}
@@ -175,8 +184,8 @@ function update(dt){
 // World coordinates are independent from the 1280 × 800 camera viewport.
 const MAPS={},ALL_SPAWNS={};
 function makeMap(id,name,en,w,h,theme,spawn,subtitle='冷雨 · 子夜'){return MAPS[id]={id,name,en,w,h,theme,spawn,subtitle,bounds:{left:60,right:w-60,top:80,bottom:h-60},props:[],paths:[],water:[],colliders:[],spawns:[],lights:[]};}
-function building(m,x,y,w,h,name,type='house'){const o={kind:'building',x,y,w,h,name,type,sortY:y+h,id:m.id+'-building-'+m.props.length};m.props.push(o);m.colliders.push({x:x+12,y:y+40,w:w-24,h:h-56});m.lights.push({x:x+w/2,y:y+h-70,r:140,color:'#c49a5350'});return o;}
-function prop(m,kind,x,y,extra={}){const o={kind,x,y,sortY:y,id:m.id+'-'+kind+'-'+m.props.length,...extra};m.props.push(o);if(extra.r)m.colliders.push({circle:true,x,y,r:extra.r,kind,breakable:extra.breakable,crateId:extra.crateId});return o;}
+function building(m,x,y,w,h,name,type='house'){const o={kind:'building',x,y,w,h,name,type,sortY:y+h,id:m.id+'-building-'+m.props.length};m.props.push(o);m.colliders.push({x:x+12,y:y+40,w:w-24,h:h-56,occludes:true});m.lights.push({x:x+w/2,y:y+h-70,r:140,color:'#c49a5350'});return o;}
+function prop(m,kind,x,y,extra={}){const o={kind,x,y,sortY:y,id:m.id+'-'+kind+'-'+m.props.length,...extra};m.props.push(o);if(extra.r)m.colliders.push({circle:true,x,y,r:extra.r,kind,breakable:extra.breakable,crateId:extra.crateId,occludes:extra.occludes??['crate','barrels','largebarrel'].includes(kind)});return o;}
 function road(m,x,y,w,h){m.paths.push({x,y,w,h});}
 function spawn(m,id,type,x,y,unique=false,when=null){const s={id,type,x,y,unique,when,map:m.id};m.spawns.push(s);ALL_SPAWNS[id]=s;return s;}
 function light(m,x,y,r=130,color='#b887434b'){m.lights.push({x,y,r,color});}
@@ -197,9 +206,14 @@ for(let i=0;i<12;i++)prop(wild,'grave',1230+i%4*90,350+Math.floor(i/4)*90,{r:16,
 spawn(wild,'wild-hound-1','hound',1050,1240);spawn(wild,'wild-hound-2','hound',1300,1390);spawn(wild,'wild-spider','spider',1870,1060);
 const dock=makeMap('dock','苦水碼頭','BITTERWATER DOCKS',2300,1800,'dock',{x:180,y:930},'海霧 · 潮汐');
 road(dock,80,850,1550,180);road(dock,700,450,190,1100);road(dock,800,1230,1200,160);dock.water.push({x:1710,y:100,w:550,h:1050},{x:1710,y:1450,w:550,h:300});dock.colliders.push({x:1710,y:80,w:600,h:1100},{x:1710,y:1440,w:600,h:400});
-building(dock,900,200,720,450,'私人武裝稅務倉','warehouse');building(dock,1240,1120,420,280,'雷克的地下船塢','boatshop');prop(dock,'grate',470,1300,{w:90,h:50});prop(dock,'vent',1190,740,{r:18});prop(dock,'boat',1970,1280,{variant:0});prop(dock,'crane',1640,570,{r:28});
+const WAREHOUSE_VENT={x:1090,y:185},MORRIS_ESCAPE={x:760,y:490};
+building(dock,900,200,720,450,'私人武裝稅務倉','warehouse');building(dock,1240,1120,420,280,'雷克的地下船塢','boatshop');prop(dock,'grate',470,1300,{w:90,h:50});prop(dock,'vent',WAREHOUSE_VENT.x,WAREHOUSE_VENT.y,{r:18});prop(dock,'boat',1970,1280,{variant:0});prop(dock,'crane',1640,570,{r:28});
+road(dock,500,650,190,280);road(dock,590,125,190,580);road(dock,720,112,920,110);
+for(const [i,p] of [[0,[740,735]],[1,[750,605]],[2,[770,315]],[3,[650,405]]])prop(dock,'crate',p[0],p[1],{r:34,crateId:'dock-cargo-'+i});
+prop(dock,'signpost',520,825,{text:'貨運後巷 ↑'});prop(dock,'signpost',820,195,{text:'後牆通風口 →'});
 for(const [x,y] of [[460,710],[640,1160],[910,1100],[1600,1020],[1700,1400]]){prop(dock,'barrels',x,y,{r:25});light(dock,x,y,110);}
 for(let i=0;i<5;i++)spawn(dock,'dock-tax-'+i,i%3===0?'ranger':'guard',1030+i*100,780+(i%2)*90,false,()=>!flags().warehouseBurned&&!state.factions.Dock&&state.quests.morris!=='done');
+Object.assign(spawn(dock,'dock-rear-patrol','guard',1480,145,false,()=>!flags().warehouseBurned&&!state.factions.Dock&&state.quests.morris!=='done'),{angle:0,patrol:[{x:1480,y:145},{x:1625,y:145}]});
 const mine=makeMap('mine','斷骨礦坑','BONEBREAK MINE',2500,1850,'mine',{x:210,y:1490},'礦塵 · 蒸氣');
 road(mine,130,1350,2120,170);road(mine,600,760,200,700);road(mine,760,720,1300,160);road(mine,1770,800,180,630);building(mine,1520,310,660,380,'伊莉絲的煉金工坊','lab');building(mine,200,900,360,250,'礦工營地','camp');prop(mine,'pump',730,1120,{r:55});prop(mine,'cave',800,700,{w:300,h:180});prop(mine,'vent',2210,390,{r:24});prop(mine,'rail',1350,1500,{w:800});
 for(let i=0;i<20;i++)prop(mine,'rock',950+(i*281)%1320,930+(i*199)%740,{r:22,variant:i%3});
@@ -240,8 +254,8 @@ function portal(id,x,y,label,map,tx,ty,when){addInteract('portal-'+id,x,y,label,
 function localClear(ids){return ids.every(id=>state.kills[id]);}
 function regionClear(prefix){return Object.keys(ALL_SPAWNS).filter(id=>id.startsWith(prefix)).every(id=>state.kills[id]);}
 function objectivePoint(id){
- const f=flags();switch(id){
- case 'morris':return f.morrisDown?{map:f.warehouseBurned?'dock':'warehouse',x:f.warehouseBurned?1430:1210,y:f.warehouseBurned?870:390}:{map:state.map==='warehouse'?'warehouse':'dock',x:state.map==='warehouse'?1210:1260,y:state.map==='warehouse'?390:710};
+ const f=flags();if(isIntro())return state.map==='tavern'?{map:'tavern',x:1020,y:400}:{map:'town',x:1440,y:770};if(inAftermath())return aftermathTarget();switch(id){
+ case 'morris':if(f.warehouseBurned)return {map:'dock',...MORRIS_ESCAPE};if(f.morrisDown||state.map==='warehouse')return {map:'warehouse',x:1210,y:390};if(f.oil&&!state.factions.Dock)return {map:'dock',...WAREHOUSE_VENT};return {map:'dock',x:1260,y:710};
  case 'elise':return f.eliseDown?{map:f.mineCollapsed?'mine':'workshop',x:f.mineCollapsed?2180:900,y:f.mineCollapsed?510:450}:{map:state.map==='workshop'?'workshop':'mine',x:state.map==='workshop'?900:1840,y:state.map==='workshop'?450:750};
  case 'bark':return {map:f.barkDown&&state.routes.bark==='bridge'?'highland':'outpost',x:state.routes.bark==='bridge'?1510:640,y:state.routes.bark==='bridge'?670:390};
  case 'truthA':if(!f.docTalk)return {map:'clinic',x:640,y:350};if(!f.jailKey)return {map:'town',x:640,y:760};if(!f.apprentice||!f.journal)return {map:'jail',x:f.apprentice?1120:1390,y:f.apprentice?700:420};if(!state.factions.Town)return {map:'town',x:640,y:760};if(!f.ash)return {map:'clinic',x:640,y:350};return {map:'wild',x:250,y:690};
@@ -253,7 +267,9 @@ function objectivePoint(id){
  case 'finale':return {map:'highland',x:1180,y:400};default:return {map:'town',x:1600,y:1200};}
 }
 function rebuildActors(){
- if(!world)return;enemies=[];npcs=[];interactables=[];const f=flags(),m=state.map;
+ if(!world)return;enemies=[];npcs=[];interactables=[];worldDecor=[];worldBarriers=[];const f=flags(),m=state.map;
+ if(inAftermath()){buildAftermathActors();return;}
+ if(isIntro()){if(!cinematic)buildIntroActors();return;}
  for(const s of world.spawns)if(!state.kills[s.id]&&(!s.when||s.when()))enemies.push(createEnemy(s));
  if(m==='town'){
  portal('wild',145,1150,'前往迷霧荒野','wild',2430,1100);portal('dock',3050,1160,'前往苦水碼頭','dock',185,930);portal('mine',2720,190,'前往斷骨礦坑','mine',210,1490);portal('highland',1600,160,'登上灰岩高地','highland',1180,1760);
@@ -277,8 +293,11 @@ function rebuildActors(){
  if(!f.warehouseBurned){portal('warehouse',1260,710,'進入稅務倉庫','warehouse',900,1020);portal('office',850,470,'潛入側翼書房','office',320,680);portal('sewer',470,1340,'進入碼頭下水道','sewer',260,910);}
  if(!f.orphanNotified)npc('jack','小傑',430,1020,'child',talkOrphan);
  npc('rex','獨眼雷克',1510,1470,'rex',talkRex);
- if(!f.warehouseBurned&&state.quests.morris!=='done')addInteract('burnwarehouse',1190,780,'稅倉通風口：使用煉金火油',burnWarehouse);
- if(f.warehouseBurned&&state.quests.morris!=='done')installBoss('morris',1430,870,!!f.morrisDown);
+ if(!f.warehouseBurned&&state.quests.morris!=='done')addInteract('burnwarehouse',WAREHOUSE_VENT.x,WAREHOUSE_VENT.y,()=>f.oilPoured?'後牆通風口：點燃已投放的火油':'後牆通風口：投放煉金火油（需 3 秒）',burnWarehouse,{range:65});
+ if(f.warehouseBurned){
+  for(const [i,p] of [[0,[1040,690]],[1,[1250,700]],[2,[1460,690]]])npc('fireguard-'+i,'忙於救火的稅倉衛兵',p[0],p[1],'soldier',()=>say('稅倉衛兵','快提水！守住正門，別讓火燒到碼頭！','soldier'),{angle:-PI/2,firefighter:true});
+  if(state.quests.morris!=='done')installBoss('morris',MORRIS_ESCAPE.x,MORRIS_ESCAPE.y,!!f.morrisDown);
+ }
  }else if(m==='mine'){
  portal('town',170,1530,'返回鴉棲下城區','town',2700,290);
  npc('barton','老礦工巴頓',470,1220,'worker',talkBarton);
@@ -330,7 +349,7 @@ function rebuildActors(){
 }
 function propAftermath(type,x,y){npcs.push({id:'dead-'+type,name:'',x,y,type,dead:true});}
 function installBoss(type,x,y,down=false){
- if(!boss||boss.type!==type)boss=createBoss(type,x,y);if(down){boss.hp=0;boss.state='KNEEL';}
+ if(!boss||boss.type!==type)boss=createBoss(type,x,y);if(type==='morris'&&flags().warehouseBurned&&boss.state==='IDLE'){boss.hp=Math.round(boss.maxHp*.8);boss.burned=true;}if(down){boss.hp=0;boss.state='KNEEL';}
  addInteract('boss-'+type,x,y,()=>boss?.state==='KNEEL'?'清算血債，收起金庫鑰匙':'挑戰「'+BOSS_DATA[type].name+'」',()=>{if(boss?.state==='KNEEL')finishBossDialogue(type);else startBossDialogue(type);},{range:type==='bark'?120:110,when:()=>boss&&['IDLE','KNEEL'].includes(boss.state),combatAllowed:true,category:'boss'});
 }
 function updateEscort(dt){const n=npcs.find(n=>n.follower);if(!n)return;const d=dist(player,n);if(d>70){n.x+=(player.x-n.x)/d*Math.min(d-65,190*dt);n.y+=(player.y-n.y)/d*Math.min(d-65,190*dt);}n.angle=Math.atan2(player.y-n.y,player.x-n.x);}
@@ -599,35 +618,45 @@ function drawWeather(g){
 
 // ---- audio.js ----
 const sound={
- ac:null,master:null,ambient:null,
+ ac:null,master:null,effectsBus:null,ambient:null,limiter:null,
  init(){
   if(!settings.sound)return;try{
-   if(!this.ac){const A=window.AudioContext||window.webkitAudioContext;if(!A)return;this.ac=new A();this.master=this.ac.createGain();this.master.gain.value=.65;this.master.connect(this.ac.destination);
+   if(!this.ac){const A=window.AudioContext||window.webkitAudioContext;if(!A)return;this.ac=new A();
+    this.master=this.ac.createGain();this.effectsBus=this.ac.createGain();this.limiter=this.ac.createDynamicsCompressor();
+    this.limiter.threshold.value=-8;this.limiter.knee.value=10;this.limiter.ratio.value=6;this.limiter.attack.value=.004;this.limiter.release.value=.18;
+    this.effectsBus.connect(this.master);this.master.connect(this.limiter);this.limiter.connect(this.ac.destination);
     const count=this.ac.sampleRate*3,buffer=this.ac.createBuffer(1,count,this.ac.sampleRate),data=buffer.getChannelData(0);for(let i=0;i<count;i++)data[i]=(Math.random()*2-1)*.3;
     const source=this.ac.createBufferSource();source.buffer=buffer;source.loop=true;const filter=this.ac.createBiquadFilter();filter.type='lowpass';filter.frequency.value=1400;
-    this.ambient=this.ac.createGain();this.ambient.gain.value=.065;source.connect(filter);filter.connect(this.ambient);this.ambient.connect(this.master);source.start();
-   }if(this.ac.state==='suspended')this.ac.resume().catch(()=>{});
+    this.ambient=this.ac.createGain();source.connect(filter);filter.connect(this.ambient);this.ambient.connect(this.master);source.start();
+   }this.sync();if(this.ac.state==='suspended')this.ac.resume().catch(()=>{});
   }catch(e){}
  },
- sync(){if(this.master)this.master.gain.value=settings.sound?.65:0;$('sound-check').checked=settings.sound;$('motion-check').checked=settings.reduced;$('sound-btn').style.opacity=settings.sound?'1':'.45';$('sound-btn').setAttribute('aria-label',settings.sound?'關閉聲音':'開啟聲音');},
+ sync(){
+  if(this.master)this.master.gain.value=settings.sound?settings.masterVolume:0;
+  if(this.effectsBus)this.effectsBus.gain.value=settings.effectsVolume;
+  if(this.ambient)this.ambient.gain.value=.058*settings.ambientVolume;
+  $('sound-check').checked=settings.sound;$('motion-check').checked=settings.reduced;$('sound-btn').style.opacity=settings.sound?'1':'.45';$('sound-btn').setAttribute('aria-label',settings.sound?'關閉聲音':'開啟聲音');
+  for(const [id,key] of [['master-volume','masterVolume'],['effects-volume','effectsVolume'],['ambient-volume','ambientVolume']]){$(id).value=Math.round(settings[key]*100);$(id+'-value').textContent=Math.round(settings[key]*100)+'%';}
+ },
  tone(freq,seconds=.15,type='sine',gain=.1,end=40){
   if(!settings.sound||!this.ac||this.ac.state!=='running')return;
   const t=this.ac.currentTime,o=this.ac.createOscillator(),g=this.ac.createGain();o.type=type;o.frequency.setValueAtTime(freq,t);o.frequency.exponentialRampToValueAtTime(Math.max(15,end),t+seconds);
-  g.gain.setValueAtTime(gain,t);g.gain.exponentialRampToValueAtTime(.0001,t+seconds);o.connect(g);g.connect(this.master);o.start(t);o.stop(t+seconds);
+  g.gain.setValueAtTime(gain,t);g.gain.exponentialRampToValueAtTime(.0001,t+seconds);o.connect(g);g.connect(this.effectsBus);o.start(t);o.stop(t+seconds);
  },
- slash(heavy=false){this.tone(heavy?220:400,heavy?.19:.11,'triangle',.055,50);},
- hit(metal=false){this.tone(metal?880:92,metal?.16:.22,metal?'square':'triangle',metal?.032:.13,metal?360:30);},
+ slash(heavy=false){this.tone(heavy?220:400,heavy?.19:.11,'triangle',.065,50);},
+ hit(metal=false){this.tone(metal?880:92,metal?.16:.22,metal?'square':'triangle',metal?.042:.14,metal?360:30);},
  click(){this.tone(520,.045,'sine',.04,400);},
  heal(){this.tone(450,.38,'sine',.08,900);},
- victory(){this.tone(330,.8,'triangle',.07,660);}
+ victory(){this.tone(330,.8,'triangle',.08,660);}
 };
 
 
 // ---- combat.js ----
 const ENEMY_DATA={guard:{name:'治安衛兵',hp:64,damage:17,speed:103,reach:58,type:'soldier'},elite:{name:'稅務署菁英',hp:110,damage:24,speed:102,reach:67,type:'elite'},ranger:{name:'弩手',hp:58,damage:22,speed:85,reach:420,type:'ranger'},hound:{name:'食腐獵犬',hp:58,damage:17,speed:140,reach:55,type:'hound'},alpha:{name:'雙頭裂骨犬',hp:185,damage:28,speed:140,reach:80,type:'alpha'},spider:{name:'酒窖巨蛛',hp:48,damage:14,speed:110,reach:210,type:'spider'},rat:{name:'噬腐鼠',hp:40,damage:12,speed:145,reach:43,type:'rat'},beetle:{name:'噬礦甲蟲',hp:68,damage:19,speed:110,reach:56,type:'beetle'},leech:{name:'變異水蛭',hp:52,damage:15,speed:95,reach:53,type:'leech'},croc:{name:'腐水巨鱷',hp:140,damage:25,speed:90,reach:83,type:'croc'}};
 const BOSS_DATA={morris:{name:'金算盤・莫里斯',hp:800,r:25,speed:96,tag:'稅務官 / FIRE & GOLD'},elise:{name:'渡鴉・伊莉絲',hp:1100,r:22,speed:130,tag:'煉金師 / BLACK FEATHER'},bark:{name:'屠夫・巴爾克',hp:1500,r:30,speed:83,tag:'治安官 / THE BUTCHER'},rain:{name:'雷恩・瓦倫',hp:2200,r:27,speed:112,tag:'灰岩的鐵腕守望者'},edwin:{name:'灰梟・艾德溫',hp:2000,r:23,speed:155,tag:'暗影中的提線人'},vann:{name:'刀疤范恩',hp:380,r:22,speed:116,tag:'東巷劍客 / WHITE RAVEN'}};
-function createEnemy(s){const d=ENEMY_DATA[s.type];return {...s,...d,enemyType:s.type,hp:d.hp,maxHp:d.hp,r:['alpha','croc'].includes(s.type)?24:16,homeX:s.x,homeY:s.y,angle:PI/2,phase:'CHASE',timer:.5,aggro:false,hurt:0,walk:0,windup:0,attackCd:0};}
-function createBoss(type,x,y){const d=BOSS_DATA[type];return {...d,type,x,y,maxHp:d.hp,hp:d.hp,r:d.r,angle:PI/2,state:'IDLE',timer:1,walk:0,hurt:0,pattern:0,broken:false,hallucinated:false,enraged:false,second:false,swapped:false,summons:0,allyTimer:6,attack:'',attackClock:0,arena:{...world.bounds}};}
+function createEnemy(s){const d=ENEMY_DATA[s.type],hp=d.hp*(DIFFICULTY[settings.difficulty].hp||1);return {...s,...d,enemyType:s.type,hp,maxHp:hp,r:['alpha','croc'].includes(s.type)?24:16,homeX:s.x,homeY:s.y,homeAngle:s.angle??PI/2,angle:s.angle??PI/2,phase:'CHASE',timer:.5,aggro:false,hurt:0,walk:0,windup:0,attackCd:0,patrolIndex:1,patrolPause:s.patrol?1.5:0};}
+function retireEnemy(e){e.hp=0;e.phase='DEAD';e.aggro=false;e.hurt=0;e.timer=0;e.windup=0;state.kills[e.id]=true;}
+function createBoss(type,x,y){const d=BOSS_DATA[type],hp=d.hp*(DIFFICULTY[settings.difficulty].hp||1);return {...d,type,x,y,maxHp:hp,hp,r:d.r,angle:PI/2,state:'IDLE',timer:1,walk:0,hurt:0,pattern:0,broken:false,hallucinated:false,enraged:false,second:false,swapped:false,summons:0,allyTimer:6,attack:'',attackClock:0,arena:{...world.bounds}};}
 function beginFight(type,options={}){
  clearInput();cinemaFocus=null;hazards=[];projectiles=[];scheduled=[];mode='PLAY';if(!boss||boss.type!==type)boss=createBoss(type,options.x||900,options.y||500);
  boss.state='CHASE';boss.timer=1.4;boss.second=!!options.second;boss.trueRoute=!!options.trueRoute;boss.ally=options.ally||null;
@@ -635,8 +664,8 @@ function beginFight(type,options={}){
  if(type==='morris'&&flags().warehouseBurned){boss.hp=Math.round(boss.maxHp*.8);state.routes.morris='fire';boss.burned=true;}else if(type==='morris')state.routes.morris=state.factions.Dock?'allied':'assault';
  if(type==='elise'){boss.swapped=!!flags().serumSwapped;state.routes.elise=boss.swapped?'serum':'assault';boss.arena={left:150,right:1250,top:300,bottom:880};}
  if(type==='bark'){state.routes.bark=flags().smith?'informed':'assault';boss.arena={...outpost.bounds};}
- if(type==='rain'&&boss.second){boss.maxHp=1600;boss.hp=1600;boss.speed=140;}
- if(type==='edwin'&&(boss.second||boss.trueRoute)){boss.maxHp=2500;boss.hp=2500;}
+ if(type==='rain'&&boss.second){boss.maxHp=1600*(DIFFICULTY[settings.difficulty].hp||1);boss.hp=boss.maxHp;boss.speed=140;}
+ if(type==='edwin'&&(boss.second||boss.trueRoute)){boss.maxHp=2500*(DIFFICULTY[settings.difficulty].hp||1);boss.hp=boss.maxHp;}
  if(type==='vann'){boss.arena={left:2420,right:3020,top:1600,bottom:2170};npcs=npcs.filter(n=>n.id!=='vann');}
  if(['rain','edwin'].includes(type)){boss.arena={left:220,right:1580,top:370,bottom:1120};}
  for(const e of enemies)if(e.x>boss.arena.left&&e.x<boss.arena.right&&e.y>boss.arena.top&&e.y<boss.arena.bottom)e.aggro=true;
@@ -644,12 +673,13 @@ function beginFight(type,options={}){
 }
 function requestAttack(){if(movable())attackBuffer=.22;sound.init();}
 function slash(){
- if(!movable()||player.attackCd>0||player.dodge>0||player.stun>0)return false;
- if(!pointer.valid||clock-pointer.last>2){const target=[...(boss&&boss.state!=='IDLE'&&boss.state!=='KNEEL'?[boss]:[]),...enemies.filter(e=>e.aggro)].sort((a,b)=>dist(player,a)-dist(player,b))[0];if(target&&dist(player,target)<125)player.angle=Math.atan2(target.y-player.y,target.x-player.x);}
+ if(!movable()||isIntro()||player.attackCd>0||player.dodge>0||player.stun>0)return false;
+ cancelFieldAction('投油中斷：你拔劍迎敵。');
+ if(!pointer.valid||clock-pointer.last>2){const target=[...(boss&&boss.state!=='IDLE'&&boss.state!=='KNEEL'?[boss]:[]),...enemies.filter(e=>e.hp>0&&e.aggro)].sort((a,b)=>dist(player,a)-dist(player,b))[0];if(target&&dist(player,target)<125)player.angle=Math.atan2(target.y-player.y,target.x-player.x);}
  player.combo=player.comboTimer>0?player.combo%3+1:1;player.comboTimer=.78;const heavy=player.combo===3,reach=heavy?75*(flags().sword?1.3:1):65,arc=heavy?PI*.9:PI*2/3;
  player.attackCd=heavy?.42:.245;player.attackAnim=heavy?.26:.19;attackBuffer=0;slashes.push({x:player.x,y:player.y,angle:player.angle,reach,arc,heavy,life:heavy?.23:.18,max:heavy?.23:.18,silver:heavy&&flags().sword});sound.slash(heavy);moveEntity(player,Math.cos(player.angle)*4,Math.sin(player.angle)*4);
  const hits=e=>dist(player,e)<reach+e.r&&Math.abs(angleDiff(Math.atan2(e.y-player.y,e.x-player.x)-player.angle))<arc/2+.18;
- for(const e of enemies){if(e.hp<=0||!hits(e))continue;const n=Math.round(player.atk*(heavy?1.45:1));e.hp=Math.max(0,e.hp-n);e.hurt=.18;e.aggro=true;floatText(e.x,e.y-56,n+(heavy?'!':''),'#eee2b9',heavy?21:16);burst(e.x,e.y-25,'#ae7358',7,70);sound.hit();if(heavy){moveEntity(e,Math.cos(player.angle)*16,Math.sin(player.angle)*16);e.phase='STUN';e.timer=.35;}if(e.hp<=0){state.kills[e.id]=true;burst(e.x,e.y-15,'#c2a78e',15,100);}}
+ for(const e of enemies){if(e.hp<=0||!hits(e))continue;const n=Math.round(player.atk*(heavy?1.45:1));e.hp=Math.max(0,e.hp-n);e.hurt=.18;e.aggro=true;floatText(e.x,e.y-56,n+(heavy?'!':''),'#eee2b9',heavy?21:16);burst(e.x,e.y-25,'#ae7358',7,70);sound.hit();if(heavy){moveEntity(e,Math.cos(player.angle)*16,Math.sin(player.angle)*16);e.phase='STUN';e.timer=.35;}if(e.hp<=0){retireEnemy(e);burst(e.x,e.y-15,'#c2a78e',15,100);}}
  if(boss&&boss.state!=='IDLE'&&!['DEAD','KNEEL'].includes(boss.state)&&hits(boss))damageBoss(player.atk*(heavy?1.45:1),heavy);
  if(state.map==='cave'&&!flags().pipeDestroyed&&Math.hypot(player.x-1510,player.y-430)<reach+35&&Math.abs(angleDiff(Math.atan2(430-player.y,1510-player.x)-player.angle))<arc/2+.2){flags().pipeHits=(flags().pipeHits||0)+1;burst(1510,430,'#9fa87a',12,80);if(flags().pipeHits>=3)cutPipe(true);}
  for(const p of world.props.filter(p=>p.breakable&&!flags()['broken:'+p.crateId]))if(hits({...p,r:36})){flags()['crateHp:'+p.crateId]=(flags()['crateHp:'+p.crateId]??2)-1;if(flags()['crateHp:'+p.crateId]<=0){flags()['broken:'+p.crateId]=true;burst(p.x,p.y,'#ac9367',18,90);}}
@@ -664,17 +694,23 @@ function damageBoss(amount,heavy=false,ally=false){
  floatText(boss.x+random(-12,12),boss.y-65,amount+(heavy?'!':''),ally?'#a6c4b5':heavy?'#eed7a0':'#e9e4cb',heavy?22:17);burst(boss.x,boss.y-34,boss.type==='bark'&&!boss.broken?'#b6b99c':'#ad725c',heavy?14:7,100);if(!ally){hitstop=heavy?.045:.025;shake=heavy?5:2;sound.hit(boss.type==='bark'&&!boss.broken);}
  if(boss.hp<=0)defeatBoss();
 }
-function dodge(){if(!movable()||player.dodgeCd>0||player.dodge>0||player.stun>0)return false;const m=getMovement(),a=m.x||m.y?Math.atan2(m.y,m.x):player.angle;player.dodge=.31;player.dodgeCd=1.2;player.dodgeX=Math.cos(a)*535;player.dodgeY=Math.sin(a)*535;player.attackAnim=0;burst(player.x,player.y,'#8ca9a1',5,35);sound.tone(170,.16,'triangle',.035,55);return true;}
+function dodge(){if(!movable()||isIntro()||player.dodgeCd>0||player.dodge>0||player.stun>0)return false;cancelFieldAction('投油中斷：你離開了通風口。');const m=getMovement(),a=m.x||m.y?Math.atan2(m.y,m.x):player.angle;player.dodge=.31;player.dodgeCd=1.2;player.dodgeX=Math.cos(a)*535;player.dodgeY=Math.sin(a)*535;player.attackAnim=0;burst(player.x,player.y,'#8ca9a1',5,35);sound.tone(170,.16,'triangle',.035,55);return true;}
 function usePotion(){if(!movable()||player.hp<=0)return;if(player.potions<=0){toast('藥袋已空。鎮中心診所可以免費補藥。',3);return;}if(player.hp>=player.maxHp){toast('生命已滿。',1.5);return;}player.potions--;const n=Math.min(player.maxHp-player.hp,Math.round(player.maxHp*(flags().alchemy?.58:.45)));player.hp+=n;floatText(player.x,player.y-55,'+'+n,'#b8d8ad',19);burst(player.x,player.y-25,'#a5d6a0',18,60);sound.heal();syncHUD();}
-function hurtPlayer(amount,source=null){if(mode!=='PLAY'||player.hurt>0||player.hp<=0)return false;if(player.dodge>.06){floatText(player.x,player.y-45,'閃避','#b8d6cb',14);return false;}amount=Math.max(1,Math.round(amount*DIFFICULTY[settings.difficulty].damage));player.hp=Math.max(0,player.hp-amount);player.hurt=.62;shake=7;damageTint=.3;burst(player.x,player.y-22,'#b16f59',11,80);floatText(player.x,player.y-56,'−'+amount,'#e8a28b',19);sound.hit();if(source){const a=Math.atan2(player.y-source.y,player.x-source.x);moveEntity(player,Math.cos(a)*14,Math.sin(a)*14);}if(player.hp<=0)die();syncHUD();return true;}
+function hurtPlayer(amount,source=null){if(mode!=='PLAY'||player.hurt>0||player.hp<=0)return false;if(player.dodge>.06){floatText(player.x,player.y-45,'閃避','#b8d6cb',14);return false;}cancelFieldAction('投油中斷：你受到了攻擊。');amount=Math.max(1,Math.round(amount*DIFFICULTY[settings.difficulty].damage));player.hp=Math.max(0,player.hp-amount);player.hurt=.62;shake=7;damageTint=.3;burst(player.x,player.y-22,'#b16f59',11,80);floatText(player.x,player.y-56,'−'+amount,'#e8a28b',19);sound.hit();if(source){const a=Math.atan2(player.y-source.y,player.x-source.x);moveEntity(player,Math.cos(a)*14,Math.sin(a)*14);}if(player.hp<=0)die();syncHUD();return true;}
+function patrolEnemy(e,dt){
+ const target=e.patrol?e.patrol[e.patrolIndex]:{x:e.homeX,y:e.homeY};
+ if(e.patrolPause>0){e.patrolPause-=dt;return;}
+ const d=dist(e,target);if(d>3){e.angle=Math.atan2(target.y-e.y,target.x-e.x);const step=Math.min(d,(e.patrol?60:e.speed*.55)*dt);moveEntity(e,Math.cos(e.angle)*step,Math.sin(e.angle)*step);}
+ else if(e.patrol){e.patrolIndex=(e.patrolIndex+1)%e.patrol.length;e.patrolPause=1.5;}else e.angle=e.homeAngle;
+}
 function updateEnemies(dt){
- for(const e of enemies){if(e.hp<=0)continue;e.hurt=Math.max(0,e.hurt-dt);e.timer-=dt;e.walk+=dt*5;const d=dist(player,e);if(d<230)e.aggro=true;if(e.aggro&&d>620&&!boss)e.aggro=false;if(!e.aggro){if(Math.hypot(e.x-e.homeX,e.y-e.homeY)>8){const a=Math.atan2(e.homeY-e.y,e.homeX-e.x);moveEntity(e,Math.cos(a)*e.speed*.55*dt,Math.sin(a)*e.speed*.55*dt);}continue;}
+ for(const e of enemies){if(e.hp<=0){retireEnemy(e);continue;}e.hurt=Math.max(0,e.hurt-dt);e.timer-=dt;e.walk+=dt*5;const d=dist(player,e);if(d<230)e.aggro=true;if(e.aggro&&d>620&&(!boss||['IDLE','KNEEL','DEAD'].includes(boss.state)))e.aggro=false;if(!e.aggro){patrolEnemy(e,dt);continue;}
  if(e.phase==='STUN'){if(e.timer<=0){e.phase='CHASE';e.timer=.5;}continue;}
  if(e.phase==='CHASE'){e.angle=Math.atan2(player.y-e.y,player.x-e.x);if(d>e.reach*.8){const hit=moveEntity(e,Math.cos(e.angle)*e.speed*dt,Math.sin(e.angle)*e.speed*dt);if(hit)moveEntity(e,Math.cos(e.angle+PI/2)*e.speed*dt,Math.sin(e.angle+PI/2)*e.speed*dt);}if(d<e.reach&&e.timer<=0){e.phase='WARN';e.timer=(e.enemyType==='hound'?.62:.8)*DIFFICULTY[settings.difficulty].warn;e.windup=e.timer;}}
- else if(e.phase==='WARN'&&e.timer<=0){e.phase='RECOVERY';e.timer=.85;if(['ranger','spider'].includes(e.enemyType)){shoot(e.x,e.y,e.angle,300,e.damage,e.enemyType==='spider'?'#ad91c2':'#d5c3a0');}else{if(d<e.reach+15&&Math.abs(angleDiff(Math.atan2(player.y-e.y,player.x-e.x)-e.angle))<PI*.7)hurtPlayer(e.damage,e);slashes.push({x:e.x,y:e.y,angle:e.angle,reach:e.reach,arc:PI,heavy:false,life:.2,max:.2,enemy:true});}}
+ else if(e.phase==='WARN'&&e.timer<=0){e.phase='RECOVERY';e.timer=.85;{if(['ranger','spider'].includes(e.enemyType)){shoot(e.x,e.y,e.angle,300,e.damage,e.enemyType==='spider'?'#ad91c2':'#d5c3a0');}else{if(d<e.reach+15&&Math.abs(angleDiff(Math.atan2(player.y-e.y,player.x-e.x)-e.angle))<PI*.7)hurtPlayer(e.damage,e);slashes.push({x:e.x,y:e.y,angle:e.angle,reach:e.reach,arc:PI,heavy:false,life:.2,max:.2,enemy:true});}}}
  else if(e.phase==='RECOVERY'&&e.timer<=0){e.phase='CHASE';e.timer=.3;}
  }
- enemies=enemies.filter(e=>e.hp>0||e.hurt>0);
+ enemies=enemies.filter(e=>e.hp>0);
 }
 function shoot(x,y,a,speed,damage,color='#cfbb92',extra={}){projectiles.push({x,y,vx:Math.cos(a)*speed,vy:Math.sin(a)*speed,damage,color,r:5,life:5,age:0,...extra});}
 function fan(x,y,a,count,spread,speed,damage,color,extra={}){for(let i=0;i<count;i++)shoot(x,y,a-spread/2+(count===1?0:i*spread/(count-1)),speed,damage,color,extra);}
@@ -752,11 +788,19 @@ function updateBoss(dt){
 }
 function defeatBoss(){
  if(!boss||boss.state==='KNEEL')return;const type=boss.type;boss.state='KNEEL';boss.hp=0;boss.hurt=0;clearInput();hazards=[];projectiles=[];scheduled=[];shake=8;sound.tone(75,.8,'triangle',.14,22);
- for(const e of enemies){state.kills[e.id]=true;e.hp=0;}
+ for(const e of enemies)retireEnemy(e);enemies=[];
  if(['morris','elise','bark'].includes(type)){flags()[type+'Down']=true;interactables=interactables.filter(i=>i.id!=='boss-'+type);addInteract('boss-'+type,boss.x,boss.y,'清算血債，收起金庫鑰匙',()=>finishBossDialogue(type),{range:120,combatAllowed:true,category:'boss'});bark('敵人跪倒。走近，按 E 收起金庫鑰匙。',6);}
  else if(type==='vann'){flags().vannDefeated=true;flags().whiteSword=true;boss=null;rebuildActors();say('刀疤范恩','這把劍……給你！給你就是了！別殺我！\n范恩丟下白鴉之劍，帶著手下倉皇逃離。','vann',()=>toast('獲得白鴉之劍。回中央廣場找托比亞斯。',5));}
  else{schedule(.1,()=>{});finalBattleAftermath(type);}
  syncHUD();
+}
+
+function changeDifficulty(next){
+ if(!DIFFICULTY[next]||inCombat())return false;
+ const scale=(DIFFICULTY[next].hp||1)/(DIFFICULTY[settings.difficulty].hp||1);
+ for(const e of enemies){e.hp*=scale;e.maxHp*=scale;}
+ if(boss){boss.hp*=scale;boss.maxHp*=scale;}
+ settings.difficulty=next;savePreferences();syncHUD();return true;
 }
 
 
@@ -767,7 +811,8 @@ const PORTRAITS={'主角':'hero','灰梟':'owl','灰梟・艾德溫':'edwin','�
 function line(speaker,text,portrait,extra={}){return {speaker,text,portrait:portrait||PORTRAITS[speaker]||'narrator',...extra};}
 function playDialogue(nodes,onDone=null){clearInput();$('dialogue').hidden=false;mode='DIALOGUE';dialogue={nodes,index:0,onDone,token:0};showNode();}
 function say(speaker,text,portrait='narrator',done=null){playDialogue([line(speaker,text,portrait)],done);}
-function showNode(){const d=dialogue;if(!d)return;const n=d.nodes[d.index];if(!n){closeDialogue();return;}d.token++;d.consumed=false;typed=0;choiceIndex=0;if(n.onEnter)n.onEnter();$('speaker').textContent=n.speaker;$('speaker-tag').textContent=cinematic?'ASHES OF RAVENROOST / PROLOGUE':QUESTS[tracked]?.kind||'RAVENROOST';$('dialogue-text').textContent='';$('choices').replaceChildren();drawPortrait(n.portrait);$('skip-prologue').hidden=!cinematic;$('dialogue').hidden=false;}
+function redrawDialogue(){const d=dialogue;if(!d)return;const n=d.nodes[d.index];$('speaker').textContent=n.speaker;$('speaker-tag').textContent=cinematic?'ASHES OF RAVENROOST / PROLOGUE':inAftermath()?'後日談 / '+ENDINGS[state.ending].title:QUESTS[tracked]?.kind||'RAVENROOST';$('dialogue-text').textContent=n.text.slice(0,Math.floor(typed));$('choices').replaceChildren();drawPortrait(n.portrait);$('skip-prologue').hidden=!cinematic;if(typed>=n.text.length)renderChoices();}
+function showNode(){const d=dialogue;if(!d)return;const n=d.nodes[d.index];if(!n){closeDialogue();return;}d.token++;d.consumed=false;typed=0;choiceIndex=0;if(n.onEnter)n.onEnter();redrawDialogue();$('dialogue').hidden=false;}
 function updateDialogue(dt){if(!dialogue)return;const n=dialogue.nodes[dialogue.index];const before=Math.floor(typed);typed=Math.min(n.text.length,typed+dt*settings.textSpeed);if(Math.floor(typed)!==before)$('dialogue-text').textContent=n.text.slice(0,Math.floor(typed));if(typed>=n.text.length&&!$('choices').children.length)renderChoices();}
 function renderChoices(){if(!dialogue)return;const d=dialogue,n=d.nodes[d.index],token=d.token,choices=(n.choices||[{label:'繼續　→'}]).filter(c=>!c.when||c.when());d.options=choices;choices.forEach((c,i)=>{const b=document.createElement('button');b.className='choice'+(i===choiceIndex?' selected':'')+(c.special?' special':'');b.textContent=c.label;b.addEventListener('click',()=>{if(dialogue===d&&dialogue.token===token)chooseDialogue(i);});$('choices').append(b);});}
 function chooseDialogue(index=choiceIndex){
@@ -779,13 +824,31 @@ function chooseDialogue(index=choiceIndex){
 function closeDialogue(){const done=dialogue?.onDone;dialogue=null;$('dialogue').hidden=true;mode='PLAY';clearInput();if(done)done();focusGame();}
 function decision(speaker,text,choices,portrait){playDialogue([line(speaker,text,portrait,{choices})]);}
 function askRest(){decision('葛蘭','躺一會兒吧。傷口與藥袋我會替你處理。\n休息不會建立任務狀態點，外圍巡邏兵會重新出現。',[{label:'免費休息、回滿生命與藥水',action:()=>rest(true)},{label:'暫時不需要',action:()=>{}}],'doctor');}
-function finishPrologue(){
- cinematic=false;cinemaFocus=null;sceneActors=[];flags().prologueSeen=true;state.quests.prologue='done';enterMap('tower',640,650);mode='PLAY';$('touch-controls').hidden=false;setStats(true);tracked='morris';commitCheckpoint('序章・雨夜的折翼');toast('獲得生鏽鐵劍與旅人灰斗篷。三條獵殺主線已開啟。按 Tab 查看手札，G 查看地圖。',8);syncHUD();
-}
 function startPrologue(){
- cinematic=true;enterMap('tavern',680,580,{silent:true});cinemaFocus={x:750,y:530};sceneActors=[{type:'merchant',x:1020,y:430},{type:'morris',x:850,y:530},{type:'elise',x:960,y:500},{type:'bark',x:720,y:750},{type:'rain',x:710,y:260}];
+ cinematic=false;cinemaFocus=null;sceneActors=[];flags().prologueStage='street';for(const id of ['morris','elise','bark'])state.quests[id]='hidden';tracked='prologue';
+ enterMap('town',1840,1350,{silent:true});mode='PLAY';$('touch-controls').hidden=false;syncHUD();
+ toast('雨夜抵達鴉棲鎮。WASD 移動，走近酒館門口按 E；也可先和夜歸鎮民交談。',7);
+}
+function skipIntro(){if(!isIntro())return;clearInput();dialogue=null;$('dialogue').hidden=true;finishPrologue();}
+function buildIntroActors(){
+ if(state.map==='town'){
+  addInteract('intro-entry',1440,770,'推門走進黑羽酒館',()=>{flags().prologueStage='tavern';enterMap('tavern',700,830);toast('爐火就在前面。走到櫃檯，向巴納比打聽瓦倫領主。',5);},{category:'exit',range:95});
+  npc('intro-resident','夜歸鎮民',1775,1280,'woman',()=>say('夜歸鎮民','異鄉人？黑羽酒館還有熱酒。北邊通山的路入夜就封了，別去碰巡夜人的霉頭。','woman'));
+  npc('intro-watch','夜巡衛兵',1220,1000,'soldier',()=>say('夜巡衛兵','宵禁了。酒館的客人往那邊走，其餘道路天亮再說。','soldier'));
+  for(const p of [[1160,970],[1160,1190],[1920,1190],[1920,1390],[1330,1430],[1660,1430]])worldDecor.push({kind:'barricade',x:p[0],y:p[1],sortY:p[1],id:'intro-barrier-'+p.join('-'),rotation:p[0]===1160?-PI/2:p[0]===1920?PI/2:0});
+ }else if(state.map==='tavern'){
+  addInteract('portal-intro-street',700,855,'回到酒館外的雨夜',()=>{flags().prologueStage='street';enterMap('town',1440,845);},{category:'exit',range:95});
+  npc('intro-barnaby','酒館老闆巴納比',1020,400,'merchant',playPrologueScene);
+  npc('intro-worker','避雨的礦工',350,720,'worker',()=>say('避雨的礦工','酒暖得了手，暖不了礦道。你要問山上的事？先問問老闆吧。','worker'));
+ }
+}
+function finishPrologue(){
+ if(state.quests.prologue==='done')return;delete flags().prologueStage;for(const id of ['morris','elise','bark'])state.quests[id]='active';dialogue=null;$('dialogue').hidden=true;cinematic=false;cinemaFocus=null;sceneActors=[];flags().prologueSeen=true;state.quests.prologue='done';enterMap('tower',640,650);mode='PLAY';$('touch-controls').hidden=false;setStats(true);tracked='morris';commitCheckpoint('序章・雨夜的折翼');toast('獲得生鏽鐵劍與旅人灰斗篷。三條獵殺主線已開啟。按 Tab 查看手札，G 查看地圖。',8);syncHUD();
+}
+function playPrologueScene(){
+ flags().prologueStage='scene';cinematic=true;enterMap('tavern',680,580,{silent:true});cinemaFocus={x:750,y:530};sceneActors=[{type:'merchant',x:1020,y:430},{type:'morris',x:850,y:530},{type:'elise',x:960,y:500},{type:'bark',x:720,y:750},{type:'rain',x:710,y:260}];
  const nodes=[
- line('雨夜的折翼','鴉棲鎮。連下了七天的雨。\n你帶著父親與老領主訂下的星銀礦契，推開黑羽酒館的門。','narrator'),
+ line('雨夜的折翼','鴉棲鎮。連下了七天的雨。\n黑羽酒館的爐火暖著你的雙手。你攤開父親與老領主訂下的星銀礦契。','narrator'),
  line('主角','一杯熱酒，再問一條路。這封信上的瓦倫領主，住在山頂嗎？'),
  line('巴納比','這火漆……老領主的印？年輕人，快把信收起來！這些東西現在不能隨便拿出來。'),
  line('莫里斯','喲，拿著老領主廢紙的肥羊。星銀礦契現在歸稅務署管了，連同你的錢袋，老夫一併沒收。'),
@@ -814,7 +877,7 @@ function talkGreyowl(){
  if(state.enteredFinal){say('空置的鐘樓','爐火已冷。灰梟帶著他的私兵去了莊園。','narrator');return;}
  const known=state.evidence.C||flags().confrontedOwl;
  decision('灰梟',known?'你的眼神變了。知道得越多，有時反而越難下手。\n雷恩還在山上。我們的約定，沒有變。':'三隻爪牙各有死穴。正面拔劍之外，還有省力的辦法。',[
- {label:'詢問莫里斯，取得高燃煉金火油',action:()=>{flags().oil=true;playDialogue([line('灰梟','莫里斯把錢全鎖在稅務倉庫，外圍十幾名重金聘來的打手。\n這桶火油，倒進外牆通風口。等肥豬逃出來，你的劍就有地方用了。'),line('主角',state.evidence.B?'帳本已在我手上。但倉庫裡的其他東西，不會有第二份。':'整座倉庫都燒掉……裡面也許還有我不知道的東西。')],()=>toast('獲得高燃煉金火油。可在苦水碼頭稅倉外使用。',5));}},
+ {label:'詢問莫里斯，取得高燃煉金火油',action:()=>{flags().oil=true;playDialogue([line('灰梟','別撞正門。從碼頭西側的貨箱巷繞到倉庫北面的後牆通風口。\n後方巡邏在東北角。沿西側繞遠一點，別靠近守衛；把這桶油倒進去要三秒，遭到追擊就得重來。'),line('主角',state.evidence.B?'帳本已在我手上。但倉庫裡的其他東西，不會有第二份。':'整座倉庫都燒掉……裡面也許還有我不知道的東西。')],()=>{tracked='morris';syncHUD();toast('獲得高燃煉金火油。西側貨箱巷 → 後牆通風口；確認點火後才會焚毀倉庫。',6);});}},
  {label:'詢問伊莉絲，取得高爆礦用雷管',action:()=>{flags().explosives=true;playDialogue([line('灰梟','工坊上方的中央通風井，連著整座礦坑。把雷管丟下去，震塌舊礦道，倒灌的毒氣會替你收拾伊莉絲。'),line('灰梟','別管下面那些還在工作的礦工了，成大事者不能婦人之仁。'),line('主角',state.evidence.C?'我看過礦坑底下的遺囑。他還想讓我親手埋掉那些人。':'他說得太輕巧了。井下那些人，可沒有做過我的仇人。')],()=>toast('獲得高爆礦用雷管。使用前請考慮礦道與礦工的命運。',5));}},
  {label:'詢問巴爾克',action:()=>say('灰梟','重甲與巨錘，沒有多少人敢硬碰。可他怕鬼，怕得晚上都要燒香。\n鎮上的老醫生與鐵匠，似乎都欠他一筆帳。','owl')},
  {label:'出示已找到的證據，當面質詢',when:()=>truthCount()>0&&!flags().confrontedOwl,action:()=>{flags().confrontedOwl=true;playDialogue([line('主角',state.evidence.C?'艾德溫。這個名字，在舊礦坑的遺囑裡寫得很清楚。':'我找到一些東西。你的花圃、你的帳款，和你告訴我的故事，對不上。'),line('灰梟','你可以懷疑我。等雷恩倒下，金庫打開，一切都會有解釋。\n在那之前，我們仍然需要彼此。'),line('主角','我把劍收回鞘裡。不是因為相信他，是因為這一局還沒有結束。')]);}},
@@ -859,11 +922,28 @@ function talkRex(){
  ],'rex');
 }
 function burnWarehouse(){
- if(flags().warehouseBurned||state.quests.morris==='done')return;if(!flags().oil){say('稅倉通風口','若把高燃火油倒進去，火勢會吞掉整棟倉庫。灰梟提過這種油。','narrator');return;}
+ if(state.map!=='dock'||mode!=='PLAY'||flags().warehouseBurned||state.quests.morris==='done'||fieldAction)return;
+ if(dist(player,WAREHOUSE_VENT)>=65){toast('先沿西側貨箱巷走到倉庫後牆的通風口。',4);return;}
+ if(inCombat()){toast('你已被發現，先沿後巷拉開距離，甩開追兵。',4);return;}
+ if(!flags().oil){say('後牆通風口','通風管通向整棟稅倉。灰梟提過一種高燃火油，也許能迫使莫里斯逃出來。','narrator');return;}
+ if(flags().oilPoured){confirmWarehouseFire();return;}
+ clearInput();fieldAction={kind:'oil',map:state.map,x:player.x,y:player.y,elapsed:0,duration:3};
+ bark('投油中……保持原地。移動、揮劍、閃避、被發現或受傷都會中斷。',4);findNearest();
+}
+function cancelFieldAction(message){if(!fieldAction)return;fieldAction=null;if(message)toast(message,3);}
+function updateFieldAction(dt){
+ if(!fieldAction)return;const a=fieldAction;
+ if(mode!=='PLAY'||state.map!==a.map||player.hp<=0){cancelFieldAction();return;}
+ if(inCombat()){cancelFieldAction('投油中斷：守衛開始追擊，先退回後巷拉開距離。');return;}
+ if(dist(player,a)>2||player.dodge>0||player.attackAnim>0||player.stun>0){cancelFieldAction('投油中斷：離開通風口後，需要重新投放。');return;}
+ a.elapsed+=dt;if(a.elapsed+1e-6<a.duration)return;
+ fieldAction=null;flags().oilPoured=true;floatText(WAREHOUSE_VENT.x,WAREHOUSE_VENT.y-35,'火油已佈置','#d9c594',17);syncHUD();confirmWarehouseFire();
+}
+function confirmWarehouseFire(){
  const lost=!state.evidence.B;
- decision('火燒連環倉',lost?'火會燒毀尚未取得的雙重帳本，使關鍵支線永久失敗。這次失敗會建立新的狀態點，死亡也無法讓倉庫復原。':'帳本已在你手裡。大火仍會摧毀倉庫，但已取得的證據會保留。',[{label:'點火，承擔焚毀倉庫的後果',action:()=>{
- flags().warehouseBurned=true;state.routes.morris='fire';const failed=lost&&failQuest('truthB','密室帳本已化為灰燼');if(failed)commitCheckpoint('稅倉焚毀・關鍵支線失敗');rebuildActors();boss=createBoss('morris',1430,870);shake=10;playDialogue([line('莫里斯','咳！哪個天殺的燒老夫的帳房……你？！酒館裡拿礦契的小子，你不是已經死了嗎！'),line('主角','閻王嫌我的錢袋被你搶了，叫我回來連本帶利地拿。')],()=>beginFight('morris'));
- }},{label:'收起火油，另找入口',action:()=>{}}],'narrator');
+ decision('火油已佈置・是否點火？',lost?'點火會燒毀尚未取得的雙重帳本，使關鍵支線永久失敗。這次失敗會建立新的狀態點，死亡也無法讓倉庫復原。':'帳本已在你手裡。點火仍會摧毀倉庫，但已取得的證據會保留。',[{label:'點火，承擔焚毀倉庫的後果',action:()=>{
+ if(flags().warehouseBurned)return;flags().warehouseBurned=true;state.routes.morris='fire';const failed=lost&&failQuest('truthB','密室帳本已化為灰燼');if(failed)commitCheckpoint('稅倉焚毀・關鍵支線失敗');rebuildActors();shake=10;playDialogue([line('稅倉衛兵','走水了！弩手去提水，其餘的人守住正門！\n倉庫裡傳來一聲咳嗽，莫里斯踉蹌著逃向西側貨運巷。','soldier'),line('主角','他逃進西側巷子了。趁護衛忙著救火，把帳算清。')],()=>{tracked='morris';syncHUD();toast('護衛已轉往正門救火。沿後牆退回西側貨運巷，追上受傷的莫里斯。',6);});
+ }},{label:'保留佈置，暫不點火',action:()=>{toast('火油已佈置。尚未點火，帳本仍可取回；回到通風口可再次決定。',5);}}],'narrator');
 }
 function talkBarton(){
  if(flags().mineCollapsed){say('巴頓','下面的人……都沒了。\n別拿你的劍靠近我。那座礦坑裡，也有我等待了三年的孩子。','worker');return;}
@@ -886,7 +966,7 @@ function useAsh(){if(flags().ashUsed){toast('香灰已混入香爐。巴爾克�
 function prepareBridge(){if(!flags().alchemy){say('吊橋主繩','繩索被鐵套保護著。伊莉絲的煉金筆記，也許記有能腐蝕它的配方。','narrator');return;}if(flags().bridgeWeak){toast('主繩已腐蝕。到橋東側敲鐘，引誘巴爾克。');return;}decision('懸崖吊橋','從煉金筆記調出的強酸能融斷主繩。之後在對岸敲鐘，可引誘巴爾克衝上橋。',[{label:'腐蝕繩索，準備吊橋陷阱',action:()=>{flags().bridgeWeak=true;toast('主繩已被腐蝕。穿過吊橋，到東側敲響警鐘。',6);}},{label:'暫時離開',action:()=>{}}],'narrator');}
 function springBridge(){if(!flags().bridgeWeak||flags().barkDown||state.quests.bark==='done')return;state.routes.bark='bridge';flags().barkDown=true;sceneActors=[{type:'bark',x:1840,y:670}];playDialogue([line('巴爾克','誰敢敲老子的鐘！灰斗篷的野狗，站在那邊等死吧！'),line('懸崖吊橋','巨錘拖過木板。主繩在他衝到橋中央時崩斷，整座橋驟然向深淵折去。','narrator',{onEnter:()=>{shake=12;sound.hit();}}),line('巴爾克','卑鄙的小子——！老子做鬼也不會放過你！'),line('主角','三號鑰匙卡在橋西側的木板上。\n剩下這段路，我自己走。')],()=>{sceneActors=[];rebuildActors();toast('巴爾克墜谷。沿南側山路繞回橋西，拾起鑰匙。',6);});}
 function startBossDialogue(type){if(!boss||boss.type!==type||boss.state!=='IDLE')return;const scripts={
- morris:[line('莫里斯','黑羽酒館裡的臭蟲！那晚就該叫巴爾克砸爛你的腦袋！\n護衛，把他剁碎，賞銀一百枚！'),line('主角',state.factions.Dock?'別吹哨了。你出賣的那些人，已經替我看住了門。':'盤纏和鑰匙，今天一起還我。')],
+ morris:[line('莫里斯',flags().warehouseBurned?'咳……是你！燒老夫的倉庫，又堵住老夫的退路！\n那些只會提水的蠢貨……老夫自己取你的命！':'黑羽酒館裡的臭蟲！那晚就該叫巴爾克砸爛你的腦袋！\n護衛，把他剁碎，賞銀一百枚！'),line('主角',flags().warehouseBurned?'你的護衛救不了你。盤纏和鑰匙，今天一起還我。':state.factions.Dock?'別吹哨了。你出賣的那些人，已經替我看住了門。':'盤纏和鑰匙，今天一起還我。')],
  elise:[line('伊莉絲','上次的渡鴉迷香還沒吸夠？今天想泡進腐蝕酸液，做個不會說話的標本？'),line('主角','收起你的破瓶子，伊莉絲。今天沒人替你擋劍。')],
  bark:[line('巴爾克','亂葬崗的泥土睡得不舒服？特地爬回來，讓老子把你的腦袋也砸扁？'),line('主角','酒館那晚的一錘，我今天用十劍還你。')]
  };playDialogue(scripts[type]||[],()=>beginFight(type));}
@@ -1000,9 +1080,193 @@ const ENDINGS={
  '沒有人知道那位灰斗篷劍客的名字。人們只記得，他在雨夜折斷雙翼，卻替小鎮劈開了黎明。']}
 };
 function showEnding(id,save=true){
- if(!ENDINGS[id])return;state.ending=id;state.final.phase=3;flags().contract=true;state.quests.finale='done';if(save){if(!endingGallery.includes(id))endingGallery.push(id);commitCheckpoint('終章・'+ENDINGS[id].title);}mode='END';hideScreens();clearInput();sceneActors=[];$('ending-screen').hidden=false;$('ending-name').textContent=ENDINGS[id].title;$('ending-en').textContent=ENDINGS[id].en;$('ending-index').textContent='0'+id;const root=$('ending-copy');root.replaceChildren();
+ if(!ENDINGS[id])return;saveAftermathPosition();state.ending=id;delete flags().aftermath;reviewingFinal=false;state.final.phase=3;flags().contract=true;state.quests.finale='done';if(save){if(!endingGallery.includes(id))endingGallery.push(id);commitCheckpoint('終章・'+ENDINGS[id].title);}mode='END';hideScreens();clearInput();sceneActors=[];$('ending-screen').hidden=false;$('ending-name').textContent=ENDINGS[id].title;$('ending-en').textContent=ENDINGS[id].en;$('ending-index').textContent='0'+id;const root=$('ending-copy');root.replaceChildren();
  const paragraphs=[...ENDINGS[id].text];if(id===3)paragraphs.splice(2,0,factionCount()===3?'三方同盟曾撐住街區，也救出許多居民。然而沒有移交統治權與倒戈私兵的名冊，議會尚未成形，代表便接連遭到暗殺。抵抗延續得更久，仍在內外夾擊下衰微。':factionCount()>0?'你曾幫助的盟友盡力護住居民，卻無法同時守住碼頭、街道與礦道。暗中的襲擊讓各地的抵抗逐漸分散。':'沒有整合起來的自治力量，鎮民只能各自逃散。餘黨的一把火，就讓最後的糧倉倒了。');
- for(const t of paragraphs){const p=document.createElement('p');p.textContent=t;root.append(p);}$('ending-stats').textContent='Lv.'+player.level+'　·　真相 '+truthCount()+'/3　·　同盟 '+factionCount()+'/3　·　結局收藏 '+endingGallery.length+'/4';$('ending-replay').hidden=!preFinal;sound.victory();syncHUD();
+ for(const t of paragraphs){const p=document.createElement('p');p.textContent=t;root.append(p);}$('ending-stats').textContent='Lv.'+player.level+'　·　真相 '+truthCount()+'/3　·　同盟 '+factionCount()+'/3　·　結局收藏 '+endingGallery.length+'/4';$('ending-replay').hidden=!preFinal;$('ending-explore').textContent=id===1?'半月後，重返鴉棲鎮':'數日後，返回小鎮';sound.victory();syncHUD();
+}
+
+
+// ---- aftermath.js ----
+// Ending worlds share the original maps, while actors, dressing and saves are independent.
+const AFTERMATH={
+ 1:{time:'半月後 · 紫霧中的回訪',name:'無聲的死城',hint:'薄霧中的道路仍可通行。走訪廣場、碼頭與礦坑，讀完人們留下的最後消息。'},
+ 2:{time:'三日後 · 鐵腕清算',name:'絞架下的小鎮',hint:'廣場的絞架已立起。調查熟人的遺物，再到酒館與診所聽聽倖存者的聲音。'},
+ 3:{time:'五日後 · 餘黨的戰火',name:'無主之地',hint:'盟友各自守著據點，灰梟餘黨仍在外圍活動。看看哪些街區還撐得住。'},
+ 4:{time:'七日後 · 議會的第一週',name:'破曉後的生活',hint:'議會接管了小鎮。走訪廣場、酒館與各地盟友，看看這一週的改變。'}
+};
+function validEpilogues(value){const out={};if(value&&typeof value==='object')for(const id of [1,2,3,4]){const s=value[id];if(validSnapshot(s)&&s.state.ending===id&&s.state.flags.aftermath)out[id]=deepCopy(s);}return out;}
+function saveAftermathPosition(){if(!inAftermath()||!player||player.hp<=0)return false;const s=snapshot();s.entry=validSnapshot(preFinal)&&!preFinal.state.ending?deepCopy(preFinal):validSnapshot(epilogues[state.ending]?.entry)?deepCopy(epilogues[state.ending].entry):null;epilogues[state.ending]=s;checkpoint=deepCopy(s);return persist();}
+function enterAftermath(){
+ if(!state.ending||!ENDINGS[state.ending])return;hideScreens();dialogue=null;clearInput();cinematic=false;cinemaFocus=null;sceneActors=[];reviewingFinal=false;flags().aftermath=true;state.final.phase=3;state.quests.finale='done';mode='PLAY';setStats(true);tracked='finale';
+ enterMap('town',840,1320,{silent:true});saveAftermathPosition();$('hud').hidden=false;$('touch-controls').hidden=false;syncHUD();toast(AFTERMATH[state.ending].time+'。自由走訪小鎮；調查與區域移動會保存後日談進度。',8);
+}
+function loadAftermath(id){saveAftermathPosition();const s=epilogues[id];if(!s)return false;reviewingFinal=false;preFinal=validSnapshot(s.entry)&&!s.entry.state.ending?deepCopy(s.entry):null;checkpoint=deepCopy(s);const ok=loadSnapshot(checkpoint);if(ok){persist();toast('繼續後日談：'+ENDINGS[id].title,4);}return ok;}
+function openAftermathArchive(){
+ saveAftermathPosition();const back=mode,oldDialogue=dialogue,oldTyped=typed,oldChoice=choiceIndex;hideScreens();mode='PLAY';
+ const choices=Object.keys(epilogues).map(Number).sort().map(id=>({label:'結局 '+id+' · '+ENDINGS[id].title,action:()=>loadAftermath(id)}));
+ choices.push({label:'返回目前畫面',action:()=>{if(back==='TITLE')returnTitle();else{dialogue=oldDialogue;typed=oldTyped;choiceIndex=oldChoice;if(dialogue)redrawDialogue();$('dialogue').hidden=true;mode='PAUSE';$('pause-screen').hidden=false;}}});
+ decision('後日談收藏','每個結局保留各自的探索進度。切換會離開目前旅程；莊園前回顧與後日談收藏可分別繼續。',choices,'narrator');
+}
+function aftermathFates(){
+ const id=state.ending,f=flags(),life=id===1?'dead':'alive';
+ return {
+  hawk:id===2?'executed':id===3&&!state.factions.Town?'missing':life,
+  rex:id===2?'executed':id===3&&!state.factions.Dock?'missing':life,
+  barton:id===2?'executed':id===3&&!state.factions.Mine?'missing':life,
+  doctor:life,barnaby:life,clara:life,martha:life,lily:life,
+  veteran:id===2&&state.quests.veteran==='done'?'executed':id===3&&!f.vannDefeated?'missing':life,
+  apprentice:id===2?(f.apprentice?'executed':'imprisoned'):life,
+  markus:f.markusEscaped?'escaped':f.markusKilled?'dead':id===1?'dead':id===2?'executed':id===3?'hiding':'alive'
+ };
+}
+function aftermathSites(){
+ const id=state.ending,f=flags();return [
+  {id:'square',map:'town',x:1740,y:1270,name:['','廣場最後的名冊','清算告示','臨時守望名冊','鎮民議會公告'][id],text:[
+   '',
+   '墨跡被紫霧浸成一片。名冊最後一行寫著：「新領主說封印打開，就再也不用交飢餓稅了。」後面再沒有簽名。',
+   '「奉雷恩領主之命：鐵匠霍克、礦工巴頓、獨眼雷克，勾連叛軍，罪不容赦。」紙角蓋著你曾替他保住的領主印信。',
+   '餘黨偽造命令、襲擊糧車。'+(factionCount()===3?'三方同盟保住幾個街區，仍有其他代表遇刺；沒有完成交接的議會，始終無法統合城防。':factionCount()>0?'少數盟友仍在守望，缺乏支援的街區已經失守。':'名冊上多數名字已被劃去，居民只好各自找路逃亡。'),
+   '議會第一號決議：封存毒礦，公開稅帳；城防由各區代表共同監督。霍克、巴頓、雷克的簽名並列，沒有新的領主頭銜。'
+  ][id]},
+  {id:'tavern',map:'tavern',x:740,y:740,name:['','酒館最後一頁帳','被劃掉的熟客','避難者的留言','第一桶新麥酒'][id],text:[
+   '',
+   '帳本記到第十四天就停了。巴納比寫著：「今晚不收錢。若還有人走得進門，讓他喝口熱的。」',
+   '霍克喝的黑麥酒、巴頓留給工友的半桶麥酒、雷克欠的一輪酒錢，都被劃上細線。老闆沒有再寫「已付」。',
+   '避難者把名字寫在桌板上。白天有人去找糧，晚上有人守門；門外偶爾傳來冒充城防的灰梟餘黨叫喊。',
+   '新木桶上寫著「議會第一週」。'+(state.quests.deserter==='done'?'巴納比仍記得你處理酒窖那件事，特地留了一杯。':'酒窖仍留著那段沒來得及問清的故事。')
+  ][id]},
+  {id:'dock',map:'dock',x:620,y:1030,name:['','最後一艘渡船','封港命令','斷裂的補給線','碼頭公帳'][id],text:[
+   '',
+   '船索還繫著，甲板上的足跡卻停在岸邊。毒霧從礦谷追上海風，渡船再也沒有離港。',
+   '封港名單把走私客、搬貨工與捐過糧的人寫在同一頁。雷克被押走後，船塢的門一直鎖著。',
+   (state.factions.Dock?'雷克的人保住了這段棧橋，勉強能運進藥與糧。':'雷克失去消息，補給船被餘黨燒毀，散落的貨箱只剩空殼。')+(f.warehouseBurned?'你焚毀的稅倉仍是焦黑的空架。':''),
+   '碼頭開始公開記錄稅金與工資。'+(f.warehouseBurned?'稅倉舊址正架起修繕棚，燒掉的書房沒有復原。':'稅倉封條改蓋議會印，帳目可供居民查閱。')
+  ][id]},
+  {id:'mine',map:'mine',x:470,y:1300,name:['','破裂的封印','被沒收的工牌','礦工的防線','永久封礦碑'][id],text:[
+   '',
+   '艾德溫半月前下令炸開封印。如今礦口只有紫黑結晶與散落的工牌。你的礦契仍完整，契約裡的小鎮卻已經不在。',
+   '工牌被當成叛軍證物掛在營地門口。巴頓的工牌最舊，背面刻著他兒子的名字。',
+   (state.factions.Mine?'巴頓和礦工守住入口，把孩子與傷者送往營地。':'營地遭到襲擊，巴頓失聯，餘黨正搶奪剩下的炸藥。')+(f.mineCollapsed?'坍塌的礦道沒有重新打通。':''),
+   '封礦碑抄錄老領主的警告，並刻上罹難礦工的姓名。'+(state.evidence.C?'你取回的遺囑與銘牌，終於有了公開的安放之處。':'議會正在整理礦難紀錄。')
+  ][id]},
+  {id:'highland',map:'highland',x:1180,y:1200,name:['','山谷的紫霧','新的宵禁令','破裂的城防','退位告示'][id],text:[
+   '',
+   '從這裡望下去，紫霧蓋住了鴉棲鎮。莊園的窗再沒有亮過，艾德溫也死在自己打開的毒霧裡。',
+   '宵禁提前到日落。告示說，秩序已經恢復；山下每一扇不敢點燈的窗，都替這句話保持沉默。',
+   '城防沒有收到合法交接令。餘黨混入潰散的私兵，向外部傭兵出售礦道與城門的路線。',
+   '瓦倫家族退位。雷恩交還印信，前往深層封印服役；礦坑由議會與礦工共同監督，任何人不得獨自下令開採。'
+  ][id]}
+ ];
+}
+function aftermathTarget(){return aftermathSites().find(p=>!flags()['afterRead:'+state.ending+':'+p.id])||{map:'town',x:840,y:1320};}
+function decorateAfter(kind,x,y,extra={}){const o={kind,x,y,sortY:y,id:'after-'+state.ending+'-'+state.map+'-'+worldDecor.length,...extra};worldDecor.push(o);return o;}
+function afterNote(id,x,y,name,text,kind='notice',extra={}){decorateAfter(kind,x,y,{name,...extra});addInteract('after-'+id,x,y,'調查：'+name,()=>say(name,text,'narrator',()=>{flags()['afterRead:'+state.ending+':'+id]=true;saveAftermathPosition();syncHUD();}),{range:110});}
+function buildAftermathExits(){
+ const exits={
+  town:[['wild',145,1150,'wild',2430,1100],['dock',3050,1160,'dock',185,930],['mine',2720,190,'mine',210,1490],['highland',1600,160,'highland',1180,1760],['tavern',1440,770,'tavern',700,830],['clinic',640,1250,'clinic',640,680]],
+  wild:[['town',2430,1100,'town',250,1150],['tower',665,850,'tower',640,700],['cave',750,1840,'cave',250,1040]],
+  dock:[['town',160,930,'town',2960,1160],...(!flags().warehouseBurned?[['warehouse',1260,710,'warehouse',900,1020],['office',850,470,'office',320,680],['sewer',470,1340,'sewer',260,910]]:[])],
+  mine:[['town',170,1530,'town',2700,290],...(!flags().mineCollapsed?[['workshop',1840,750,'workshop',700,810],['backroom',1470,760,'backroom',320,660],...(flags().pump?[['deep',800,790,'deep',250,1050]]:[])]:[])],
+  highland:[['town',1180,1770,'town',1600,250],['outpost',1200,1150,'outpost',640,660],['jail',510,1330,'jail',230,900],['manor',1180,405,'manor',900,1040]],
+  tavern:[['town',700,855,'town',1440,820],['cellar',235,730,'cellar',250,920]],clinic:[['town',640,690,'town',640,1300]],tower:[['wild',640,740,'wild',665,900]],cave:[['wild',230,1100,'wild',750,1890]],cellar:[['tavern',230,960,'tavern',285,720]],sewer:[['dock',230,960,'dock',470,1390],['office',1660,900,'office',320,680]],office:[['dock',320,715,'dock',840,490]],warehouse:[['dock',900,1080,'dock',1260,770]],deep:[['mine',230,1090,'mine',800,850]],backroom:[['mine',320,700,'mine',1470,820]],workshop:[['mine',700,860,'mine',1840,810]],jail:[['highland',230,950,'highland',510,1380]],outpost:[['highland',640,680,'highland',1200,1200],['jail',160,650,'jail',230,900]],manor:[['highland',900,1130,'highland',1180,460]]
+ };
+ for(const [id,x,y,to,tx,ty] of exits[state.map]||[])portal(id,x,y,'前往'+MAPS[to].name,to,tx,ty);
+}
+function buildAftermathActors(){
+ const id=state.ending,m=state.map,f=flags(),fates=aftermathFates();boss=null;buildAftermathExits();
+ for(const p of aftermathSites().filter(p=>p.map===m))afterNote(p.id,p.x,p.y,p.name,p.text);
+ if(m==='town'){
+  const restName=id===1?'避霧棚':id===2?'診所後廊':'居民補給棚';decorateAfter('supplies',840,1285);
+  addInteract('after-rest',840,1285,restName+'：休息、補藥與保存後日談',()=>{player.hp=player.maxHp;player.potions=player.potionMax;saveAftermathPosition();sound.heal();toast('資源已補滿，後日談進度已保存。',4);syncHUD();});
+  if(id===2){
+   for(const [i,v] of ['hawk','barton','rex',...(fates.veteran==='executed'?['veteran']:[])].entries()){
+    const names={hawk:'鐵匠霍克',barton:'礦工巴頓',rex:'獨眼雷克',veteran:'托比亞斯'},types={hawk:'smith',barton:'worker',rex:'rex',veteran:'veteran'},x=i===3?1830:1830+i*230,y=i===3?1470:1240;
+    afterNote('gallows-'+v,x,y,names[v]+'的遺體',v==='hawk'?(state.factions.Town?'那雙替你修劍、組織居民的手，垂在冰冷的圍裙旁。':'告示寫著霍克的名字。鐵匠鋪裡的爐火已被勒令熄滅。'):v==='barton'?'他的工牌和兒子的名字掛在一起。領主把父子最後的重逢，也當成了罪證。':v==='rex'?'獨眼的面孔仍朝著碼頭方向。被吊起的不只是一個走私客，還有整條街的補給。':'空袖子被風捲起。那把曾守過領主家族的劍，沒有替他換來赦免。','gallows',{victimType:types[v]});worldBarriers.push({circle:true,x,y,r:42});
+   }
+   for(const p of [[1280,970],[1850,950],[2600,1060]])npc('after-watch-'+p[0],'宵禁衛兵',...p,'soldier',()=>say('宵禁衛兵','領主准你領賞，不代表准你替名冊上的人翻案。日落前離開廣場。','soldier'));
+   npc('after-resident','熄燈的居民',2010,1530,'woman',()=>say('居民','求你小聲一點。他們問過，誰替鐵匠送過飯。現在我連孩子的哭聲都怕人聽見。','woman'));
+  }else if(id===1){
+   afterNote('town-remains',1880,1050,'倒在廣場的鎮民','手裡攥著新領主登位那天分發的紫羽徽章。歡呼的名字，如今也留不下聲音。','corpse');
+   for(const p of [[2100,1130],[2330,1760],[990,1500]])decorateAfter('ruin',...p);
+  }else{
+   if(fates.hawk==='alive')npc('after-hawk','霍克',640,780,'smith',()=>say('霍克',id===4?'這回爐火替大家燒。議會的印信我收下了，但每一筆支出，都得讓街坊看見。':'糧車昨夜又被截了。我能替街坊守住這條街，卻追不上每一道假命令。','smith'));
+   else afterNote('forge-missing',640,800,'鐵匠鋪的尋人紙','霍克在第一夜的襲擊後失去消息。沒有組織起來的街坊，已無力守住爐火。');
+   if(fates.veteran==='alive')npc('after-tobias','托比亞斯',1860,1370,'veteran',()=>say('托比亞斯',id===4?'白鴉的劍，總算替人守住了天亮。往後學劍的孩子，也該先學怎麼收劍。':'你斬掉了王冠。剩下這些人，還得學會怎麼一起活。','veteran'));
+   if(id===4){for(const p of [[2050,1020],[2300,1170],[2050,1760],[2390,1800]])npc('after-market-'+p.join('-'),'回到市集的鎮民',...p,'woman',()=>say('鎮民','今天敢把燈留到晚上了。那面公告上，每個名字都能當面問責。','woman'));for(const p of [[1510,900],[2110,1090]])decorateAfter('banner',...p);}
+   else {for(const p of [[2050,1130],[2320,1760]])decorateAfter('ruin',...p);decorateAfter('barricade',1850,1450);}
+  }
+  if(id!==1){npc('after-clara','克拉拉',1430,1840,'herbalist',()=>say('克拉拉',f.belt?'你帶回的藥救了莉莉。如今我把那個方子教給更多人，能救一個是一個。':id===4?'議會派人清理水井了。孩子還需要治療，我會把沒做完的事接著做。':'井水和傷口，都還得有人照看。瑪莎每天都來幫忙。','herbalist'));npc('after-martha','瑪莎',1220,1840,'woman',()=>say('瑪莎',f.belt?'莉莉還記得你。每次聽見腳步，都問是不是帶藥的大哥哥。':'孩子還在等藥。我們得繼續等，繼續活。','woman'));npc('after-lily','莉莉',f.belt?1210:1230,f.belt?1780:1870,'child',f.belt?()=>say('莉莉','大哥哥！你看，我今天可以跑這麼遠了！','child'):null,{sick:!f.belt});}
+  if(f.orphanNotified&&id!==1)npc('after-jack','小傑',id===2?900:760,id===2?1320:820,'child',()=>say('小傑',id===2?'霍克叔叔說，名字刻進鐵裡，就不會忘。可是我還沒學會……':'我會把哥哥的名字刻進第一把工具裡。這次，大家都會記得。','child'));
+ }else if(m==='tavern'){
+  if(fates.barnaby==='alive')npc('after-barnaby','巴納比',1020,360,'merchant',()=>say('巴納比',id===2?'熟客的杯子我還留著。有人能下令清空廣場，不能下令我忘記他們。':id===3?'桌子拼起來能睡三個人。只要今晚還有一袋麥子，門就開著。':'今晚的第一杯敬活下來的人，第二杯敬回不來的人。第三杯，才敬這個終於能說真話的小鎮。','merchant'));
+  if(fates.markus==='escaped')afterNote('markus-letter',400,770,'馬庫斯寄回的信','「我已離開鴉棲鎮，在南邊找到了工作。那晚的一席乾草，換回了我一輩子的勇氣。若你還在，替我向老闆問好。」\n他確實活著離開了，這封信比任何傳聞都確切。');
+  else if(fates.markus==='dead'&&f.markusKilled)afterNote('markus-memory',400,770,'空下來的酒杯','你親手處決的年輕逃兵沒有回來。巴納比把空杯收在櫃下，那段選擇也留在這座酒館。');
+  else if(fates.markus==='executed')afterNote('markus-order',400,770,'逃兵追緝結案令','馬庫斯沒有趕在清算前離城。追緝令上蓋著「已處決」，原來躲藏的酒桶已被劈開。');
+ }else if(m==='cellar'&&(fates.markus==='alive'||fates.markus==='hiding'))npc('after-markus','馬庫斯',1520,380,'soldier',()=>say('馬庫斯',id===4?'議會撤了追緝令。我還欠那些被扔進死人堆的人一句話，也欠自己一種新活法。':'我不再替領主抓人了。這次守的是酒館門，不是誰的命令。','soldier'));
+ else if(m==='clinic'&&fates.doctor==='alive')npc('after-doctor','葛蘭',640,350,'doctor',()=>say('葛蘭',id===2?'我治傷，不問名冊。可他們連一瓶止痛水，也不准我帶到廣場。':id===3?'藥不夠，傷者太多。你救過的人，也正抬著別人來這裡。':'我把三年前不敢寫的證詞，交給了議會。這次，病歷上不會再刪名字。','doctor'));
+ else if(m==='dock'){
+  if(fates.rex==='alive')npc('after-rex','雷克',1510,1470,'rex',()=>say('雷克',id===4?'碼頭的帳攤在陽光下，老子也得照規矩簽名。至少這回，弟兄們知道銀子去了哪裡。':'能進港的船剩兩艘。我把人留在這裡守著，街上的假軍令一張都別信。','rex'));
+  if(f.warehouseBurned)afterNote('warehouse-ruin',850,670,'焚毀的稅倉','牆上的焦痕還在。'+(state.evidence.B?'你先帶走的帳本仍保存在證物中。':'沒來得及取回的帳本，已經永遠留在灰裡。'),'ruin');
+ }else if(m==='mine'){
+  if(fates.barton==='alive')npc('after-barton','巴頓',470,1220,'worker',()=>say('巴頓',id===4?'兒子的名字有人記得了。今後守礦的人，得先知道哪條路不能打開。':'礦工守得住這個洞口，守不住每一個家的門。把傷者送去營地，剩下的交給我們。','worker'));
+  if(f.mineCollapsed)afterNote('collapsed-route',800,790,'坍塌的舊礦道','斷裂的岩層仍封住入口。當天沒有逃出來的人，無法靠另一紙命令回來。','ruin');
+  else if(!f.pump)afterNote('flooded-shaft',800,790,'仍被水淹沒的三號礦坑','抽水機沒有修好，深層通道仍在積水下。後日談保留了你當時沒來得及改變的結果。');
+ }else if(m==='highland'){
+  if(id===2)npc('after-high-guard','領主親衛',1180,620,'elite',()=>say('領主親衛','領主准你通行。至於山下那些名字，判決已經執行。','elite'));
+  else if(id===4)npc('after-militia','議會守望者',1180,620,'soldier',()=>say('議會守望者','城防命令要有代表共同簽署。再有人拿一張密令叫我們吊人，先把他帶去公開問話。','soldier'));
+ }else if(m==='manor'){
+  if(id===2)npc('after-rain','雷恩・瓦倫',900,450,'rain',()=>say('雷恩・瓦倫','封印仍在，小鎮仍在。你已領過賞，其他的代價，由我決定。','rain'));
+  else if(id===1)afterNote('edwin-throne',900,430,'王座下的灰梟','紫黑結晶穿透衣襟。艾德溫緊握金庫的印信，最後卻沒有替自己留下一條逃路。','corpse');
+  else if(id===3){afterNote('brothers',900,430,'空下來的兩把椅子','兩兄弟都死在這一夜。印信卻沒有交到任何能公開承擔責任的人手上，城門外的爭奪才剛開始。');}
+  else npc('after-clerk','議會書記',900,650,'worker',()=>say('議會書記','證詞、遺囑和稅帳都封存了。這間大廳，現在先用來讓每個人把話說完。','worker'));
+ }else if(m==='jail'){
+  if(fates.apprentice==='alive')npc('after-apprentice','亞倫',1390,420,'worker',()=>say('亞倫',f.apprentice?'你打開的那道牢門，我記得。霍克師父說，今後鐵匠只做工具，不替人打刑具。':'議會的人打開了牢門。這些年沒人敢問的名字，終於有人來記。','worker'));
+  else afterNote('jail-register',1390,420,'黑牢移交簿',fates.apprentice==='executed'?'亞倫曾走出這扇門，卻又因霍克的學徒身分被押回清算。':'牢房依舊沒有聲音。移交簿上的名字停在最後一次點名。');
+ }else if(m==='tower')afterNote('owl-hideout',790,470,'灰梟留下的紙片','「棋子會以為自己選了路。」那行字沒有署名。現在你知道，這場雨裡每個人的命，都曾被寫成籌碼。');
+ else if(m==='cave')afterNote('water-source',1510,850,'水源留下的痕跡',f.pipeDestroyed?'被你斬斷的導流管仍躺在岩壁旁。這條支線改變過的水，沒有因終局而倒流回去。':'紫色廢液仍染著深處的岩壁。沒有完成的清理，仍是小鎮往後得面對的事。');
+ else if(['office','warehouse','workshop','backroom','deep','outpost','sewer'].includes(m))afterNote('room-record',world.spawn.x+120,world.spawn.y-110,'留在此地的紀錄',id===1?'這裡只剩沒有人再回來取走的物品，紫霧把最後的腳步也抹平了。':id===2?'接管者把物品逐一封存。名冊比物品更長，卻沒有誰敢問那些人去了哪裡。':id===3?'餘黨和避難者都曾經過。散落的記號裡，有假命令，也有求救的路標。':'調查員正在整理舊物與證詞。公開封存的清單，貼在每一扇仍可進出的門旁。');
+ if(id===3&&['dock','mine','highland'].includes(m)){
+  const supported=m==='dock'?state.factions.Dock:m==='mine'?state.factions.Mine:state.factions.Town;
+  const positions=m==='dock'?[[1150,980],[1450,1000]]:m==='mine'?[[1220,760],[1450,850]]:[[1060,1460],[1380,1390]];
+  for(let i=0;i<(supported?1:2);i++){const eid='after-raider-'+m+'-'+i;if(!state.kills[eid])enemies.push(createEnemy({id:eid,type:i?'ranger':'guard',x:positions[i][0],y:positions[i][1]}));}
+ }
+}
+function aftermathPropVisible(o){return !(inAftermath()&&state.map==='manor'&&o.kind==='corpse'&&o.id.startsWith('manor-corpse-'));}
+function drawAftermathProp(g,o){
+ const {x,y,kind}=o;
+ if(o.rotation){g.save();g.translate(x,y);g.rotate(o.rotation);drawAftermathProp(g,{...o,x:0,y:0,rotation:0});g.restore();return;}
+ if(kind==='gallows'){
+  box(g,x-72,y-13,144,23,'#6e6243');box(g,x-78,y-17,156,8,'#a08e5d');for(const xx of [-62,55]){box(g,x+xx,y-200,10,191,'#655c3e');box(g,x+xx+2,y-197,3,180,'#ad996044');}box(g,x-71,y-205,142,12,'#9b8858');stroke(g,[[x-60,y-195],[x-23,y-160]],'#82754a',9);stroke(g,[[x+60,y-195],[x+23,y-160]],'#82754a',9);
+  stroke(g,[[x+8,y-193],[x+8,y-99]],'#a69b73',3);drawCharacter(g,{type:o.victimType,x:x+8,y:y-44,hanged:true,angle:PI/2});g.strokeStyle='#b1a17a';g.lineWidth=3;g.beginPath();g.ellipse(x+9,y-99,10,6,0,0,TAU);g.stroke();
+ }else if(kind==='barricade'){
+  for(const xx of [-65,57]){box(g,x+xx,y-65,9,72,'#766a46');stroke(g,[[x+xx-16,y+5],[x+xx+18,y-48]],'#8b7c50',7);}for(const yy of [-47,-24]){box(g,x-85,y+yy,170,10,'#9f8a5a');box(g,x-81,y+yy+2,163,2,'#c0a86b');}
+ }else if(kind==='ruin'){
+  oval(g,x,y,76,27,'#182720aa');for(let i=0;i<7;i++){const xx=x-60+i*19;box(g,xx,y-8+(i%3)*6,14,13,'#777759');stroke(g,[[xx,y-6],[xx+18,y-50-i%3*17]],i%2?'#30372a':'#525442',7);}stroke(g,[[x-70,y-10],[x+48,y-15]],'#8f8460',6);
+ }else if(kind==='banner'){
+  box(g,x-4,y-165,8,170,'#8a8155');polygon(g,[[x+4,y-155],[x+72,y-155],[x+72,y-75],[x+38,y-92],[x+4,y-75]],'#577565');stroke(g,[[x+12,y-144],[x+62,y-144]],'#d2c18a',3);ravenSigil(g,x+37,y-117,.5,'#d6c98f');
+ }else if(kind==='supplies'){
+  box(g,x-60,y-45,120,51,'#686545');box(g,x-63,y-49,126,9,'#a08d5e');for(let i=0;i<3;i++){oval(g,x-37+i*31,y-52,15,9,'#b9b58d');box(g,x-40+i*31,y-64,7,12,'#a7bea0');}box(g,x+52,y-105,6,110,'#77744e');polygon(g,[[x-65,y-107],[x+65,y-107],[x+86,y-64],[x-82,y-64]],'#597361');
+ }else{
+  box(g,x-4,y-90,8,99,'#6c6744');box(g,x-55,y-97,110,69,'#615f40');box(g,x-48,y-91,96,54,'#b4ad85');for(let i=0;i<5;i++)box(g,x-37,y-83+i*8,65-i%2*12,2,'#5a654a');
+ }
+}
+function drawAftermathGround(g){
+ if(!inAftermath())return;const id=state.ending;
+ if(id===1||id===3){for(let i=0;i<65;i++){const x=150+(i*271)%(world.w-300),y=240+(i*193)%(world.h-350);oval(g,x,y,27+i%4*13,7+i%3*3,id===1?'#5f4a742b':'#131e18aa');stroke(g,[[x-20,y],[x+12,y-7]],'#a59b7144',2);}}
+ if(id===4&&outside()){for(let i=0;i<28;i++){const x=180+(i*317)%(world.w-350),y=260+(i*223)%(world.h-400);box(g,x,y,4,3,'#cfbe7733');}}
+}
+function drawAftermathBuilding(g,o){
+ if(!inAftermath())return;const id=state.ending,{x,y,w,h,type}=o;
+ if(id===1){box(g,x+8,y+h-140,w-16,126,'#15291d5c');for(let i=0;i<3;i++)stroke(g,[[x+20+i*w/3,y+h-110],[x+85+i*w/3,y+h-65]],'#6d6e50',9);}
+ if(id===2&&['forge','boatshop','camp'].includes(type)){stroke(g,[[x+w/2-34,y+h-90],[x+w/2+35,y+h-28]],'#b29b64',10);stroke(g,[[x+w/2+34,y+h-90],[x+w/2-35,y+h-28]],'#7e7751',10);box(g,x+w/2-12,y+h-70,24,31,'#a1906d');}
+ if(id===3&&['shop','bakery','slum'].includes(type)){for(let i=0;i<4;i++)stroke(g,[[x+28+i*w/4,y+h*.55],[x+60+i*w/4,y+h-18]],'#18271d88',11);}
+ if(id===4&&['forge','boatshop','camp','tavern'].includes(type)){polygon(g,[[x+20,y+h*.55],[x+63,y+h*.55],[x+63,y+h*.55+68],[x+41,y+h*.55+54],[x+20,y+h*.55+68]],'#527565');ravenSigil(g,x+41,y+h*.55+24,.28,'#d2c38e');}
+}
+function drawAftermathAtmosphere(g){
+ if(!inAftermath())return;const id=state.ending;
+ if(id===1){for(let i=0;i<10;i++){const x=(i*197+clock*8)%(W+240)-120,y=170+(i*113)%650;oval(g,x,y,220,48,'#9673b51b');}g.fillStyle='#69527c19';g.fillRect(0,0,W,H);}
+ else if(id===3){for(let i=0;i<30;i++){const x=(i*83+clock*13)%W,y=(i*127+clock*15)%H;box(g,x,y,2,3,i%3?'#c7b78a44':'#dba46d66');}}
+ else if(id===4){const dawn=g.createLinearGradient(0,0,W,H);dawn.addColorStop(0,'#edd9a32b');dawn.addColorStop(.6,'#b5c6970a');dawn.addColorStop(1,'#061b1700');g.fillStyle=dawn;g.fillRect(0,0,W,H);}
 }
 
 
@@ -1034,7 +1298,7 @@ function buildWorldBackground(){
  }
  for(const w of world.water){bg.fillStyle=state.map==='cave'&&!flags().pipeDestroyed?'#554264':'#173e3c';bg.fillRect(w.x,w.y,w.w,w.h);for(let i=0;i<Math.floor(w.w*w.h/2800);i++){const x=w.x+seeded()*w.w,y=w.y+seeded()*w.h;stroke(bg,[[x,y],[x+20+seeded()*40,y]],'#a9c6b12a',2);}}
  for(let i=0;i<120;i++){const x=120+seeded()*(world.w-240),y=210+seeded()*(world.h-300);if(!isOutside&&seeded()<.7)box(bg,x,y,2+seeded()*5,2,'#acac7d24');}
- objectSprites.clear();
+ drawAftermathGround(bg);objectSprites.clear();
 }
 function roof(g,x,y,w,h,type){
  const dark=type==='slum'?'#3e4237':type==='lab'?'#393c44':'#263d36',mid=type==='slum'?'#676451':'#4c6357';polygon(g,[[x-16,y+95],[x+w*.5,y-35],[x+w+16,y+95],[x+w,y+h*.51],[x,y+h*.51]],dark);
@@ -1047,7 +1311,7 @@ function drawBuilding(g,o){
   drawWall(g,x,y+h*.45,w,h*.55);polygon(g,[[x-12,y+80],[x+w*.38,y-20],[x+w*.7,y+65],[x+w+12,y+150],[x+w-12,y+h*.5],[x+15,y+h*.5]],'#232f26');for(let i=0;i<15;i++){const xx=x+20+i*w/15;box(g,xx,y+130+i%3*25,10,h*.5,'#18261f');stroke(g,[[xx,y+140],[xx+50,y+h*.55]],'#62654b',5);}for(let i=0;i<5;i++){const xx=x+80+i*(w-130)/4;box(g,xx-30,y+h-130,60,112,'#15251e');box(g,xx-20,y+h-60,45,33,'#aa5937');}box(g,x+w/2-45,y+h,90,15,'#64664b');return;
  }
  if(['fort','tower','manorGate'].includes(type))drawWall(g,x,y+70,w,h-65);else{box(g,x,y+60,w,h-60,'#353f32');box(g,x+8,y+65,w-16,h-68,type==='slum'?'#4b4e3b':'#56604b');for(let xx=x+14;xx<x+w-10;xx+=48){box(g,xx,y+70,8,h-77,'#2d3428');box(g,xx+2,y+70,2,h-77,'#8c8b6045');}for(let yy=y+100;yy<y+h-8;yy+=44)box(g,x+9,yy,w-18,7,'#363a2b');}
- const closed=['bakery','shop'].includes(type)&&!flags().vannDefeated;const windows=Math.max(2,Math.floor(w/130));for(let i=0;i<windows;i++){const xx=x+38+i*(w-80)/(windows-1);if(Math.abs(xx-(x+w/2))<55)continue;box(g,xx-20,y+h-120,42,56,'#182b23');box(g,xx-15,y+h-116,32,46,closed?'#3a4534':'#b19256');box(g,xx-12,y+h-113,10,39,closed?'#56624b':'#dfb867');box(g,xx-1,y+h-115,4,43,'#5e6040');box(g,xx-18,y+h-96,37,4,'#5a5738');box(g,xx-24,y+h-64,49,8,'#7e8057');if(closed)stroke(g,[[xx-21,y+h-111],[xx+22,y+h-78]],'#9e8a60',7);}
+ const closed=inAftermath()?state.ending!==4&&['bakery','shop'].includes(type):['bakery','shop'].includes(type)&&!flags().vannDefeated;const windows=Math.max(2,Math.floor(w/130));for(let i=0;i<windows;i++){const xx=x+38+i*(w-80)/(windows-1);if(Math.abs(xx-(x+w/2))<55)continue;box(g,xx-20,y+h-120,42,56,'#182b23');box(g,xx-15,y+h-116,32,46,closed?'#3a4534':'#b19256');box(g,xx-12,y+h-113,10,39,closed?'#56624b':'#dfb867');box(g,xx-1,y+h-115,4,43,'#5e6040');box(g,xx-18,y+h-96,37,4,'#5a5738');box(g,xx-24,y+h-64,49,8,'#7e8057');if(closed)stroke(g,[[xx-21,y+h-111],[xx+22,y+h-78]],'#9e8a60',7);}
  const dx=x+w/2;box(g,dx-37,y+h-102,74,104,'#162b22');box(g,dx-29,y+h-92,58,92,'#423d2d');for(let i=0;i<4;i++)box(g,dx-24+i*13,y+h-86,9,81,'#6d6347');box(g,dx+16,y+h-47,5,5,'#d6bf7f');box(g,dx-48,y+h,96,13,'#7d8260');box(g,dx-55,y+h+11,110,10,'#42533d');
  if(type==='tower'){drawWall(g,x+110,y-140,w-220,260);box(g,x+130,y-125,w-260,130,'#1c3027');oval(g,x+w/2,y-45,43,43,'#8d946c');oval(g,x+w/2,y-45,37,37,'#263f31');stroke(g,[[x+w/2,y-70],[x+w/2,y-45],[x+w/2+24,y-45]],'#d0c18c',4);for(let i=0;i<6;i++)block(g,x+100+i*45,y-160,28,35,'#718063');}
  else if(type==='fort'||type==='manorGate'){for(let xx=x;xx<x+w;xx+=60)block(g,xx,y+30,37,44,'#788063');drawWall(g,x-35,y+30,88,h);drawWall(g,x+w-53,y+30,88,h);for(const tx of [x-35,x+w-53]){box(g,tx+29,y+100,25,67,'#122b22');for(let k=0;k<3;k++)block(g,tx-4+k*35,y+8,24,40,'#7b8565');}ravenSigil(g,dx,y+145,1.5,'#b9a772');}
@@ -1057,7 +1321,8 @@ function drawBuilding(g,o){
  if(type==='forge'){box(g,x+30,y+h-68,80,65,'#26332a');oval(g,x+70,y+h-48,25,23,'#c78643');box(g,x+33,y+h-20,75,15,'#5d6346');box(g,x+86,y+h+15,75,20,'#1a3027');polygon(g,[[x+75,y+h+8],[x+163,y+h+8],[x+151,y+h+25],[x+95,y+h+25]],'#9a9f7d');}
 }
 function drawPropRaw(g,o){const {x,y,kind}=o;switch(kind){
- case 'building':drawBuilding(g,o);break;
+ case 'building':drawBuilding(g,o);drawAftermathBuilding(g,o);break;
+ case 'gallows':case 'barricade':case 'ruin':case 'banner':case 'notice':case 'supplies':drawAftermathProp(g,o);break;
  case 'pine':case 'tree':if(o.variant===2){box(g,x-5,y-100,10,104,'#4e4b33');for(let i=0;i<7;i++)stroke(g,[[x,y-60-i*7],[x+(i%2?1:-1)*(22+i*6),y-85-i*6]],'#4b5740',5);}else pine(g,x,y,o.scale||1,o.variant===1?'#29463a':'#203e31');break;
  case 'pillar':drawPillar(g,o);break;
  case 'burner':drawBurner(g);break;
@@ -1066,12 +1331,13 @@ function drawPropRaw(g,o){const {x,y,kind}=o;switch(kind){
  case 'fountain':oval(g,x,y,115,52,'#152e26');oval(g,x,y-12,112,47,'#7b8264');oval(g,x,y-17,95,35,'#254b46');oval(g,x,y-26,54,18,'#97a28a');box(g,x-16,y-89,32,60,'#5b7257');oval(g,x,y-90,48,19,'#9a9c77');ravenSigil(g,x,y-132,.8,'#7f957b');break;
  case 'well':oval(g,x,y,48,25,'#20382b');drawWall(g,x-40,y-55,80,55);oval(g,x,y-55,40,18,'#9c9c73');oval(g,x,y-57,29,12,'#1b3432');box(g,x-45,y-130,7,85,'#665f40');box(g,x+38,y-130,7,85,'#665f40');box(g,x-50,y-135,100,9,'#969062');stroke(g,[[x,y-129],[x,y-65]],'#baad79',3);break;
  case 'statue':box(g,x-40,y-8,80,20,'#829172');box(g,x-28,y-29,56,28,'#5c735a');polygon(g,[[x-17,y-35],[x-28,y-102],[x,y-142],[x+22,y-102],[x+25,y-35]],'#768b71');box(g,x-13,y-150,27,28,'#a1aa86');stroke(g,[[x+22,y-100],[x+46,y-18]],'#c4c4a0',5);break;
- case 'stall':box(g,x-55,y-12,110,19,'#635638');for(const xx of [-51,48])box(g,x+xx,y-105,6,108,'#776e48');polygon(g,[[x-65,y-110],[x+65,y-110],[x+75,y-57],[x-75,y-57]],o.variant===1?'#4b6b61':'#7a5944');for(let i=0;i<9;i++)box(g,x-60+i*15,y-105,9,43,'#b0a87855');if(flags().vannDefeated){for(let i=0;i<7;i++)oval(g,x-42+i*13,y-19,8,5,o.variant===1?'#9dada1':'#b39562');}else{box(g,x-62,y-58,124,51,'#4e5a4655');stroke(g,[[x-55,y-55],[x+55,y-9]],'#a5956b',4);}break;
+ case 'stall':box(g,x-55,y-12,110,19,'#635638');for(const xx of [-51,48])box(g,x+xx,y-105,6,108,'#776e48');polygon(g,[[x-65,y-110],[x+65,y-110],[x+75,y-57],[x-75,y-57]],o.variant===1?'#4b6b61':'#7a5944');for(let i=0;i<9;i++)box(g,x-60+i*15,y-105,9,43,'#b0a87855');if(inAftermath()?state.ending===4:flags().vannDefeated){for(let i=0;i<7;i++)oval(g,x-42+i*13,y-19,8,5,o.variant===1?'#9dada1':'#b39562');}else{box(g,x-62,y-58,124,51,'#4e5a4655');stroke(g,[[x-55,y-55],[x+55,y-9]],'#a5956b',4);}break;
  case 'canal':box(g,x,y,o.w,o.h,'#152d29');box(g,x,y+4,o.w,o.h-8,flags().belt?'#3d6960':'#54435f');for(let i=0;i<o.w;i+=36)box(g,x+i,y-5,30,7,'#6b7758');break;
  case 'garden':box(g,x-65,y-65,150,150,'#2b3d2e');for(let i=0;i<28;i++){const xx=x-48+i%5*27,yy=y-50+Math.floor(i/5)*23;stroke(g,[[xx,yy+12],[xx,yy-1]],'#69905d',2);for(let k=0;k<4;k++){const a=k*PI/2;box(g,xx+Math.cos(a)*4,yy+Math.sin(a)*4,5,4,'#ad88b6');}}break;
  case 'cave':polygon(g,[[x-100,y+20],[x-128,y-50],[x-83,y-139],[x+23,y-178],[x+104,y-116],[x+128,y+19]],'#344c3b');polygon(g,[[x-65,y+12],[x-61,y-55],[x-33,y-101],[x+42,y-108],[x+76,y-42],[x+74,y+12]],'#0b2420');stroke(g,[[x-105,y-51],[x-66,y-111],[x-8,y-140]],'#8b947142',5);break;
  case 'grate':box(g,x-o.w/2,y-35,o.w,45,'#142c26');for(let i=0;i<o.w;i+=12)box(g,x-o.w/2+i,y-34,5,43,'#72816a');box(g,x-o.w/2,y-38,o.w,7,'#9ba27e');break;
  case 'vent':oval(g,x,y,43,23,'#152b25');oval(g,x,y-8,40,20,'#899174');oval(g,x,y-9,30,13,'#122a25');for(let i=-2;i<=2;i++)box(g,x+i*11,y-18,4,23,'#4a6650');break;
+ case 'signpost':box(g,x-4,y-72,8,79,'#635a3d');box(g,x-78,y-82,156,33,'#263e31');box(g,x-76,y-80,152,29,'#82764e');box(g,x-72,y-77,144,23,'#34483a');g.textAlign='center';g.font='14px "Microsoft JhengHei",sans-serif';g.fillStyle='#d8c89b';g.fillText(o.text,x,y-60);break;
  case 'pump':box(g,x-75,y-20,150,30,'#263e2e');box(g,x-58,y-110,116,100,'#67765b');box(g,x-46,y-105,92,83,'#354e3b');oval(g,x,y-64,35,35,'#a3a878');oval(g,x,y-64,25,25,'#334d39');stroke(g,[[x-22,y-65],[x+22,y-65]],'#9ca97c',7);box(g,x-95,y-80,30,15,'#889270');box(g,x+65,y-100,40,15,'#889270');box(g,x-17,y-155,34,50,'#718064');box(g,x-22,y-160,44,11,'#a8ad80');break;
  case 'rail':for(let i=0;i<o.w;i+=45){box(g,x-o.w/2+i,y-40,17,110,'#574e35');}box(g,x-o.w/2,y-27,o.w,5,'#91a18a');box(g,x-o.w/2,y+41,o.w,5,'#91a18a');break;
  case 'rock':polygon(g,[[x-35,y],[x-39,y-31],[x-12,y-57],[x+22,y-50],[x+39,y-15],[x+25,y+10]],'#5a6d57');polygon(g,[[x-34,y-30],[x-11,y-55],[x+20,y-48],[x+10,y-27]],'#849074');break;
@@ -1114,7 +1380,7 @@ function drawCharacter(g,n,portrait=false){
  const x=n.x||0,y=n.y||0;
  if(['hound','alpha','rat','spider','beetle','leech','croc'].includes(type)){drawCreature(g,n);return;}
  const styles={morris:['#80643c','#bfaa72','#c5ab82'],elise:['#4c4057','#9d84b4','#c1c6b2'],owl:['#4a5a4b','#82977a','#bca47c'],edwin:['#314d43','#a8bc92','#d1c4a4'],rain:['#3e4c41','#b8a16d','#beb18a'],vann:['#6d4937','#c19a6a','#bc9a72'],smith:['#4f4d35','#aa9370','#bda17a'],doctor:['#6f8271','#b9c7a8','#bca98b'],veteran:['#485c4d','#9eaa87','#baa583'],worker:['#656249','#b1a078','#b59a70'],herbalist:['#537365','#adbd9b','#c2aa83'],woman:['#746055','#b5a17c','#c4aa83'],child:['#5b7159','#b8bc8f','#bba07c'],merchant:['#6b6047','#c2b38a','#c0a87c'],rex:['#55463a','#baa16a','#af9168'],soldier:['#52614b','#a2aa83','#b9a078'],elite:['#4e5d4b','#acb58c','#b9a078'],ranger:['#4b6554','#a3b18c','#b9a078']};
- const [coat,trim,skin]=styles[type]||styles.soldier,scale=type==='child'?.68:type==='morris'?1.12:1;g.save();g.translate(x,y);g.scale(scale,scale);if(n.dead||n.state==='KNEEL'){g.translate(0,15);g.scale(1,.65);}if(n.sick){g.rotate(-PI/2);g.translate(15,5);}if(!portrait)oval(g,3,3,type==='morris'?29:22,8,'#081e1688');const step=!portrait&&(n.aggro||n.state==='CHASE'||n.ally)?Math.sin((n.walk||clock*4)*2)*3:0;
+ const [coat,trim,skin]=styles[type]||styles.soldier,scale=type==='child'?.68:type==='morris'?1.12:1;g.save();g.translate(x,y);g.scale(scale,scale);if(n.dead||n.state==='KNEEL'){g.translate(0,15);g.scale(1,.65);}if(n.sick){g.rotate(-PI/2);g.translate(15,5);}if(!portrait)oval(g,3,3,type==='morris'?29:22,8,'#081e1688');const step=!portrait&&(n.aggro||n.patrol&&n.patrolPause<=0||n.state==='CHASE'||n.ally)?Math.sin((n.walk||clock*4)*2)*3:0;
  box(g,-12,-13+step,9,16,'#24362a');box(g,4,-13-step,9,16,'#24362a');box(g,-14,-4+step,13,7,'#7e8060');box(g,3,-4-step,13,7,'#6b7455');
  polygon(g,[[-17,-48],[16,-48],[22,-12],[12,-5],[0,-11],[-12,-7],[-22,-17]],'#152b23');polygon(g,[[-14,-46],[13,-46],[18,-14],[8,-10],[-2,-15],[-15,-11],[-18,-22]],coat);box(g,-12,-38,24,20,coat);box(g,-15,-45,5,26,trim);box(g,10,-45,5,26,trim);stroke(g,[[-10,-44],[10,-21]],trim,3);box(g,-15,-19,31,5,'#3b3528');box(g,-4,-20,9,7,trim);
  if(type!=='veteran'){box(g,-23,-41,9,24,coat);box(g,-22,-21,8,9,skin);}box(g,15,-41,9,24,coat);box(g,16,-21,8,9,skin);
@@ -1128,7 +1394,7 @@ function drawCharacter(g,n,portrait=false){
  if(type==='rain'){polygon(g,[[-14,-44],[-27,-44],[-29,-30],[-16,-28]],'#c0b585');polygon(g,[[14,-44],[27,-44],[29,-30],[16,-28]],'#a4a278');box(g,-4,-41,8,20,'#e0ca91');box(g,-15,-78,31,7,'#d5bb76');for(let i=0;i<3;i++)box(g,-12+i*11,-85,6,9,'#d5bb76');}
  if(['doctor','smith','veteran','worker','rex'].includes(type)){box(g,-10,-69,22,7,type==='doctor'?'#c4ccb1':'#8d8d6d');if(type!=='worker')polygon(g,[[-8,-47],[9,-47],[6,-37],[-5,-38]],type==='rex'?'#4b4233':'#aaa98a');if(type==='rex')box(g,-8,-58,8,6,'#172820');}
  if(type==='vann'){stroke(g,[[-6,-63],[2,-49]],'#784b3b',2);box(g,-14,-69,29,8,'#76654a');}
- if(!portrait&&['morris','edwin','rain','vann','soldier','elite','ranger','rex','smith'].includes(type)){
+ if(!portrait&&!n.hanged&&['morris','edwin','rain','vann','soldier','elite','ranger','rex','smith'].includes(type)){
   const a=n.angle||0;g.save();g.translate(18,-27);g.rotate(a+(n.state==='TELEGRAPH'?-.25:n.state==='ATTACK'?.4:0));const len=type==='rain'?70:type==='morris'?45:43;box(g,0,-3,15,7,'#b59f75');box(g,17,-3,len,5,type==='morris'?'#756c4a':'#d0ddc3');box(g,16,-9,5,17,'#b09c68');if(type==='morris'){box(g,36,-5,15,10,'#a99b6c');}else polygon(g,[[len+17,-3],[len+26,-1],[len+17,3]],'#f2eed3');g.restore();
  }
  g.restore();
@@ -1151,38 +1417,44 @@ function enemyBar(g,n,isBoss=false){
 }
 function drawWorldMarker(g,i){if(!actable(i)||i.id==='confront'&&cinematic)return;const near=dist(player,i)<180;if(!near&&i.category!=='exit')return;const x=i.x,y=i.y-14,a=clock*2;g.save();g.globalAlpha=near?.9:.55;const color=i.category==='exit'?'#a7c5b0':i.category==='boss'?'#d6b578':'#d5c695';if(i.category==='exit'){stroke(g,[[x-9,y+Math.sin(a)*2],[x,y+8+Math.sin(a)*2],[x+9,y+Math.sin(a)*2]],color,2);}else if(i.category!=='npc'){g.strokeStyle=color;g.lineWidth=2;g.strokeRect(x-5,y-5,10,10);}g.restore();}
 function visible(o,margin=200){return o.x+(o.w||0)>camera.x-margin&&o.x<camera.x+W+margin&&o.y>camera.y-margin&&o.y-(o.h||170)<camera.y+H+margin;}
+function drawFieldAction(g){
+ if(!fieldAction||mode!=='PLAY')return;const a=fieldAction,x=player.x-76,y=player.y+36,p=clamp(a.elapsed/a.duration,0,1);
+ box(g,x-6,y-27,164,48,'#102b23eb');g.strokeStyle='#b5a16b';g.lineWidth=1;g.strokeRect(x-6,y-27,164,48);g.textAlign='center';g.font='13px "Microsoft JhengHei",sans-serif';g.fillStyle='#e6d6a9';g.fillText('投放火油  '+a.elapsed.toFixed(1)+' / 3.0 秒',player.x,y-9);box(g,x,y,152,8,'#314b3d');box(g,x+1,y+1,150*p,6,'#c7b47b');
+}
 function drawFrame(){
  if(!world)return;art.setTransform(.5,0,0,.5,0,0);art.clearRect(0,0,W,H);art.imageSmoothingEnabled=false;art.save();if(shake>.1&&!settings.reduced&&mode==='PLAY')art.translate(random(-shake/2,shake/2),random(-shake/2,shake/2));art.translate(-Math.round(camera.x/2)*2,-Math.round(camera.y/2)*2);art.drawImage(background,0,0,world.w,world.h);
- drawHazards(art);if(boss)drawWarning(art,boss);for(const e of enemies)if(e.phase==='WARN'){art.fillStyle='#c1705140';art.strokeStyle='#d7a57a';art.save();art.translate(e.x,e.y);art.rotate(e.angle);art.beginPath();art.moveTo(0,0);art.arc(0,0,e.reach,-PI*.55,PI*.55);art.closePath();art.fill();art.stroke();art.restore();}
- const objects=world.props.filter(o=>visible(o)).map(o=>({y:o.sortY,draw:()=>cachedProp(art,o)}));
+ drawHazards(art);if(boss)drawWarning(art,boss);for(const e of enemies){if(e.hp>0&&e.phase==='WARN'){art.fillStyle='#c1705140';art.strokeStyle='#d7a57a';art.save();art.translate(e.x,e.y);art.rotate(e.angle);art.beginPath();art.moveTo(0,0);art.arc(0,0,e.reach,-PI*.55,PI*.55);art.closePath();art.fill();art.stroke();art.restore();}}
+ const objects=[...world.props,...worldDecor].filter(o=>visible(o)&&aftermathPropVisible(o)).map(o=>({y:o.sortY,draw:()=>cachedProp(art,o)}));
  for(const n of cinematic?sceneActors:npcs)if(visible(n))objects.push({y:n.y,draw:()=>drawCharacter(art,n)});
  if(!cinematic){for(const e of enemies)if(e.hp>0&&visible(e))objects.push({y:e.y,draw:()=>{if(e.hurt>0)art.globalAlpha=.68;drawCharacter(art,e);art.globalAlpha=1;}});if(boss&&visible(boss))objects.push({y:boss.y,draw:()=>drawCharacter(art,boss)});for(const n of sceneActors)if(visible(n))objects.push({y:n.y,draw:()=>drawCharacter(art,n)});}
  for(const t of trails){art.globalAlpha=t.life*1.4;drawHero(art,t.x,t.y);art.globalAlpha=1;}objects.push({y:player.y,draw:()=>drawHero(art,player.x,player.y)});objects.sort((a,b)=>a.y-b.y).forEach(o=>o.draw());
  for(const s of slashes)drawSlash(art,s);for(const p of projectiles){glow(art,p.x,p.y-18,18,p.color+'66');art.save();art.translate(p.x,p.y-18);art.rotate(Math.atan2(p.vy,p.vx));box(art,-8,-2,17,4,p.color);box(art,-5,-1,13,2,'#f0e8cb');art.restore();}
  for(const p of particles){art.globalAlpha=clamp(p.life*2,0,1);box(art,p.x,p.y-p.z,p.size,p.size,p.color);}art.globalAlpha=1;
- for(const l of world.lights)if(visible(l,l.r))glow(art,l.x,l.y,l.r,l.color,settings.reduced?1:.95+Math.sin(clock*9+l.x)*.05);
+ for(const l of world.lights)if(visible(l,l.r)&&(!inAftermath()||state.ending!==1))glow(art,l.x,l.y,l.r,l.color,settings.reduced?1:.95+Math.sin(clock*9+l.x)*.05);
  if(state.map==='deep'){for(const o of world.props.filter(o=>o.kind==='crystal'&&visible(o)))glow(art,o.x,o.y-35,95,'#8d68c22a');}
  if(state.map==='cave'&&!flags().pipeDestroyed)glow(art,1510,430,180,'#a975b32e');
- if(state.map==='dock'&&flags().warehouseBurned){
+ if(state.map==='dock'&&flags().warehouseBurned&&!inAftermath()){
   for(let i=0;i<14;i++){const x=960+i*43,y=595-(i%3)*24,t=(clock*.7+i/14)%1;polygon(art,[[x-14,y],[x-8,y-34-Math.sin(clock*8+i)*14],[x+2,y-14],[x+16,y]],i%2?'#daa05b99':'#b86c3d99');art.globalAlpha=(1-t)*.35;box(art,x+Math.sin(t*7+i)*30,y-60-t*200,22+t*40,15+t*23,'#74856d');art.globalAlpha=1;}glow(art,1260,520,340,'#bb74413d');
  }
  if(state.map==='mine'&&flags().mineCollapsed){for(let i=0;i<12;i++){const x=690+(i%4)*65,y=720+Math.floor(i/4)*26;polygon(art,[[x-29,y],[x-20,y-40],[x+11,y-58],[x+32,y-20],[x+22,y+12]],i%2?'#5e6b52':'#7a8160');}glow(art,2150,450,200,'#a78aa13f');}
  if(flags().pump&&state.map==='mine'){for(let i=0;i<7;i++){const t=(clock*.4+i/7)%1;art.globalAlpha=(1-t)*.4;box(art,710+Math.sin(t*8)*20,965-t*80,25+t*15,12+t*12,'#bdd0b4');}art.globalAlpha=1;}
  if(boss?.hallucinated){glow(art,boss.x,boss.y-45,100,'#9f91b644');}if(boss?.state==='STUN'){for(let i=0;i<3;i++){const a=clock*2+i*TAU/3;box(art,boss.x+Math.cos(a)*22-3,boss.y-100+Math.sin(a)*5,6,3,'#e4d39b');}}
  if(!cinematic){for(const i of interactables)drawWorldMarker(art,i);for(const n of npcs)if(n.name&&dist(player,n)<120&&!n.dead){art.textAlign='center';art.font='12px "Microsoft JhengHei",sans-serif';art.fillStyle='#122c22';art.fillText(n.name,n.x+1,n.y-80+1);art.fillStyle='#d6dabd';art.fillText(n.name,n.x,n.y-80);}for(const e of enemies)if(e.hp>0&&(e.aggro||e.hurt>0))enemyBar(art,e);if(boss&&boss.state!=='DEAD')enemyBar(art,boss,true);}
+ drawFieldAction(art);
  for(const e of effects){art.globalAlpha=clamp(e.life*2,0,1);art.textAlign='center';art.font='bold '+e.size+'px "Microsoft JhengHei",sans-serif';art.fillStyle='#10251c';art.fillText(e.text,e.x+2,e.y+2);art.fillStyle=e.color;art.fillText(e.text,e.x,e.y);}art.globalAlpha=1;art.restore();
- if(outside())drawWeather(art);else{for(let i=0;i<14;i++){const x=(i*193+Math.sin(clock*.2+i)*30)%W,y=(i*137+clock*7)%H;box(art,x,y,2,2,'#d2ca9238');}}
+ if(outside()){if(!inAftermath()||state.ending!==4)drawWeather(art);}else{for(let i=0;i<14;i++){const x=(i*193+Math.sin(clock*.2+i)*30)%W,y=(i*137+clock*7)%H;box(art,x,y,2,2,'#d2ca9238');}}
  const vig=art.createRadialGradient(W/2,H/2,220,W/2,H/2,720);vig.addColorStop(0,'#08170d00');vig.addColorStop(1,'#07140f66');art.fillStyle=vig;art.fillRect(0,0,W,H);
- drawNavigation(art);if(damageTint>0&&!settings.reduced){art.fillStyle='rgba(133,48,35,'+damageTint*.35+')';art.fillRect(0,0,W,H);}if(flash>0&&!settings.reduced){art.fillStyle='rgba(222,224,190,'+flash*.3+')';art.fillRect(0,0,W,H);}if(transition>0){art.fillStyle='rgba(5,15,12,'+clamp(transition/.55,0,.9)+')';art.fillRect(0,0,W,H);}
+ drawAftermathAtmosphere(art);drawNavigation(art);if(damageTint>0&&!settings.reduced){art.fillStyle='rgba(133,48,35,'+damageTint*.35+')';art.fillRect(0,0,W,H);}if(flash>0&&!settings.reduced){art.fillStyle='rgba(222,224,190,'+flash*.3+')';art.fillRect(0,0,W,H);}if(transition>0){art.fillStyle='rgba(5,15,12,'+clamp(transition/.55,0,.9)+')';art.fillRect(0,0,W,H);}
  ctx.imageSmoothingEnabled=false;ctx.clearRect(0,0,W,H);ctx.drawImage(scene,0,0,W,H);if(mode==='PLAY'||mode==='DIALOGUE')drawMinimap();
 }
-function drawNavigation(g){if(mode!=='PLAY'||cinematic||!tracked||['done','failed'].includes(state.quests[tracked]))return;const target=objectivePoint(tracked),p=navigationPoint(target);if(!p)return;const x=p.x-camera.x,y=p.y-camera.y;if(x>100&&x<W-100&&y>130&&y<H-110){g.strokeStyle='#d9c48377';g.lineWidth=2;const a=clock*2;g.beginPath();g.arc(x,y,18+Math.sin(a)*2,0,TAU);g.stroke();return;}const a=Math.atan2(y-H/2,x-W/2),r=Math.min(Math.abs((W/2-65)/Math.cos(a)),Math.abs((H/2-90)/Math.sin(a)));const xx=W/2+Math.cos(a)*r,yy=H/2+Math.sin(a)*r;g.save();g.translate(xx,yy);g.rotate(a);polygon(g,[[9,0],[-7,-6],[-3,0],[-7,6]],'#dbca96');g.restore();}
+function drawNavigation(g){if(mode!=='PLAY'||cinematic||!tracked||!inAftermath()&&['done','failed'].includes(state.quests[tracked]))return;const target=objectivePoint(tracked),p=navigationPoint(target);if(!p)return;const x=p.x-camera.x,y=p.y-camera.y;if(x>100&&x<W-100&&y>130&&y<H-110){g.strokeStyle='#d9c48377';g.lineWidth=2;const a=clock*2;g.beginPath();g.arc(x,y,18+Math.sin(a)*2,0,TAU);g.stroke();return;}const a=Math.atan2(y-H/2,x-W/2),r=Math.min(Math.abs((W/2-65)/Math.cos(a)),Math.abs((H/2-90)/Math.sin(a)));const xx=W/2+Math.cos(a)*r,yy=H/2+Math.sin(a)*r;g.save();g.translate(xx,yy);g.rotate(a);polygon(g,[[9,0],[-7,-6],[-3,0],[-7,6]],'#dbca96');g.restore();}
 function drawMinimap(){const c=$('minimap').getContext('2d'),sx=134/world.w,sy=86/world.h;c.clearRect(0,0,134,86);c.fillStyle='#162d25';c.fillRect(0,0,134,86);c.fillStyle='#56634d';for(const p of world.paths)c.fillRect(p.x*sx,p.y*sy,p.w*sx,p.h*sy);c.fillStyle='#839174';for(const p of world.props.filter(p=>p.kind==='building'))c.fillRect(p.x*sx,p.y*sy,p.w*sx,p.h*sy);c.strokeStyle='#bac4a04a';c.strokeRect(camera.x*sx,camera.y*sy,W*sx,H*sy);for(const i of interactables.filter(i=>i.category==='exit')){c.fillStyle='#84b6a1';c.fillRect(i.x*sx-1,i.y*sy-1,3,3);}const target=navigationPoint(objectivePoint(tracked));if(target){c.fillStyle='#ddc480';c.fillRect(target.x*sx-2,target.y*sy-2,4,4);}if(boss){c.fillStyle='#c88a69';c.fillRect(boss.x*sx-2,boss.y*sy-2,4,4);}c.fillStyle='#ecedd0';c.beginPath();c.arc(player.x*sx,player.y*sy,2.3,0,TAU);c.fill();}
 
 
 // ---- ui.js ----
 function questHint(id){const f=flags();if(state.quests[id]==='done')return '已完成。結果已寫入任務狀態點。';if(state.quests[id]==='failed')return '已失敗。後果保留在世界中。';switch(id){
- case 'morris':return f.morrisDown?'敵人已倒下，按 E 清算血債並收取鑰匙。':state.factions.Dock?'碼頭同盟已就位。進入倉庫挑戰莫里斯。':'前往苦水碼頭。可強攻倉庫，或先調查小傑哥哥的下落。';
+ case 'prologue':return f.prologueStage==='tavern'?'走到櫃檯，按 E 向巴納比打聽瓦倫領主，出示父親留下的礦契。':'沿街走到黑羽酒館門口，按 E 推門進去。附近道路已因宵禁封鎖。';
+ case 'morris':return f.morrisDown?'敵人已倒下，按 E 清算血債並收取鑰匙。':f.warehouseBurned?'護衛忙於正門救火。到倉庫西側貨運巷，追擊受傷的莫里斯。':f.oilPoured?'後牆火油已佈置。尚未點火，仍可尋找帳本；回通風口決定是否焚倉。':state.factions.Dock?'碼頭同盟已就位。進入倉庫挑戰莫里斯。':f.oil?'走西側貨箱巷，繞到北面後牆通風口。避開守衛，原地投油 3 秒後決定是否點火。':'前往苦水碼頭。可強攻倉庫，或先調查小傑哥哥的下落。';
  case 'elise':return f.eliseDown?'到中央通風井旁搜取二號鑰匙。':f.serumSwapped?'血清已調包。從正門進入工坊，等伊莉絲半血喝藥。':'前往斷骨礦坑。幫助巴頓能找到潛入藥櫃的暗門。';
  case 'bark':return f.barkDown?'走近倒下的敵人或吊橋西端，收起三號鑰匙。':f.bridgeWeak?'越過吊橋到東端敲鐘，誘他衝鋒；也可進校場決鬥。':f.smith?'用第三擊劈碎重甲。若有香灰，先撒進校場西北香爐。':'灰岩哨站在高地北側。鐵匠與鎮醫知道屠夫的弱點。';
  case 'truthA':return !f.docTalk?'到葛蘭診所，擊退兩名收保護費的衛兵。':!f.jailKey?'到鎮中心西側鐵匠鋪，找霍克取得備用鑰匙。':!f.apprentice||!f.journal?'從高地西側暗門進黑牢。救亞倫，搜索刑訊室暗櫃。':!state.factions.Town?'帶亞倫的消息與驗屍手札，返回鐵匠鋪找霍克。':!state.evidence.A?'帶著手札，調查迷霧荒野鐘樓西側的花圃。':'把調查結果交給霍克與葛蘭。';
@@ -1196,10 +1468,12 @@ function questHint(id){const f=flags();if(state.quests[id]==='done')return '已�
 function syncHUD(){
  if(!state||!world)return;$('level').textContent='Lv. '+(player.level||1);$('hp-text').textContent=Math.ceil(player.hp)+' / '+player.maxHp;$('attack-text').textContent='劍傷 '+player.atk;const hp=100*player.hp/player.maxHp;$('hp-fill').style.width=hp+'%';$('hp-lag').style.width=hp+'%';$('potions').textContent=player.potions+' / '+player.potionMax;$('dodge-gem').classList.toggle('cool',player.dodgeCd>0);$('dodge-text').textContent=player.dodgeCd>0?'閃避 '+player.dodgeCd.toFixed(1)+'s':'閃避就緒';$('location-name').textContent=world.name;$('location-en').textContent=world.en;$('weather').textContent=world.subtitle+' · '+DIFFICULTY[settings.difficulty].name;
  if(!tracked||['done','failed','hidden'].includes(state.quests[tracked]))tracked=(state.quests.finale==='active'?'finale':LEVEL_QUESTS.find(id=>state.quests[id]==='active'))||'finale';
- $('objective-kind').textContent=QUESTS[tracked].kind+' / 追蹤';$('objective-title').textContent=QUESTS[tracked].name;$('objective-text').textContent=questHint(tracked);$('key-text').textContent='鑰匙 '+state.keys.length+'/3　·　真相 '+truthCount()+'/3　·　同盟 '+factionCount()+'/3';$('skill-label').hidden=!flags().sword;$('hud').classList.toggle('combat',inCombat());$('act-label').textContent=cinematic?'序章 · 雨夜的折翼':state.ending?'終章 · '+ENDINGS[state.ending].title:state.enteredFinal?'終幕 · 鴉棲鎮的審判':'第二幕 · '+world.name;[...$('combo').children].forEach((e,i)=>e.classList.toggle('lit',i<player.combo));
+ $('objective-kind').textContent=QUESTS[tracked].kind+' / 追蹤';$('objective-title').textContent=QUESTS[tracked].name;$('objective-text').textContent=questHint(tracked);$('key-text').textContent='鑰匙 '+state.keys.length+'/3　·　真相 '+truthCount()+'/3　·　同盟 '+factionCount()+'/3';$('skill-label').hidden=!flags().sword;$('hud').classList.toggle('combat',inCombat());$('act-label').textContent=isIntro()?'序章 · 雨夜的折翼':state.ending?'終章 · '+ENDINGS[state.ending].title:state.enteredFinal?'終幕 · 鴉棲鎮的審判':'第二幕 · '+world.name;[...$('combo').children].forEach((e,i)=>e.classList.toggle('lit',i<player.combo));
+ $('hud').classList.toggle('prologue',isIntro());$('intro-skip').hidden=!isIntro()||cinematic;
+ if(inAftermath()){const a=AFTERMATH[state.ending],sites=aftermathSites(),seen=sites.filter(p=>flags()['afterRead:'+state.ending+':'+p.id]).length;$('objective-kind').textContent='後日談 / 自由活動';$('objective-title').textContent=a.name;$('objective-text').textContent=a.hint;$('key-text').textContent='已記錄 '+seen+'/'+sites.length+' 處地方消息 · 探索進度各自保存';$('weather').textContent=a.time+' · '+DIFFICULTY[settings.difficulty].name;$('act-label').textContent='後日談 · '+ENDINGS[state.ending].title;}
 }
 function element(tag,className,text){const e=document.createElement(tag);if(className)e.className=className;if(text!==undefined)e.textContent=text;return e;}
-function renderJournal(){const root=$('journal-content');root.replaceChildren();for(const b of document.querySelectorAll('[data-tab]'))b.classList.toggle('selected',b.dataset.tab===journalTab);
+function renderJournal(){const root=$('journal-content');root.replaceChildren();if(inAftermath()){const card=element('section','evidence-item');card.append(element('h3','',ENDINGS[state.ending].title+' · 後日談'),element('p','',AFTERMATH[state.ending].hint));for(const p of aftermathSites())card.append(element('p','',(flags()['afterRead:'+state.ending+':'+p.id]?'◆ 已記錄：':'◇ 尚未走訪：')+p.name+' / '+MAPS[p.map].name));root.append(card);}for(const b of document.querySelectorAll('[data-tab]'))b.classList.toggle('selected',b.dataset.tab===journalTab);
  if(journalTab==='quests'){
   root.append(element('p','journal-copy','任務正式完成或失敗時建立狀態點。九個中段任務成功各升一級，小兵不提供經驗。'));
   const order=[...Object.keys(QUESTS)].sort((a,b)=>['active','hidden','done','failed'].indexOf(state.quests[a])-['active','hidden','done','failed'].indexOf(state.quests[b]));
@@ -1210,7 +1484,7 @@ function renderJournal(){const root=$('journal-content');root.replaceChildren();
   for(const [id,title,desc] of [['Town','下城鐵匠民兵','救出亞倫，帶回手札，爭取霍克的支持。'],['Dock','苦水碼頭走私客','帶雙重帳本副頁給雷克，談妥攻守同盟。'],['Mine','斷骨礦工工會','修復抽水機，將遺囑與兒子的銘牌交給巴頓。']]){const c=element('div','evidence-item');c.append(element('h3','',(state.factions[id]?'◆ ':'◇ ')+title));c.append(element('p','',state.factions[id]?'同盟已成立。居民會在莊園之夜響應。':id==='Mine'&&flags().mineCollapsed?'礦道塌方，礦工已不再支持你。':desc));root.append(c);}
   const items=[['contract','父親的星銀礦契'],['purse','旅人盤纏'],['jailKey','黑牢備用鑰匙'],['ring','書房暗門戒指'],['journal','老鎮醫的驗屍手札'],['nameplate','巴頓兒子的礦工銘牌'],['ash','致幻香灰'],['smith','重甲卡榫情報'],['serumSwapped','已調包的抗毒血清'],['alchemy','高階藥劑與強酸配方'],['belt','擴容藥劑腰帶（5 瓶）'],['sword','白鴉劍意（第三擊範圍 +30%）']];root.append(element('div','section-label','隨身物品與永久能力'));for(const [id,name] of items)if(flags()[id])root.append(element('div','check-row done','✦ '+name));
  }else{
-  const c=element('div','guide-copy');const sections=[['劍與步伐','WASD / 方向鍵：移動。J 或左鍵：三連擊；滑鼠可瞄準，鍵盤會朝面向與近身敵人揮劍。空白鍵 / K：向移動方向翻滾，前 0.25 秒無敵、冷卻 1.2 秒。H：喝一瓶生命藥水。E：交談、調查、進出區域。'],['預警與破綻','紅色範圍在蓄力結束時造成傷害，提早離開或翻滾穿過。紫色區域持續傷害並減速。銀光代表雷恩的格擋，停止正面揮砍或繞到背後。金色失衡期間，第三擊重斬能造成更多傷害。'],['在鎮中心重新站起來','診所免費恢復生命與藥水，護送逃兵後，酒館另有免費回血烈酒。休息不建立狀態點，普通巡邏兵與野獸會重生。切換地圖不會讓已死敵人立刻重生。'],['任務狀態點','每個任務成功或正式失敗，保存整個世界；死亡回鎮中心，還原最近狀態點後的行動。一般物品拾取不會單獨存檔。焚毀證據導致任務失敗時，該後果也會被保存。'],['莊園之前與之後','第三把鑰匙只會開放終局。親自確認入場，才封閉未完成支線。終局兩場戰鬥屬於同一任務，中途死亡從第一階段再戰。回顧功能可另行返回入場前快照，嘗試其他結局。'],['難度與存檔','暫停選單可在戰鬥外切換難度：故事傷害 70%、預警 125%；標準 100%；挑戰傷害 130%、預警 90%。存檔保存在目前瀏覽器，可匯出 JSON 備份並在另一個瀏覽器匯入。'],['道路與地圖','G 開啟區域地圖。白點是你，金色是手札追蹤目標。鎮中心北側通灰岩高地，東北通礦坑，東側通碼頭，西側通荒野。室內入口與暗道需要走近並按 E。']];for(const [h,t] of sections){c.append(element('h3','',h),element('p','',t));}root.append(c);
+  const c=element('div','guide-copy');const sections=[['劍與步伐','WASD / 方向鍵：移動。J 或左鍵：三連擊；滑鼠可瞄準，鍵盤會朝面向與近身敵人揮劍。空白鍵 / K：向移動方向翻滾，前 0.25 秒無敵、冷卻 1.2 秒。H：喝一瓶生命藥水。E：交談、調查、進出區域。'],['預警與破綻','紅色範圍在蓄力結束時造成傷害，提早離開或翻滾穿過。紫色區域持續傷害並減速。銀光代表雷恩的格擋，停止正面揮砍或繞到背後。金色失衡期間，第三擊重斬能造成更多傷害。'],['碼頭潛入','守衛靠近就會追擊，不受面朝方向或遮蔽物影響。拉開足夠距離可甩開追兵。拿到灰梟火油後，沿西側貨箱巷到北面後牆通風口，按 E 原地投油 3 秒；移動、揮劍、閃避、受傷或被發現會中斷。完成後另外確認點火，帳本焚毀仍有永久後果。'],['在鎮中心重新站起來','診所免費恢復生命與藥水，護送逃兵後，酒館另有免費回血烈酒。休息不建立狀態點，普通巡邏兵與野獸會重生。切換地圖不會讓已死敵人立刻重生。'],['任務狀態點','每個任務成功或正式失敗，保存整個世界；死亡回鎮中心，還原最近狀態點後的行動。一般物品拾取不會單獨存檔。焚毀證據導致任務失敗時，該後果也會被保存。'],['莊園之前與之後','第三把鑰匙只會開放終局。親自確認入場，才封閉未完成支線。終局兩場戰鬥屬於同一任務，中途死亡從第一階段再戰。回顧功能可另行返回入場前快照，嘗試其他結局。'],['難度與存檔','暫停選單可在戰鬥外切換難度：故事傷害 70%、預警 125%；標準 100%；挑戰傷害 130%、預警 90%；浴血敵人生命與傷害 200%，速度與預警維持標準。存檔保存在目前瀏覽器，可匯出 JSON 備份並在另一個瀏覽器匯入。'],['道路與地圖','G 開啟區域地圖。白點是你，金色是手札追蹤目標。鎮中心北側通灰岩高地，東北通礦坑，東側通碼頭，西側通荒野。室內入口與暗道需要走近並按 E。']];for(const [h,t] of sections){c.append(element('h3','',h),element('p','',t));}root.append(c);
  }
 }
 function journalToggle(){if(mode==='JOURNAL'){mode='PLAY';$('journal').hidden=true;focusGame();return;}if(mode!=='PLAY')return;clearInput();mode='JOURNAL';$('journal').hidden=false;renderJournal();}
@@ -1226,12 +1500,13 @@ function drawFullMap(){
 }
 function pause(){
  if(mode==='PAUSE'){mode=previousMode;$('pause-screen').hidden=true;if(mode==='DIALOGUE')$('dialogue').hidden=false;focusGame();return;}
- if(!['PLAY','DIALOGUE','JOURNAL','MAP'].includes(mode))return;previousMode=mode==='JOURNAL'||mode==='MAP'?'PLAY':mode;clearInput();$('journal').hidden=true;$('map-screen').hidden=true;$('dialogue').hidden=true;mode='PAUSE';$('pause-screen').hidden=false;$('difficulty-select').value=settings.difficulty;$('difficulty-select').disabled=inCombat();$('difficulty-note').textContent=inCombat()?'目前仍在戰鬥中，離開戰鬥後才能更改難度。':'戰鬥外可以切換；所有難度皆可達成四種結局。';$('checkpoint-name').textContent=checkpoint?Object.entries(checkpoint.state.quests).filter(([id,status])=>status==='done').map(([id])=>QUESTS[id].name).at(-1)||'最近任務結算':'序章尚未結束';sound.sync();
+ if(!['PLAY','DIALOGUE','JOURNAL','MAP'].includes(mode))return;previousMode=mode==='JOURNAL'||mode==='MAP'?'PLAY':mode;clearInput();$('journal').hidden=true;$('map-screen').hidden=true;$('dialogue').hidden=true;mode='PAUSE';$('pause-screen').hidden=false;$('difficulty-select').value=settings.difficulty;$('difficulty-select').disabled=inCombat();$('difficulty-note').textContent=inCombat()?'目前仍在戰鬥中，離開戰鬥後才能更改難度。':'戰鬥外可以切換；所有難度皆可達成四種結局。';$('checkpoint-name').textContent=checkpoint?Object.entries(checkpoint.state.quests).filter(([id,status])=>status==='done').map(([id])=>QUESTS[id].name).at(-1)||'最近任務結算':'序章尚未結束';$('pause-aftermath').hidden=!Object.keys(epilogues).length;sound.sync();
 }
 let confirmCallback=null,confirmBack='TITLE';
 function confirmInGame(title,text,callback){confirmBack=mode;confirmCallback=callback;$('confirm-title').textContent=title;$('confirm-text').textContent=text;$('confirm-screen').hidden=false;mode='CONFIRM';clearInput();}
-function exportSave(){if(!checkpoint){toast('序章結束後才會建立第一個狀態點。');return;}const data=JSON.stringify({format:'ravenroost-save',version:1,checkpoint,preFinal,endingGallery,settings},null,2),a=document.createElement('a'),url=URL.createObjectURL(new Blob([data],{type:'application/json'}));a.href=url;a.download='ravenroost-save.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('已匯出最近任務狀態點與莊園前快照。',4);}
-async function importSave(file){if(!file)return;if(file.size>2e6){toast('存檔檔案太大，請選擇遊戲匯出的 JSON。',4);return;}try{const data=JSON.parse(await file.text());if(data.format!=='ravenroost-save'||!validSnapshot(data.checkpoint))throw Error('invalid');confirmInGame('載入這份存檔？','會取代目前的自動存檔。角色與世界將還原到匯入檔案的任務狀態點。',()=>{checkpoint=data.checkpoint;preFinal=validSnapshot(data.preFinal)?data.preFinal:null;endingGallery=Array.isArray(data.endingGallery)?data.endingGallery.filter(n=>[1,2,3,4].includes(n)):[];persist();loadSnapshot(checkpoint);toast('存檔已載入。');});}catch{toast('無法辨識這份存檔，請選擇遊戲匯出的完整 JSON。',5);}}
+function exportSave(){if(!checkpoint){toast('序章結束後才會建立第一個狀態點。');return;}saveAftermathPosition();const data=JSON.stringify({format:'ravenroost-save',version:1,checkpoint,preFinal,endingGallery,epilogues,reviewingFinal,settings},null,2),a=document.createElement('a'),url=URL.createObjectURL(new Blob([data],{type:'application/json'}));a.href=url;a.download='ravenroost-save.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('已匯出最近任務狀態點與莊園前快照。',4);}
+async function importSave(file){if(!file)return;if(file.size>2e6){toast('存檔檔案太大，請選擇遊戲匯出的 JSON。',4);return;}try{const data=JSON.parse(await file.text());if(data.format!=='ravenroost-save'||!validSnapshot(data.checkpoint))throw Error('invalid');confirmInGame('載入這份存檔？','會取代目前的自動存檔。角色與世界將還原到匯入檔案的任務狀態點。',()=>{checkpoint=data.checkpoint;preFinal=validSnapshot(data.preFinal)?data.preFinal:null;endingGallery=Array.isArray(data.endingGallery)?data.endingGallery.filter(n=>[1,2,3,4].includes(n)):[];epilogues=validEpilogues(data.epilogues);reviewingFinal=!!data.reviewingFinal;applyImportedPreferences(data.settings);persist();loadSnapshot(checkpoint);toast('存檔已載入。');});}catch{toast('無法辨識這份存檔，請選擇遊戲匯出的完整 JSON。',5);}}
+function applyImportedPreferences(p){if(!p||typeof p!=='object')return;if(DIFFICULTY[p.difficulty])settings.difficulty=p.difficulty;for(const k of ['masterVolume','effectsVolume','ambientVolume'])if(Number.isFinite(p[k]))settings[k]=clamp(p[k],0,1);for(const k of ['sound','reduced'])if(typeof p[k]==='boolean')settings[k]=p[k];savePreferences();}
 function pointOnCanvas(e){const r=canvas.getBoundingClientRect();let width=r.width,height=r.height,ox=0,oy=0;if(document.fullscreenElement){const s=Math.min(width/W,height/H);ox=(width-W*s)/2;oy=(height-H*s)/2;width=W*s;height=H*s;}return {x:(e.clientX-r.left-ox)*W/width,y:(e.clientY-r.top-oy)*H/height};}
 function keyboard(e){
  const k=e.key.toLowerCase();if(e.target&&['SELECT','INPUT','TEXTAREA'].includes(e.target.tagName)&&!['escape','tab'].includes(k))return;
@@ -1245,12 +1520,13 @@ function keyboard(e){
 }
 async function fullscreen(){try{if(document.fullscreenElement)await document.exitFullscreen();else await $('stage').requestFullscreen();}catch{toast('此瀏覽器未允許全螢幕，可使用瀏覽器的放大模式。');}}
 function bindUI(){
- $('start-btn').addEventListener('click',()=>saveData?confirmInGame('展開新的旅途？','新的序章結束後，將取代這個瀏覽器的自動存檔。已收藏的結局仍會保留。',newGame):newGame());$('continue-btn').addEventListener('click',continueGame);$('revisit-btn').addEventListener('click',replayFinal);
+ $('start-btn').addEventListener('click',()=>saveData?confirmInGame('展開新的旅途？','新的序章結束後，將取代這個瀏覽器的自動存檔。已收藏的結局仍會保留。',newGame):newGame());$('continue-btn').addEventListener('click',continueGame);$('revisit-btn').addEventListener('click',replayFinal);$('aftermath-btn').addEventListener('click',openAftermathArchive);$('pause-aftermath').addEventListener('click',openAftermathArchive);$('intro-skip').addEventListener('click',skipIntro);
  $('retry-btn').addEventListener('click',retryDeath);$('death-title-btn').addEventListener('click',returnTitle);$('pause-title-btn').addEventListener('click',returnTitle);$('resume-btn').addEventListener('click',pause);$('pause-btn').addEventListener('click',pause);$('journal-btn').addEventListener('click',journalToggle);$('close-journal').addEventListener('click',journalToggle);$('map-btn').addEventListener('click',mapToggle);$('minimap-btn').addEventListener('click',mapToggle);$('close-map').addEventListener('click',mapToggle);$('sound-btn').addEventListener('click',toggleSound);$('fullscreen-btn').addEventListener('click',fullscreen);
  $('sound-check').addEventListener('change',()=>{settings.sound=$('sound-check').checked;sound.init();savePreferences();});$('motion-check').addEventListener('change',()=>{settings.reduced=$('motion-check').checked;savePreferences();});
- for(const id of ['difficulty-select','title-difficulty']){$(id).value=settings.difficulty;$(id).addEventListener('change',()=>{if(id==='difficulty-select'&&inCombat()){$(id).value=settings.difficulty;return;}settings.difficulty=$(id).value;$('difficulty-select').value=settings.difficulty;$('title-difficulty').value=settings.difficulty;savePreferences();});}
+ for(const id of ['difficulty-select','title-difficulty']){$(id).value=settings.difficulty;$(id).addEventListener('change',()=>{if(id==='difficulty-select'&&inCombat()){$(id).value=settings.difficulty;return;}changeDifficulty($(id).value);$('difficulty-select').value=settings.difficulty;$('title-difficulty').value=settings.difficulty;});}
+ for(const [id,key] of [['master-volume','masterVolume'],['effects-volume','effectsVolume'],['ambient-volume','ambientVolume']])$(id).addEventListener('input',()=>{settings[key]=clamp(Number($(id).value)/100,0,1);sound.init();savePreferences();});
  for(const b of document.querySelectorAll('[data-tab]'))b.addEventListener('click',()=>{journalTab=b.dataset.tab;renderJournal();});
- $('skip-prologue').addEventListener('click',()=>{if(cinematic){dialogue=null;$('dialogue').hidden=true;finishPrologue();}});$('ending-replay').addEventListener('click',replayFinal);$('ending-title').addEventListener('click',returnTitle);
+ $('skip-prologue').addEventListener('click',skipIntro);$('ending-explore').addEventListener('click',enterAftermath);$('ending-replay').addEventListener('click',replayFinal);$('ending-title').addEventListener('click',returnTitle);
  $('confirm-yes').addEventListener('click',()=>{const f=confirmCallback;confirmCallback=null;$('confirm-screen').hidden=true;mode=confirmBack;f?.();});$('confirm-no').addEventListener('click',()=>{confirmCallback=null;$('confirm-screen').hidden=true;mode=confirmBack;focusGame();});
  $('export-btn').addEventListener('click',exportSave);$('import-btn').addEventListener('click',()=>$('import-file').click());$('import-file').addEventListener('change',async e=>{await importSave(e.target.files?.[0]);e.target.value='';});
  document.addEventListener('keydown',keyboard);document.addEventListener('keyup',e=>{const k=e.key.toLowerCase();keys.delete(k);if(k==='j')heldAttack=false;});window.addEventListener('blur',()=>{clearInput();if(mode==='PLAY')pause();});document.addEventListener('visibilitychange',()=>{if(document.hidden&&mode==='PLAY')pause();});
