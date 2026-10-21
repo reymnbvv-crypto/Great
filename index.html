@@ -26,8 +26,16 @@
 @media(max-width:1000px){.actionbar{gap:9px}.actionbar .action{font-size:9px;gap:5px}.actionbar .move-hint:last-child{display:none}.skill-label{bottom:47px;left:16px}.objective{top:160px}}
 @media(max-width:650px){.stamina-row{gap:5px;margin:4px 0 5px;font-size:8px}.stamina-track{height:5px}.actionbar{gap:7px}.actionbar .action{font-size:8px}.actionbar .key{font-size:8px;height:19px;padding:0 4px}.actionbar .move-hint{display:none}.skill-label{bottom:43px;font-size:8px}.objective{top:120px}.touch-actions{max-width:174px;flex-wrap:wrap;justify-content:flex-end}.touch-actions button{width:43px;height:38px;font-size:10px}.touch-actions .attack-touch{width:55px;height:48px}}
 @media(prefers-reduced-motion:reduce){.stamina-fill{transition:none}}
+
+/* Touch controls own their hold gestures; keep browser text selection and callouts outside them. */
+.touch,.touch *{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;-webkit-user-drag:none}
+.touch button{touch-action:none;-webkit-appearance:none;appearance:none;-webkit-tap-highlight-color:transparent}
+.dpad button{display:grid;place-items:center;padding:0;line-height:1}
+.dpad .direction-icon{display:block;width:18px;height:18px;fill:currentColor;stroke:none;pointer-events:none;transform:rotate(var(--direction-turn,0deg))}
+.touch button:hover{filter:none}
+.touch button.pressed{background:#496756;border-color:#e2deb0;box-shadow:inset 0 0 0 1px #c5d5a84d}
 </style></head><body><main class="app">
- <header class="masthead"><div class="identity"><svg class="sigil" viewBox="0 0 44 46" aria-hidden="true"><path fill="none" stroke="currentColor" d="M22 2 40 12v20L22 44 4 32V12Z"/><path fill="currentColor" d="m9 15 10 4 3-7 4 3 7-1-5 5 6 7-11-3-4 9-2-8-8-2 6-2Z"/></svg><div><h1>鴉棲鎮的灰燼</h1><small>ASHES OF RAVENROOST</small></div></div><div class="mast-right"><span id="act-label">一座小鎮，四種命運</span><span class="version">COMPLETE EDITION / 1.3.2</span></div></header>
+ <header class="masthead"><div class="identity"><svg class="sigil" viewBox="0 0 44 46" aria-hidden="true"><path fill="none" stroke="currentColor" d="M22 2 40 12v20L22 44 4 32V12Z"/><path fill="currentColor" d="m9 15 10 4 3-7 4 3 7-1-5 5 6 7-11-3-4 9-2-8-8-2 6-2Z"/></svg><div><h1>鴉棲鎮的灰燼</h1><small>ASHES OF RAVENROOST</small></div></div><div class="mast-right"><span id="act-label">一座小鎮，四種命運</span><span class="version">COMPLETE EDITION / 1.3.3</span></div></header>
  <section class="stage" id="stage" aria-label="鴉棲鎮的灰燼遊戲區域">
   <canvas id="game" width="1280" height="800" tabindex="0" aria-label="俯視角動作遊戲。WASD 移動，Shift 按住疾跑，J 或左鍵揮劍，右鍵或 L 按住施展已習得的迴旋劍舞，空白鍵翻滾，E 互動，H 喝藥，G 地圖，Tab 任務手札。">請使用支援 Canvas 的瀏覽器。</canvas><div class="vignette"></div>
   <button class="intro-skip" id="intro-skip" hidden>略過序章</button>
@@ -36,7 +44,7 @@
    <div class="actionbar"><span class="action move-hint"><span class="key">WASD</span>移動</span><span class="action"><span class="key">J / 左鍵</span>揮劍 <span class="combo" id="combo"><i></i><i></i><i></i></span></span><span class="action sprint-hint"><span class="key">SHIFT</span>疾跑</span><span class="action" id="dance-hint" hidden><span class="key">右鍵 / L</span>劍舞</span><span class="action"><span class="key">SPACE</span>翻滾</span><span class="action"><span class="key">E</span>互動</span><span class="action"><span class="key">H</span>藥水</span><span class="action move-hint"><span class="key">G</span>地圖</span></div>
   </div>
   <div class="interact" id="interact" hidden><span class="key">E</span><span id="interact-text"></span></div><div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
-  <div class="touch" id="touch-controls" hidden><div class="dpad"><button style="grid-area:1/2" data-move="w" aria-label="向上">▲</button><button style="grid-area:2/1" data-move="a" aria-label="向左">◀</button><button style="grid-area:2/3" data-move="d" aria-label="向右">▶</button><button style="grid-area:3/2" data-move="s" aria-label="向下">▼</button></div><div class="touch-actions"><button id="touch-interact">互動</button><button id="touch-potion">藥水</button><button id="touch-sprint" aria-label="按住疾跑">疾跑</button><button id="touch-spin" aria-label="按住施展迴旋劍舞" hidden>劍舞</button><button id="touch-dodge">閃避</button><button class="attack-touch" id="touch-attack">揮劍</button></div></div>
+  <div class="touch" id="touch-controls" hidden><div class="dpad"><button type="button" id="touch-up" style="grid-area:1/2;--direction-turn:0deg" data-move="w" aria-label="向上"><svg class="direction-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4 21 20H3Z"/></svg></button><button type="button" id="touch-left" style="grid-area:2/1;--direction-turn:-90deg" data-move="a" aria-label="向左"><svg class="direction-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4 21 20H3Z"/></svg></button><button type="button" id="touch-right" style="grid-area:2/3;--direction-turn:90deg" data-move="d" aria-label="向右"><svg class="direction-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4 21 20H3Z"/></svg></button><button type="button" id="touch-down" style="grid-area:3/2;--direction-turn:180deg" data-move="s" aria-label="向下"><svg class="direction-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4 21 20H3Z"/></svg></button></div><div class="touch-actions"><button id="touch-interact">互動</button><button id="touch-potion">藥水</button><button id="touch-sprint" aria-label="按住疾跑">疾跑</button><button id="touch-spin" aria-label="按住施展迴旋劍舞" hidden>劍舞</button><button id="touch-dodge">閃避</button><button class="attack-touch" id="touch-attack">揮劍</button></div></div>
   <div class="screen" id="title-screen"><div class="title-layout"><div class="chapter-tag">A TOWN. THREE KEYS. FOUR FATES.</div><h2 class="game-title">鴉棲鎮的灰燼</h2><p class="english-title">ASHES OF RAVENROOST</p><p class="title-copy">雨夜裡，你失去了一切。<br>他遞來一把劍，也遞來一場復仇。<br>這座小鎮的真相，藏在捷徑之外。</p><div class="title-buttons"><button class="gold-btn" id="start-btn">開始新的旅途　→</button><button class="quiet-btn" id="continue-btn" hidden>繼續上次旅途</button></div><label class="title-difficulty">戰鬥難度 <select id="title-difficulty" aria-label="選擇戰鬥難度"><option value="story">故事 · 從容探索</option><option value="normal" selected>標準 · 劍與抉擇</option><option value="hard">挑戰 · 步步為營</option><option value="blood">浴血 · 向死而生</option></select></label><button class="text-btn" id="revisit-btn" hidden>回顧：進入莊園前的旅程</button><button class="text-btn" id="aftermath-btn" hidden>後日談收藏 · 繼續探索結局世界</button><div class="title-foot">完整繁體中文 · 11 個任務 · 四種難度 · 四種結局與後日談<br>建議鍵盤與滑鼠操作 · 戰鬥外可隨時調整難度</div><div class="title-index"><b>IV</b>復仇，或是黎明</div></div></div>
   <section class="dialogue" id="dialogue" aria-label="角色對話" hidden><div class="portrait-wrap"><canvas id="portrait" width="106" height="136"></canvas></div><div class="dialogue-content"><div class="speaker"><span id="speaker"></span><small id="speaker-tag"></small></div><div class="dialogue-text" id="dialogue-text"></div><div class="choices" id="choices"></div></div><div class="dialogue-hint">E / Enter 繼續 · ↑↓ 選擇</div><button class="skip-intro" id="skip-prologue" hidden>略過序章</button></section>
   <section class="screen death-screen" id="death-screen" hidden><div class="overlay-card"><div class="overline">THE RAIN REMEMBERS</div><h2>劍客倒下了</h2><p id="death-detail"></p><button class="gold-btn" id="retry-btn">在鎮中心診所醒來</button><button class="quiet-btn" id="death-title-btn">返回標題</button></div></section>
@@ -56,7 +64,7 @@ const STORE_KEY='ravenroost.complete.v1', SETTINGS_KEY='ravenroost.preferences.v
 const $=id=>document.getElementById(id),canvas=$('game'),ctx=canvas.getContext('2d');
 const scene=document.createElement('canvas');scene.width=640;scene.height=400;const art=scene.getContext('2d');
 const background=document.createElement('canvas');const bg=background.getContext('2d');
-const keys=new Set(),clamp=(v,a,b)=>Math.max(a,Math.min(b,v)),dist=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y);
+const keys=new Set(),touchMovement=new Set(),touchHoldResets=new Set(),clamp=(v,a,b)=>Math.max(a,Math.min(b,v)),dist=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y);
 const angleDiff=a=>Math.atan2(Math.sin(a),Math.cos(a)),deepCopy=x=>JSON.parse(JSON.stringify(x)),random=(a,b)=>a+Math.random()*(b-a);
 let randSeed=72934;function seeded(){randSeed=(Math.imul(randSeed,1664525)+1013904223)>>>0;return randSeed/4294967296;}
 const STATS=[null,[100,15],[140,22],[190,30],[250,40],[320,52],[400,65],[500,85],[600,98],[700,109],[800,120]];
@@ -106,7 +114,7 @@ function updateStamina(dt){if(player.staminaActive||player.dodge>0){player.stami
 function shortStamina(){if(player.staminaFlash<=0)sound.tone(90,.15,'triangle',.035,55);player.staminaFlash=.35;}
 function hasSwordDance(){return state?.quests.veteran==='done';}
 function sprintHeld(){return sprintInputs.size>0||keys.has('shift');}
-function clearInput(){keys.clear();attackInputs.clear();spinInputs.clear();sprintInputs.clear();heldAttack=false;attackBuffer=0;stopSpin();player.sprinting=false;spinBlocked=false;sprintBlocked=false;}
+function clearInput(){for(const reset of touchHoldResets)reset();keys.clear();touchMovement.clear();attackInputs.clear();spinInputs.clear();sprintInputs.clear();heldAttack=false;attackBuffer=0;stopSpin();player.sprinting=false;spinBlocked=false;sprintBlocked=false;}
 function clearEffects(){effects=[];particles=[];slashes=[];hazards=[];projectiles=[];scheduled=[];trails=[];fieldAction=null;shake=0;hitstop=0;damageTint=0;flash=0;nearest=null;$('bark').hidden=true;$('interact').hidden=true;}
 function hideScreens(){for(const id of ['title-screen','death-screen','ending-screen','pause-screen','journal','map-screen','dialogue','confirm-screen'])$(id).hidden=true;}
 function snapshot(){return {state:deepCopy({...state,playTime}),player:{x:player.x,y:player.y,hp:player.hp,potions:player.potions,stamina:player.stamina,staminaDelay:player.staminaDelay},tracked,savedAt:new Date().toISOString()};}
@@ -161,7 +169,7 @@ function focusGame(){try{canvas.focus({preventScroll:true});}catch{canvas.focus(
 function inCombat(){return !!(boss&&!['IDLE','KNEEL','DEAD'].includes(boss.state))||enemies.some(e=>e.hp>0&&e.aggro);}
 function canInteract(){return mode==='PLAY'&&player.hp>0&&player.stun<=0;}
 function actable(i){return !i.when||i.when();}
-function getMovement(){let x=(keys.has('d')||keys.has('arrowright')?1:0)-(keys.has('a')||keys.has('arrowleft')?1:0),y=(keys.has('s')||keys.has('arrowdown')?1:0)-(keys.has('w')||keys.has('arrowup')?1:0);const n=Math.hypot(x,y)||1;return {x:x/n,y:y/n};}
+function getMovement(){const down=k=>keys.has(k)||touchMovement.has(k);let x=(down('d')||down('arrowright')?1:0)-(down('a')||down('arrowleft')?1:0),y=(down('s')||down('arrowdown')?1:0)-(down('w')||down('arrowup')?1:0);const n=Math.hypot(x,y)||1;return {x:x/n,y:y/n};}
 function circleRect(e,r){const x=clamp(e.x,r.x,r.x+r.w),y=clamp(e.y,r.y,r.y+r.h);return Math.hypot(e.x-x,e.y-y)<e.r;}
 function collides(e){
  if(isIntro()&&state.map==='town'&&(e.x<1160+e.r||e.x>1920-e.r||e.y<730+e.r||e.y>1430-e.r))return true;
@@ -1588,7 +1596,15 @@ function keyboard(e){
  if(!movable())return;if(['w','a','s','d','arrowup','arrowdown','arrowleft','arrowright'].includes(k))keys.add(k);if(k==='j')setAttackInput('keyboard',true);if(k==='l')setSpinInput('keyboard',true);if(k==='shift')setSprintInput(e.code||'shift',true);if(k===' '||k==='k')dodge();if(k==='e'||k==='enter')maybeInteract();if(k==='h')usePotion();
 }
 function releaseKey(e){const k=e.key.toLowerCase();keys.delete(k);if(k==='j')setAttackInput('keyboard',false);if(k==='l')setSpinInput('keyboard',false);if(k==='shift')setSprintInput(e.code||'shift',false);}
-function bindHold(id,change){const b=$(id),ids=new Set();b.addEventListener('pointerdown',e=>{e.preventDefault();if(!movable())return;ids.add(e.pointerId);b.setPointerCapture?.(e.pointerId);pointer.valid=false;change(true);});for(const ev of ['pointerup','pointercancel','lostpointercapture'])b.addEventListener(ev,e=>{ids.delete(e.pointerId);if(!ids.size)change(false);});}
+function bindHold(id,change){
+ const b=typeof id==='string'?$(id):id,ids=new Set();
+ touchHoldResets.add(()=>{ids.clear();b.classList.remove('pressed');});
+ b.addEventListener('pointerdown',e=>{e.preventDefault();if(!movable()||e.pointerType==='mouse'&&e.button!==0||ids.has(e.pointerId))return;const first=!ids.size;ids.add(e.pointerId);try{b.setPointerCapture?.(e.pointerId);}catch{}pointer.valid=false;b.classList.add('pressed');if(first)change(true);});
+ const release=e=>{if(!ids.delete(e.pointerId))return;if(!ids.size){b.classList.remove('pressed');change(false);}};
+ for(const ev of ['pointerup','pointercancel','lostpointercapture'])b.addEventListener(ev,release);
+ // Keep release reliable if capture is unavailable or the finger leaves the button.
+ for(const ev of ['pointerup','pointercancel'])document.addEventListener(ev,release);
+}
 async function fullscreen(){try{if(document.fullscreenElement)await document.exitFullscreen();else await $('stage').requestFullscreen();}catch{toast('此瀏覽器未允許全螢幕，可使用瀏覽器的放大模式。');}}
 function bindUI(){
  $('start-btn').addEventListener('click',()=>saveData?confirmInGame('展開新的旅途？','新的序章結束後，將取代這個瀏覽器的自動存檔。已收藏的結局仍會保留。',newGame):newGame());$('continue-btn').addEventListener('click',continueGame);$('revisit-btn').addEventListener('click',replayFinal);$('aftermath-btn').addEventListener('click',openAftermathArchive);$('pause-aftermath').addEventListener('click',openAftermathArchive);$('intro-skip').addEventListener('click',skipIntro);
@@ -1605,8 +1621,11 @@ function bindUI(){
  const releaseMouse=e=>{if(e.pointerType==='touch')return;if(e.button===0)setAttackInput('mouse',false);if(e.button===2)setSpinInput('mouse',false);};document.addEventListener('pointerup',releaseMouse);document.addEventListener('mouseup',releaseMouse);
  // Mouse events also cover chorded buttons: Pointer Events only fire pointerdown for the first button.
  canvas.addEventListener('mousedown',e=>{if(!movable()||![0,2].includes(e.button))return;e.preventDefault();if(e.button===0)setAttackInput('mouse',true);else setSpinInput('mouse',true);});const cancelMouse=()=>{setAttackInput('mouse',false);setSpinInput('mouse',false);};canvas.addEventListener('pointercancel',cancelMouse);canvas.addEventListener('lostpointercapture',cancelMouse);canvas.addEventListener('contextmenu',e=>e.preventDefault());
- for(const b of document.querySelectorAll('[data-move]')){b.addEventListener('pointerdown',e=>{e.preventDefault();b.setPointerCapture?.(e.pointerId);pointer.valid=false;keys.add(b.dataset.move);});for(const ev of ['pointerup','pointercancel','lostpointercapture'])b.addEventListener(ev,()=>keys.delete(b.dataset.move));}
- bindHold('touch-attack',down=>setAttackInput('touch',down));bindHold('touch-spin',down=>setSpinInput('touch',down));bindHold('touch-sprint',down=>setSprintInput('touch',down));$('touch-dodge').addEventListener('pointerdown',e=>{e.preventDefault();dodge();});$('touch-potion').addEventListener('pointerdown',e=>{e.preventDefault();usePotion();});$('touch-interact').addEventListener('pointerdown',e=>{e.preventDefault();maybeInteract();});
+ const controls=$('touch-controls'),preventNative=e=>e.preventDefault();
+ for(const ev of ['selectstart','contextmenu','dragstart'])controls.addEventListener(ev,preventNative);
+ controls.addEventListener('touchstart',preventNative,{passive:false});
+ for(const b of document.querySelectorAll('[data-move]'))bindHold(b,down=>{if(down)touchMovement.add(b.dataset.move);else touchMovement.delete(b.dataset.move);});
+ bindHold('touch-attack',down=>setAttackInput('touch',down));bindHold('touch-spin',down=>setSpinInput('touch',down));bindHold('touch-sprint',down=>setSprintInput('touch',down));bindHold('touch-dodge',down=>{if(down)dodge();});bindHold('touch-potion',down=>{if(down)usePotion();});bindHold('touch-interact',down=>{if(down)maybeInteract();});
 }
 function loop(now){if(!lastFrame)lastFrame=now;const elapsed=Math.min((now-lastFrame)/1000,.1);lastFrame=now;accumulator+=elapsed;while(accumulator>=STEP){update(STEP);accumulator-=STEP;}drawFrame();requestAnimationFrame(loop);}
 bindUI();state=freshState();initPlayer();returnTitle();sound.sync();requestAnimationFrame(loop);
